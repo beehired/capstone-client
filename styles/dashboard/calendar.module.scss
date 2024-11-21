@@ -1,0 +1,171 @@
+@import "../variables.module.scss";
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #fff;
+
+
+    .header {
+        width: 100%;
+        height: 120px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        inset: 0;
+        background-color: #fff;
+        padding: 20px;
+        z-index: 999;
+
+        .btnGrp {
+            display: flex;
+            align-items: center;
+
+            button {
+                width: 35px;
+                height: 35px;
+                border: none;
+                background-color: #fff;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $Neutral100;
+                }
+            }
+
+            .leftBtn {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+
+            .rightBtn {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    }
+
+    .asdxd {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px;
+        justify-content: center;
+        gap: 10px;
+
+        .days {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .as {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                padding: 20px;
+                border: none;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid $Neutral300;
+
+                span {
+                    padding: 5px 0;
+                }
+
+                .grid {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .date {
+                        font-size: $fnttiny;
+                        padding: 30px 8px
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+.miniCalendar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 290px;
+    height: 290px;
+    box-shadow: 0px 0px 3px 0px #ccc;
+    border-radius: 5px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    z-index: 999;
+    user-select: none;
+
+    .months {
+        width: 100%;
+        padding: 10px 43px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+
+        button {
+            width: 33px;
+            height: 33px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        span {
+            font-size: $fntbase;
+        }
+    }
+
+    .daysInMonth {
+        display: grid;
+        grid-template-columns: repeat(7, 35px);
+        grid-template-rows: repeat(6, 35px);
+
+        .days {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                width: 30px;
+                height: 30px;
+                border-radius: 100px;
+                background-color: transparent;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $Secondary500;
+                    color: #fff;
+                }
+            }
+
+            .isActive {
+                background-color: $Primary500;
+                color: $Secondary500;
+            }
+        }
+    }
+}

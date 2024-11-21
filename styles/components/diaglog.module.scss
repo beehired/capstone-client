@@ -1,0 +1,9 @@
+@import "../variables.module.scss";
+
+.container {
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(155, 155, 155, 0.527);
+    z-index: 999;
+}

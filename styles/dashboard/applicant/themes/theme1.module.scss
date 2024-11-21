@@ -1,0 +1,158 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+.container {
+    width: 100%;
+    background-color: #fff;
+
+    .footer {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $Primary500;
+
+        span {
+            font-size: $fntbase;
+            font-weight: 500;
+        }
+    }
+
+    .header {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        background-size: cover;
+        background-position: center;
+        background-color: $Primary500;
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+
+
+        .socialLinks {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+
+            svg {
+                stroke: #000;
+                stroke-width: 1.5px;
+            }
+        }
+
+        .activeLinks {
+            svg {
+                stroke: #fff;
+                stroke-width: 1.5px;
+            }
+        }
+
+        h2 {
+            font-size: $fnt2xl;
+
+        }
+    }
+
+    .body {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .about,
+        .workSpace,
+        .educationSpace,
+        .reviews {
+            width: 1200px;
+            padding: 2rem 10rem;
+
+            @include phone {
+                width: 100%;
+            }
+
+            @include landscape {
+                width: 100%;
+            }
+
+            .MySkills {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                span {
+                    width: auto;
+                    display: flex;
+                    padding: 10px 20px;
+                    flex-wrap: nowrap;
+                    border-radius: 100px;
+                    background-color: $Neutral200;
+                    font-size: $fntbase;
+                }
+            }
+
+            @include phone {
+                padding: 1rem 3rem;
+            }
+
+            p {
+                padding: 10px 0;
+            }
+
+            .card {
+                padding: 20px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .cardHeader {
+                    h2 {
+                        font-size: $fntlg;
+                    }
+                }
+
+                .skilled {
+                    display: flex;
+                    gap: 10px;
+
+                    span {
+                        width: auto;
+                        padding: 5px 10px;
+                        border-radius: 100px;
+                        background-color: $Neutral200;
+                        font-size: $fntbase;
+                    }
+                }
+            }
+
+            .reviewCard {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .reviewerName {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}

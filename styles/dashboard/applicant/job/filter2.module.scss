@@ -1,0 +1,25 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+
+.container {
+    background-color: #fff;
+    border-radius: 5px;
+
+    button {
+        padding: 15px;
+        border-radius: 5px;
+        border: none;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: $Primary500;
+        }
+    }
+
+    .active {
+        background-color: $Primary500;
+    }
+}

@@ -1,0 +1,15 @@
+@import "../variables.module.scss";
+@import "../mixin.module";
+
+.container {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+    padding: 20px 10px;
+    border-radius: 5px;
+
+    span {
+        font-size: $fntbase;
+        color: $Neutral600;
+    }
+}

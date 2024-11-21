@@ -1,0 +1,12 @@
+@import "../../../variables.module.scss";
+
+.container {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+
+    h2 {
+        font-size: $fntbase;
+    }
+}

@@ -1,0 +1,21 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+.container {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #fff;
+
+    .nodata {
+        span {
+            font-size: $fntbase;
+            color: $Neutral700;
+        }
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

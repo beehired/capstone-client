@@ -1,0 +1,30 @@
+@import "../variables.module.scss";
+
+.container{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 20px;
+    gap: 5px;
+    border-radius: 20px; 
+    gap: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 3px 0xpx #ccc;
+    // @media screen and (min-width: 700px) {
+    //     display: none;
+    // }
+    input {
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        background-color: transparent;
+        height: 50px;
+        outline: none;
+        font-size: $fntbase;
+    }
+    svg {
+        stroke-width: 1.2px;
+    }
+}

@@ -1,0 +1,145 @@
+@import "../../../../variables.module.scss";
+@import "../../../../mixin.module";
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .workContainer {
+        width: 750px;
+        height: auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+
+        .dateEmployment {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .om {
+                width: 100%;
+
+                .ey {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    .seleteye {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                    }
+
+                    .errors {
+                        width: 100%;
+                        height: 30px;
+                    }
+
+                    select {
+                        width: 100%;
+                        border-radius: 5px;
+                        padding: 15px 10px;
+                        font-size: $fntbase;
+                        outline: none;
+
+                        option {
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .currently {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skills {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .searchBox {
+                width: 100%;
+                height: 60px;
+                border-radius: 5px;
+                padding: 0 20px;
+                border: 1px solid $Neutral800;
+                font-size: $fntbase;
+            }
+
+            .skillsContainer {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    border-radius: 100px;
+                    gap: 5px;
+                    padding: 10px 15px;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                .active {
+                    background-color: $Primary500;
+                }
+            }
+        }
+    }
+
+    .header {
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid $Neutral200;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+
+        h2 {
+            font-size: $fntlg;
+        }
+    }
+
+    .body {
+        height: 700px;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px 10px;
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $Neutral500;
+        }
+    }
+
+    .footer {
+        width: 100%;
+        border-top: 1px solid $Neutral200;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: flex-end;
+        padding: 10px 0;
+    }
+}

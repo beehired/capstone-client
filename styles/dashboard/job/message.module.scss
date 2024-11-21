@@ -1,0 +1,232 @@
+@import "../../variables.module.scss";
+@import "../../mixin.module";
+
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .messageContainer {
+        width: 600px;
+        height: 100vh;
+        overflow-y: auto;
+        background-color: #fff;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+
+            h2 {
+                font-size: $fntlg;
+            }
+
+            button {
+                width: 40px;
+                height: 40px;
+                border-radius: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $Neutral200;
+                }
+            }
+        }
+
+        .body {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $Neutral300;
+            }
+
+            @include phone {
+                height: 500px;
+            }
+
+            .senderCard {
+                display: flex;
+                justify-content: flex-end;
+
+                .senderContainer {
+                    max-width: 300px;
+                    background-color: $Primary500;
+                    padding: 15px;
+                    border-radius: 10px;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                }
+
+                .imagePreview {
+                    width: 350px;
+                    height: 250px;
+                    position: relative;
+                }
+
+                span {
+                    text-align: right;
+                    font-size: $fntbase;
+                }
+            }
+
+            .receiverCard {
+                display: flex;
+                justify-content: flex-start;
+
+                span {
+                    text-align: right;
+                    font-size: $fntbase;
+                }
+
+                .receiverContainer {
+                    max-width: 250px;
+                    background-color: $Neutral200;
+                    padding: 20px;
+                    border-radius: 10px;
+
+
+                }
+
+                .imagePreview {
+                    width: 350px;
+                    height: 250px;
+                    position: relative;
+                }
+            }
+        }
+
+        .footer {
+            border-top: 1px solid #ccc;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .message {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                overflow-x: auto;
+
+                .imageArray {
+                    width: 100vw;
+                    overflow-x: scroll;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    overflow: auto;
+                    border-radius: 10px;
+                }
+
+                .prevImage {
+                    width: 100vw;
+                    position: relative;
+                    height: 65px;
+                    width: 65px;
+
+                    .image {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 10px;
+                        background-color: $Neutral200;
+                        overflow: hidden;
+                        height: 65px;
+                        width: 65px;
+                    }
+
+                    button {
+                        top: 0;
+                        right: 0;
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        border-radius: 100px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: none;
+                        box-shadow: 0px 0px 3px 0px $Neutral300;
+                    }
+                }
+            }
+
+            textarea {
+                width: 100%;
+                height: 40px;
+                resize: none;
+                border: none;
+                padding: 8px 10px;
+                border: 1px solid #ccc;
+                border-radius: 100px;
+                display: flex;
+                align-items: center;
+                font-size: $fntbase;
+                outline: none;
+
+                &:focus {
+                    border: 1px solid $Primary500;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
+            }
+
+            .submitBtn,
+            .imageBtn {
+                width: 40px;
+                height: 40px;
+                border-radius: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+
+                svg {
+                    fill: $Primary500;
+                    stroke: $Primary500;
+                }
+
+                &:hover {
+                    background-color: $Neutral300;
+
+                    svg {
+                        fill: #fff;
+                        stroke: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

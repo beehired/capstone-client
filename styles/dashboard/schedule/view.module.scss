@@ -1,0 +1,115 @@
+@import "../../variables.module.scss";
+@import "../../mixin.module";
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+
+
+    .time {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+    }
+
+
+    .scheduleContainer {
+        width: 500px;
+        height: 600px;
+        overflow-y: auto;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+
+        .head {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+                background-color: transparent;
+                height: 40px;
+                width: 40px;
+                border-radius: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $Neutral200;
+                }
+            }
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 0;
+
+            .box {
+                width: 30px;
+
+                .colored {
+                    width: 25px;
+                    height: 25px;
+                    background-color: $Primary500;
+                    border-radius: 5px;
+                }
+            }
+
+            .headerInfo {
+                padding: 0 4px;
+
+                h2 {
+                    font-size: $fntxl;
+                }
+            }
+        }
+
+        .links {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+
+            svg {
+                stroke-width: 1.5px;
+            }
+
+            a {
+                padding: 0;
+            }
+
+            .zoom {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            span {
+                padding: 25px 0;
+            }
+        }
+    }
+
+    .editContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+}

@@ -1,0 +1,65 @@
+@import "../../variables.module.scss";
+@import "../../mixin.module";
+
+.container {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+
+    .avatar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .avatarPic {
+            height: 80px;
+            width: 80px;
+            position: relative;
+            border-radius: 100px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            border-radius: 5px;
+            padding: 12px 16px;
+            border: 1px solid $Primary500;
+            background-color: #fff;
+            cursor: pointer;
+        }
+    }
+
+    .EmailAddress {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 0;
+
+        .email {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            button {
+                width: 45px;
+                height: 45px;
+                border-radius: 100px;
+                border: none;
+                background-color: transparent;
+
+                &:hover {
+                    background-color: $Neutral100;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .warning {
+            font-size: $fntbase;
+            color: $Neutral600;
+        }
+    }
+}

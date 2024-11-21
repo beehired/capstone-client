@@ -1,0 +1,24 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 10px;
+
+    button {
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        font-size: $fntbase;
+        color: $Neutral700;
+        text-align: left;
+    }
+
+    .active {
+        border-bottom: 2px solid $Primary500;
+        color: #000;
+    }
+}

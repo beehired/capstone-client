@@ -1,0 +1,23 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h2 {
+            font-size: $fntlg;
+        }
+    }
+}

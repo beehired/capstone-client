@@ -1,0 +1,23 @@
+@import "../variables.module.scss";
+
+.container {
+    width: 270px;
+    padding: 15px 10px;
+    background-color: #fff;
+    display: flex;
+    gap: 20px;
+    button {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        svg {
+            stroke: $Error500;
+        }
+        span {
+            font-size: $fntbase;
+        }
+    }
+    .filebtn {
+        padding: 0 1px;
+    }
+}

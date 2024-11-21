@@ -1,0 +1,242 @@
+@import "../variables.module.scss";
+@import "../mixin.module";
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  max-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .formContainer {
+    width: 650px;
+  }
+
+  .si {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+
+    @include phone {
+      height: auto;
+
+    }
+  }
+
+  .stepContainer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    user-select: none;
+  }
+
+  .plans {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+
+    h2 {
+      font-size: $fntlg;
+    }
+
+    .pcontainer {
+      width: 100%;
+
+      .p {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 0;
+
+        @include phone {
+          flex-direction: column;
+
+          .planContainer {
+            height: auto;
+          }
+        }
+      }
+    }
+
+    .planContainer {
+      width: 100%;
+      height: 100%;
+      padding: 30px 10px;
+      box-shadow: 0px 0px 3px 0px #ccc;
+      padding: 10px;
+      gap: 10px;
+      border-radius: 5px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+
+      .header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        padding: 20px 0;
+        border-bottom: 1px solid $Neutral400;
+
+        .planHeader {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        span {
+          font-size: $fntbase
+        }
+
+        svg {
+          fill: $Primary500;
+        }
+      }
+
+      .body {
+        width: 100%;
+        padding: 20px 0;
+
+        .features {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 0 10px;
+
+          span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: $Neutral600;
+
+          }
+        }
+      }
+    }
+
+    .active {
+      width: 100%;
+      background-color: $Primary300;
+      padding: 30px 10px;
+    }
+
+  }
+
+  .signup {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .step1,
+  .step2 {
+    width: 100%;
+    min-height: 350px;
+    max-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .description {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      span {
+        color: $Neutral400;
+      }
+
+      .error {
+        color: $Error500;
+      }
+    }
+
+    .om {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .personal {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+      }
+    }
+
+    .agreement {
+      width: 100%;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .fileUpload {
+      width: 100%;
+      height: 250px;
+      gap: 10px;
+
+      @include phone {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .image {
+        width: 220px;
+        height: 200px;
+        background-color: #fff;
+        box-shadow: 0px 0px 3px 0px $Neutral400;
+        border-radius: 5px;
+      }
+
+    }
+  }
+
+  .companyAddress {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    @include phone {
+      flex-direction: column;
+    }
+
+    .country,
+    .location {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px
+    }
+  }
+
+  .btnStepContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}

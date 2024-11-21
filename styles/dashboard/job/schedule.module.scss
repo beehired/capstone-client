@@ -1,0 +1,57 @@
+@import "../../variables.module.scss";
+@import "../../mixin.module";
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .scheduleContainer {
+        width: 600px;
+        height: 100vh;
+        overflow-y: auto;
+        background-color: #fff;
+        padding: 20px 30px;
+
+        .header {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            background-color: #fff;
+
+            .btn {
+                width: 40px;
+                height: 40px;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100px;
+                border: none;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $Neutral100;
+                }
+            }
+        }
+
+        form {
+
+            .time {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .setTime {
+                height: 45px;
+            }
+        }
+    }
+}

@@ -1,0 +1,155 @@
+@import "../../variables.module.scss";
+@import "../../mixin.module";
+
+
+
+
+.senderCard {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 8px;
+
+    .btnTrash {
+        display: none;
+    }
+
+    .smContainer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 5px;
+        flex-direction: column;
+
+        .senderContainer {
+            max-width: 300px;
+            background-color: $Primary500;
+            border-radius: 10px;
+            flex-wrap: wrap;
+            flex-direction: column;
+            padding: 15px;
+        }
+
+        .dateContainer {
+            .date {
+                font-size: $fnttiny;
+            }
+        }
+
+
+    }
+
+    &:hover {
+        .btnTrash {
+            display: block;
+            width: 35px;
+            height: 35px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+        }
+    }
+
+    .imageContainer {
+
+        display: flex;
+        justify-content: flex-end;
+        gap: 5px;
+        flex-direction: column;
+
+        .imagePreview {
+            width: 300px;
+            height: 250px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dateContainer {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+
+            .date {
+                font-size: $fnttiny;
+            }
+        }
+    }
+
+
+    span {
+        text-align: right;
+        font-size: $fntbase;
+    }
+}
+
+
+.receiverCard {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 0;
+    border-radius: 8px;
+
+    .rmContainer {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+        flex-direction: column;
+    }
+
+    .dateContainer {
+        .date {
+            font-size: $fnttiny;
+        }
+    }
+
+    .receiverContainer {
+        max-width: 300px;
+        background-color: $Neutral200;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 15px;
+
+        .dateContainer {
+            display: flex;
+            align-items: center;
+
+            .date {
+                font-size: $fnttiny;
+            }
+        }
+    }
+
+    .imageContainer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 5px;
+        flex-direction: column;
+
+        .imagePreview {
+            width: 300px;
+            height: 250px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+
+
+        .dateContainer {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+
+            .date {
+                font-size: $fnttiny;
+            }
+        }
+    }
+}

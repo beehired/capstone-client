@@ -1,0 +1,58 @@
+@import "../../../../variables.module.scss";
+@import "../../../../mixin.module";
+
+.container {
+    width: 100%;
+
+    h1 {
+        font-size: $fntbase;
+    }
+
+    .date {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+
+    .header {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+            font-size: $fntlg;
+            flex-wrap: wrap;
+        }
+
+        .btnGrp {
+            display: flex;
+            align-items: center;
+            // gap: ;
+        }
+    }
+
+    p {
+        padding: 10px 0;
+    }
+
+    .skills {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+
+        div {
+            background-color: $Neutral200;
+            padding: 6.5px 15px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                font-size: $fnttiny;
+            }
+        }
+    }
+}

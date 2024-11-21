@@ -1,0 +1,82 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+.container {
+    width: 350px;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+
+    @include phone {
+        display: none;
+    }
+
+    @include landscape {
+        display: none;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $Neutral500;
+        border-radius: 100px;
+    }
+
+    .searchInput {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        height: 30px;
+        margin: 10px 0;
+        padding: 5px;
+        outline: none;
+    }
+
+    .childrenCard {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        padding: 3px 0;
+
+
+    }
+
+    .inputArray {
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1.10em;
+        height: 1.10em;
+        border: 0.13em solid $Primary600;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+        display: grid;
+        place-content: center;
+
+        &:checked {
+
+            &::before {
+                transform: scale(1);
+
+            }
+        }
+
+        &::before {
+            content: "";
+            width: 0.60em;
+            height: 0.60em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            transform-origin: bottom left;
+            background-color: $Primary600;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+
+    }
+}

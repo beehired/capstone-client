@@ -1,0 +1,17 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+.container {
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 450px);
+        grid-template-rows: repeat(auto-fit, 270px);
+        gap: 20px;
+    }
+}

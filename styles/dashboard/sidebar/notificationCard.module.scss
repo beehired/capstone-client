@@ -1,0 +1,123 @@
+@import "../../variables.module.scss";
+@import "../../mixin.module";
+
+
+.container {
+    width: 100%;
+    padding: 10px;
+    position: relative;
+
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        .info {
+            display: flex;
+            gap: 10px;
+
+            h2 {
+                font-size: $fntbase;
+            }
+
+            .avatar {
+                width: 45px;
+                height: 45px;
+                border-radius: 100px;
+                position: relative;
+                overflow: hidden;
+            }
+        }
+
+        .unread {
+
+            height: 13px;
+            width: 13px;
+            border-radius: 100px;
+            background-color: $Primary500;
+
+
+
+        }
+    }
+
+    .dialog {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            height: 40px;
+            width: 40px;
+            background-color: transparent;
+            border-radius: 100px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $Neutral100;
+            }
+        }
+
+        .dialogContainer {
+            width: 750px;
+            height: 450px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+
+            .diaglogHeader {
+                width: 100%;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            .applicantHeader {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .avatar {
+                    position: relative;
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 100px;
+                    overflow: hidden;
+                }
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+
+                    span {
+                        font: $fntlg;
+                    }
+
+                    a {
+                        font-size: $fntbase;
+                    }
+                }
+            }
+
+            .applicantBody {
+                width: 100%;
+                padding: 10px;
+
+                div {
+                    ul {
+                        padding: 10px 25px;
+                    }
+                }
+            }
+        }
+    }
+}

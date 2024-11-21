@@ -1,0 +1,259 @@
+@import "../variables.module.scss";
+
+.goback {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background-color: $Primary500;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: $Primary500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+
+    span {
+        font-size: $fntbase;
+    }
+
+    &:disabled {
+        background-color: $Neutral200;
+    }
+}
+
+.routingBtnV1 {
+    padding: 12px 16px;
+    background-color: $Primary500;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+    span {
+        font-size: $fntbase;
+    }
+}
+
+.cancelBtn {
+    padding: 12px 16px;
+    background-color: $Neutral200;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+    span {
+        font-size: $fntbase;
+    }
+}
+
+.deleteBtn {
+    padding: 12px 16px;
+    background-color: $Error500;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+
+    span {
+        font-size: $fntbase;
+    }
+}
+
+.routingBtnV2 {
+    padding: 12px 16px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+    span {
+        font-size: $fntbase;
+    }
+
+    &:hover {
+        background-color: $Primary500 ;
+    }
+}
+
+.iconBtn {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    color: $Secondary500;
+
+    .con {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    svg {
+        stroke-width: 1.5px;
+        color: $Secondary500;
+    }
+
+
+    &:hover {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        svg {
+            stroke: #fff;
+        }
+
+        span {
+            color: #fff
+        }
+
+        &::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 100px;
+            background-color: #fff;
+        }
+    }
+
+    span {
+        font-size: $fntbase;
+    }
+}
+
+.activeIcon {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    &:hover {
+        background-color: transparent;
+        color: $Secondary500;
+
+        svg {
+            stroke: $Secondary500
+        }
+
+        span {
+            color: $Secondary500;
+        }
+
+        &::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 100px;
+            background-color: $Secondary500;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 100px;
+        background-color: #fff;
+    }
+
+    svg {
+        stroke: #fff;
+    }
+
+    span {
+        color: #fff;
+    }
+}
+
+
+.toggleBtn {
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+        stroke-width: 1.6px;
+    }
+}
+
+
+.ButtonStepState {
+    width: 100%;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $Primary500;
+    border-radius: 5px;
+    border: none;
+
+    span {
+        font-size: $fntbase;
+    }
+
+    &:disabled {
+        background-color: $Neutral200;
+    }
+}
+
+.buttonState,
+.activeState {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: $fntbase;
+
+    &:hover {
+        background-color: $Neutral200;
+    }
+}
+
+.activeState {
+    background-color: $Primary500;
+
+    &:hover {
+        background-color: $Primary400;
+    }
+
+}
+
+.ButtonIconRoute {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg {
+        stroke-width: 1.5px;
+    }
+}

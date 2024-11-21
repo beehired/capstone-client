@@ -1,0 +1,74 @@
+@import "../../variables.module.scss";
+
+
+
+.container {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px 0;
+    position: relative;
+
+    .thead,
+    .tbody {
+        width: 100%;
+
+        .tr {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            .th,
+            .td {
+                width: 600px;
+                height: auto;
+            }
+
+            .th,
+            .td {
+                &:nth-child(1) {
+                    width: 300px;
+                }
+            }
+
+            .avatar {
+                width: 60px;
+                height: 60px;
+                position: relative;
+                border-radius: 100px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .actionsBtnGrp {
+                display: flex;
+                gap: 5px;
+
+                button {
+                    background-color: none;
+                    border: none;
+                    padding: 8px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                }
+
+                .edit {
+                    // background-color: ;
+                }
+
+                .deleteBtn {
+                    background-color: $Error500;
+
+                    svg {
+                        stroke: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

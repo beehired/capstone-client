@@ -1,0 +1,428 @@
+@import "./variables.module.scss";
+@import "./mixin.module";
+
+.container {
+  background-color: #fff;
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 0 4rem;
+
+    .main {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      min-height: 700px;
+      border-radius: 5px;
+      background-image: url("../app/public/grp.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      object-fit: cover;
+      color: #fff;
+
+      h2 {
+        width: 60%;
+        font-size: $fnt4xl;
+        text-align: center;
+
+        @include phone {
+          width: 100%;
+          font-size: $fnt2xl;
+        }
+      }
+
+      .skills {
+        width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        .skillsCard {
+          background-color: $Primary500;
+          border-radius: 3px;
+          padding: 10px;
+          user-select: none;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #000;
+            color: #fff;
+          }
+
+          span {
+            text-align: center;
+            font-size: $fntbase;
+          }
+        }
+
+        @include phone {
+          width: 100%;
+        }
+      }
+    }
+
+    .about {
+      margin: 10px 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+
+      }
+
+      .ey {
+        margin: 40px 0;
+      }
+
+      .aboutMain {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .description {
+          max-width: 1200px;
+          font-size: 1rem;
+          margin-bottom: 2rem;
+          text-align: center;
+        }
+      }
+
+
+
+      .image_grid {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .image_box {
+          position: relative;
+
+          overflow: hidden;
+
+          .wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+
+            .img {
+              width: 100%;
+              transition: transform 0.3s ease;
+
+              &:hover {
+                transform: scale(1.1);
+                box-shadow: 0px 0px 3px 0px #ccc;
+              }
+            }
+          }
+        }
+      }
+
+      .mission_vision {
+        width: 100%;
+        gap: 2rem;
+        border-radius: 10px;
+
+        h3 {
+          font-size: $fnt2xl;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          text-align: justify;
+          font-size: $fntlg;
+        }
+
+        .mission,
+        .vision {
+          width: 100%;
+          display: flex;
+          align-items: center;
+
+          .gap {
+            width: 100%;
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            object-fit: contain;
+
+            @include phone {
+              display: none;
+            }
+          }
+        }
+
+        .mission {
+          width: 100%;
+          padding: 1.5rem;
+          border-radius: 8px;
+          gap: 20px;
+        }
+
+        .vision {
+          width: 100%;
+          padding: 1.5rem;
+          border-radius: 8px;
+          gap: 20px;
+
+
+
+        }
+      }
+    }
+
+
+    .freelancer,
+    .employer {
+      width: 100%;
+      height: 650px;
+      border-radius: 10px;
+      padding: 20px;
+
+      button {
+        cursor: pointer;
+      }
+
+      h2 {
+        width: 650px;
+        font-size: $fnt4xl;
+        text-transform: uppercase;
+      }
+
+      span {
+        width: 100%;
+        font-size: $fntlg;
+        text-align: center;
+      }
+    }
+
+    .freelancer {
+      background-color: $Primary300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      .gap {
+        width: 600px;
+        height: 100%;
+        position: relative;
+      }
+
+      .text {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h2 {
+          text-align: center;
+        }
+
+        button {
+          padding: 20px 40px;
+          border-radius: 5px;
+          background-color: #000;
+          color: #fff;
+          font-size: $fntbase;
+        }
+
+
+        .asd {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          padding: 20px;
+          gap: 40px;
+        }
+
+        .iconsContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .iconContainer {
+          width: 90px;
+          height: 90px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100px;
+          background-color: #000;
+
+          svg {
+            stroke: #fff;
+          }
+
+        }
+
+
+
+
+      }
+    }
+
+    .employer {
+      width: 100%;
+      height: 700px;
+      background-image: url("../app/public/homepage/bgemployer.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .gap {
+        width: 600px;
+        height: 100%;
+        position: relative;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+
+        button {
+          width: 300px;
+          padding: 20px 40px;
+          border-radius: 5px;
+          background-color: $Primary500;
+          color: #fff;
+          font-size: $fntbase;
+          border: none;
+        }
+
+        h2 {
+          width: 750px;
+          font-size: $fnt5xl;
+          color: $Primary500;
+        }
+
+        span {
+          color: #fff;
+          text-align: left;
+          padding: 10px 0;
+        }
+      }
+
+
+    }
+
+    .jobPost,
+    .companies {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 40px 0;
+    }
+
+    .pricing {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .titleContainer {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h2 {
+        font-size: $fnt2xl;
+        margin: 10px 0;
+      }
+
+      .pricingTable {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        @include phone {
+          flex-direction: column;
+        }
+
+        .pricingCard {
+          width: 100%;
+          border-radius: 8px;
+          border: 1px solid $Neutral200;
+          padding: 40px;
+          background-color: #fff;
+
+          .cardHeader {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            div {
+              display: flex;
+              align-items: center;
+              gap: 20px;
+            }
+
+            h2 {
+              font-size: $fntxl;
+            }
+          }
+
+
+
+          h3 {
+            font-size: $fntxl;
+          }
+
+          span {
+            font-size: $fntbase ;
+            color: $Neutral700;
+          }
+        }
+
+        .features {
+          padding: 10px;
+
+          ul {
+            display: grid;
+            padding: 0;
+            grid-template-columns: repeat(auto-fit, 1fr);
+
+            li {
+              list-style-type: "✔";
+              padding: 5px 8px;
+            }
+          }
+        }
+      }
+    }
+
+    @include phone {
+      padding: 0 1rem;
+    }
+  }
+}

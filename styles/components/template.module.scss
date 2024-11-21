@@ -1,0 +1,24 @@
+@import "../variables.module.scss";
+
+.container {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .title {
+        font-size: $fntxl;
+    }
+
+    .header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .body {
+        width: 100%;
+    }
+}

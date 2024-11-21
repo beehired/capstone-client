@@ -1,0 +1,19 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+
+.tab {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+
+    h2 {
+        font-size: $fntbase
+    }
+
+    ;
+
+
+}

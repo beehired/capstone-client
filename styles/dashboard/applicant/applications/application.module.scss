@@ -1,0 +1,58 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+
+.container {
+    width: 100%;
+    max-height: auto;
+
+    .applications {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .applicationCard {
+            width: 100%;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 20px 5px;
+
+            h2 {
+                font-size: $fntlg;
+            }
+
+            .header {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 0 20px;
+
+                .avatar {
+                    position: relative;
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+
+                .job {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                }
+            }
+
+            .otherinfo {
+                padding: 10px 15px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .description {
+                padding: 0 15px;
+            }
+        }
+    }
+}

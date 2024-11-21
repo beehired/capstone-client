@@ -1,0 +1,214 @@
+@import '../../variables.module.scss';
+
+.container {
+    display: grid;
+    gap: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    .header {
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .title {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0;
+
+            .da {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+
+        .datePosted {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .details {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 0;
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+
+        .s {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                svg {
+                    stroke-width: 1.5px;
+                }
+            }
+        }
+
+    }
+
+    .applicants {
+        width: 100%;
+        overflow-x: auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .applicantHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+
+            .searchBox {
+                height: 45px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                background-color: #fff;
+                border: 1px solid $Neutral400;
+                padding: 0 8px;
+                border-radius: 5px;
+
+                svg {
+                    stroke: $Neutral400;
+                }
+
+                input {
+                    width: 290px;
+                    height: 40px;
+                    padding: 0 10px;
+                    border: none;
+                    outline: none;
+                    font-size: $fnttiny;
+                }
+            }
+
+            .generateReport {
+                height: 45px;
+                width: 200px;
+                padding: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                background-color: $Primary500;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+
+                span {
+                    font-size: $fntbase;
+                }
+            }
+
+        }
+
+        table {
+            min-width: 100%;
+            overflow-x: auto;
+            border-collapse: collapse;
+            border: none;
+
+            tbody {
+                height: auto;
+            }
+
+            thead,
+            tbody {
+                width: 100%;
+
+                tr {
+                    width: 100%;
+                    height: 60px;
+
+                    th {
+                        width: 250px;
+                        text-align: left;
+                        padding: 20px;
+                        font-size: $fnttiny;
+
+                        &:nth-last-child(1) {
+                            min-width: 150px;
+                            border-right: none;
+                        }
+                    }
+
+                    td {
+                        height: 35px;
+                        padding: 10px 20px;
+
+                        .span {
+                            border-radius: 5px;
+
+                        }
+
+                        .status {
+                            vertical-align: middle;
+                            text-align: center;
+                        }
+
+                        .progressbar {
+                            width: 45px;
+                            height: 45px;
+                        }
+
+                        &:nth-last-child(1) {
+                            width: 10px;
+                            border-right: none;
+
+
+                            .actiongrp {
+                                display: flex;
+                                align-items: center;
+                                justify-items: center;
+                                gap: 10px;
+                                position: relative;
+
+                                .actionBtn {
+                                    cursor: pointer;
+                                    border: none;
+                                    background-color: transparent;
+                                    border-radius: 100px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    &:hover {
+                                        background-color: $Primary500;
+                                    }
+
+                                    svg {
+                                        stroke-width: 1.5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

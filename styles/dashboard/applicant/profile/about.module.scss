@@ -1,0 +1,14 @@
+.container {
+    width: 100%;
+    display: flex;
+
+    p {
+        width: 100%;
+    }
+
+    .btnGrp {
+        width: 150px;
+        display: flex;
+        justify-content: center;
+    }
+}

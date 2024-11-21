@@ -1,0 +1,37 @@
+@import "../../variables.module.scss";
+@import "../../mixin.module";
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    gap: 10px;
+
+    .avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 100px;
+        background-color: $Neutral200;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+
+        .role {
+            font-size: 0.8rem;
+        }
+    }
+
+    span {
+        font-size: 1rem;
+    }
+}

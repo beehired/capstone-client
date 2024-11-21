@@ -1,0 +1,12 @@
+@import "../variables.module.scss";
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: $fntbase;
+}
+
+.required {
+    color: red;
+}

@@ -1,0 +1,197 @@
+@import "../../variables.module.scss";
+@import "../../mixin.module";
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    .generatedReport {
+        width: 1200px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+
+        .generatedHeader {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid $Neutral300;
+
+            button {
+                border-radius: 100px;
+                width: 45px;
+                height: 45px;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $Neutral100;
+                }
+            }
+        }
+
+        .generateBody {
+            padding: 0;
+            min-height: 300px;
+            max-height: 600px;
+            overflow-y: auto;
+
+            table {
+                min-width: 100%;
+                overflow-x: auto;
+                border-collapse: collapse;
+                border: none;
+
+                tbody {
+                    height: auto;
+                }
+
+                thead,
+                tbody {
+                    width: 100%;
+
+                    tr {
+                        width: 100%;
+                        height: 60px;
+
+                        th {
+                            min-width: auto;
+                            text-align: left;
+                            padding: 20px;
+                            font-size: $fntbase;
+
+                            &:nth-child(1) {
+                                min-width: 50px !important;
+                                text-align: center;
+                            }
+
+                            &:nth-last-child(1) {
+                                min-width: 150px;
+                                border-right: none;
+                            }
+                        }
+
+                        td {
+                            height: 35px;
+                            padding: 10px 20px;
+
+                            .span {
+                                padding: 5px;
+                                border-radius: 5px;
+
+                            }
+
+                            .status {
+                                vertical-align: middle;
+                                text-align: center;
+                            }
+
+                            .progressbar {
+                                width: 45px;
+                                height: 45px;
+                            }
+
+                            &:nth-child(1) {
+                                width: 50px;
+                                text-align: center;
+                            }
+
+                            &:nth-last-child(1) {
+                                width: 10px;
+                                border-right: none;
+
+                                .resume {
+                                    width: 120px;
+                                    border-radius: 5px;
+                                    background-color: $Neutral200;
+                                    padding: 5px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                }
+
+                                .actiongrp {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-items: center;
+                                    gap: 10px;
+                                    position: relative;
+
+                                    .actionBtn {
+                                        cursor: pointer;
+                                        border: none;
+                                        background-color: transparent;
+                                        padding: 5px;
+                                        border-radius: 100px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        &:hover {
+                                            background-color: $Primary500;
+                                        }
+
+                                        svg {
+                                            stroke-width: 1.5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .resume {
+                            text-align: center;
+
+                            a {
+                                cursor: pointer;
+                                border-radius: 100px;
+                                padding: 5px 15px;
+                                font-size: $fnttiny;
+                                border: none;
+                                background-color: $Neutral200;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                text-decoration: none;
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .generateFooter {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            border-top: 1px solid $Neutral300;
+            padding: 20px 0;
+
+            button {
+                background-color: $Success100;
+                border: none;
+                padding: 15px;
+                border-radius: 5px;
+                cursor: pointer;
+
+                span {
+                    color: $Success900;
+                    font-size: $fntbase;
+                }
+            }
+        }
+    }
+}

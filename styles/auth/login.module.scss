@@ -1,0 +1,43 @@
+@import "../variables.module.scss";
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    max-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    .formContainer {
+        width: 650px;
+    }
+
+    .forgotpassword {
+        width: 100%;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+    }
+
+    .signup {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        span {
+            color: $Secondary500;
+        }
+    }
+}

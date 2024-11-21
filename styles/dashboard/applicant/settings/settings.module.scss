@@ -1,0 +1,36 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+
+.container {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+
+    .titleContainer {
+        border-bottom: 2px solid $Primary500;
+        padding: 20px 0;
+
+        h2 {
+            font-size: $fntlg;
+        }
+    }
+
+    .securityCard {
+        margin-top: 20px;
+
+        h2 {
+            font-size: $fntbase;
+        }
+
+        button {
+            margin: 5px 0;
+            border-radius: 5px;
+            padding: 12px 16px;
+            border: 1px solid $Primary500;
+            background-color: #fff;
+            text-align: left;
+        }
+    }
+}

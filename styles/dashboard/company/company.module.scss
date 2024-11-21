@@ -1,0 +1,43 @@
+@import "../../variables.module.scss";
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    svg {
+        stroke: $Secondary500;
+    }
+
+    .mainContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .head {
+            font-size: $fntbase;
+        }
+
+        .l {
+            display: flex;
+            flex-direction: column;
+            gap: -20px;
+            color: $Secondary500;
+
+            .plan {
+                font-size: $fnttiny;
+            }
+        }
+    }
+}

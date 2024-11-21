@@ -1,0 +1,40 @@
+@import "../../variables.module.scss";
+@import "../../mixin.module";
+
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    gap: 15px;
+
+    @include phone {
+        justify-content: center;
+    }
+
+    .companyCard {
+        border-radius: 10px;
+        border: 1px solid $Neutral200;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            div {
+                h2 {
+                    font-size: $fntlg;
+                }
+
+                span {
+                    font-size: $fnttiny;
+                }
+            }
+        }
+    }
+}

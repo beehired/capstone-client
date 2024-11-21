@@ -1,0 +1,51 @@
+@import "../../variables.module.scss";
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 1px solid $Neutral200;
+    padding: 0 20px;
+    position: relative;
+    .avatar {
+        border-radius: 5px;
+        width: 45px;
+        height: 45px;
+        background-color: $Neutral200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    span {
+        user-select: none;
+        font-size: $fntbase;
+    }
+    .toggleContainer {
+        width: 250px;
+        background-color: #fff;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 3px 0px $Neutral200;
+        .logoutBtn {
+            width: 100%;
+            display: flex;
+            padding: 8px 5px;
+            background-color: $Error500;
+            border-radius: 5px;
+            border: none;
+            align-items: center;
+            color: #fff;
+            gap: 5px;
+            cursor: pointer;
+            span {
+                font-size: $fnttiny;
+            }
+            svg {
+                stroke: #fff;
+            }
+        }
+    }
+}

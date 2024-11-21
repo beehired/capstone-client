@@ -1,0 +1,57 @@
+@import "../../variables.module.scss";
+@import "../../mixin.module";
+
+
+.container {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+
+    .planCard {
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .headerPlan {
+        width: 100%;
+
+        h2 {
+            font-size: $fntlg;
+        }
+    }
+
+    .bodyPlan {
+        h2 {
+            font-size: $fntlg;
+        }
+
+        ul {
+            padding: 0 40px;
+        }
+    }
+
+    .footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        button {
+            padding: 12px 16px;
+            border-radius: 5px;
+            background-color: $Primary500;
+            border: none;
+
+            span {
+                font-size: $fnttiny;
+            }
+        }
+    }
+
+
+}

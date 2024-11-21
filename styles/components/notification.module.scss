@@ -1,0 +1,70 @@
+@import "../variables.module.scss";
+
+.container {
+    position: relative;
+
+    .notificationActive {
+        width: 10px;
+        height: 10px;
+        border-radius: 100px;
+        background-color: $Primary500;
+        position: absolute;
+        right: 10px;
+        bottom: 15px;
+    }
+
+    .notificationContainer {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 450px;
+        box-shadow: 0px 0px 3px 0px #aaaaaa;
+        background-color: #fff;
+        border-radius: 10px;
+
+        .notificationHeader {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+
+            h2 {
+                font-size: $fntlg;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    svg {
+                        stroke: $Primary500;
+                    }
+
+                    span {
+                        color: $Primary500;
+                    }
+                }
+            }
+        }
+
+        .notificationBody {
+            height: 400px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $Neutral200;
+            }
+        }
+    }
+}

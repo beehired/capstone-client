@@ -1,0 +1,183 @@
+@import "../variables.module.scss";
+
+.errors {
+    width: 100%;
+    padding: 5px 0;
+
+    span {
+        font-size: $fntbase;
+    }
+}
+
+.container {
+    width: 100%;
+
+    .input {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid $Neutral600;
+        background-color: transparent;
+        gap: 10x;
+    }
+
+
+    &:focus {
+        outline: 1px solid $Primary500;
+    }
+
+    svg {
+        stroke-width: 1.2px;
+    }
+
+    input {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        border: none;
+        font-size: $fntbase;
+        outline: none;
+        background-color: transparent;
+    }
+}
+
+.inputv2 {
+    width: 100%;
+
+    .ic {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid $Neutral600;
+        background-color: transparent;
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        svg {
+            stroke-width: 1.2px;
+        }
+    }
+
+
+    input {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        border: none;
+        font-size: $fntbase;
+        background-color: transparent;
+        outline: none;
+    }
+
+    button {
+        background-color: transparent;
+        padding: 5px 10px;
+        border: none;
+        border-left: 1px solid #ccc;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.InputCalendar {
+
+    .ic {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid $Neutral600;
+        position: relative;
+    }
+
+
+    input {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        border: none;
+        font-size: $fntbase;
+        outline: none;
+        background-color: transparent;
+    }
+
+    button {
+        padding: 5px;
+        border-radius: 5px;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+
+        svg {
+            stroke-width: 1.5px;
+        }
+
+        &:hover {
+            background-color: $Primary500;
+
+            svg {
+                stroke: $Secondary500;
+            }
+        }
+    }
+}
+
+.InputNumber {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .ic {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid $Neutral600;
+        background-color: transparent;
+    }
+
+
+    input {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        border: none;
+        font-size: $fntbase;
+        outline: none;
+        background-color: transparent;
+    }
+}
+
+.inputTime {
+    width: 50%;
+
+    .ic {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid $Neutral600;
+        background-color: transparent;
+    }
+
+    input {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        border: none;
+        font-size: $fntbase;
+        background-color: transparent;
+        outline: none;
+    }
+}

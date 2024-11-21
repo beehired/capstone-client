@@ -1,0 +1,90 @@
+@import "../../variables.module.scss";
+
+.container {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+
+    .header {
+        height: 120px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .btnGrp {
+            display: flex;
+            gap: 5px;
+
+            button {
+                width: 35px;
+                height: 35px;
+                border: none;
+                background-color: #fff;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $Neutral100;
+                }
+            }
+
+            .leftBtn {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+
+            .rightBtn {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    }
+
+    .headerDay {
+        width: 100%;
+        padding: 10px 10px;
+        background-color: $Neutral100;
+        display: grid;
+        border-left: 2px solid #ccc;
+        border-right: 2px solid #ccc;
+        border-top: 2px solid #ccc;
+        grid-template-columns: repeat(7, 1fr);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        div {
+            padding: 0 8px;
+        }
+    }
+
+    .body {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        border: 1px solid #ccc;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+
+        .calendarBox {
+            width: 100%;
+            min-height: 200px;
+            padding: 10px;
+            background-color: #fff;
+            border: 0.1px solid #ccc;
+            ;
+
+            .boxHeader {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                padding: 10px 0;
+            }
+
+            .boxBody {
+                display: grid;
+                gap: 5px;
+            }
+        }
+    }
+}

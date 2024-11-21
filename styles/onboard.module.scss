@@ -1,0 +1,17 @@
+@import "./variables.module.scss";
+@import './mixin.module';
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fff;
+
+    span {
+        font-size: $fntlg;
+    }
+}

@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .authentication {
+        width: 500px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+}

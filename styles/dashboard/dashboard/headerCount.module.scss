@@ -1,0 +1,30 @@
+@import "../../variables.module.scss";
+
+.container {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .iconContainer {
+        height: 45px;
+        width: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+    }
+
+    .information {
+        h2 {
+            font-size: $fnt2xl;
+        }
+
+        span {
+            font-size: $fnttiny;
+        }
+    }
+}

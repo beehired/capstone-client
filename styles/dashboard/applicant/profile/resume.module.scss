@@ -1,0 +1,104 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .formContainer {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .file {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+
+        .info {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .deleteBtn {
+            padding: 0 20px;
+
+            button {
+                padding: 8px;
+                border-radius: 5px;
+                border: none;
+                background-color: $Error400;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    stroke: #fff;
+                }
+            }
+        }
+
+        .pdf {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            padding: 20px;
+            background-color: $Error400;
+
+            svg {
+                stroke: #fff;
+            }
+        }
+
+        .details {
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+
+            span {
+                font-size: $fntbase;
+            }
+        }
+    }
+
+    .fileUpload {
+        display: flex;
+        height: 200px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 10px;
+        border: 3px dashed #ccc;
+
+
+        section {
+            display: flex;
+            gap: 20px;
+
+            .uploading {
+                width: 100%;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    stroke: #000;
+                }
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+}

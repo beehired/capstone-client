@@ -1,0 +1,191 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+.container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 0 40px;
+
+    @include phone {
+        padding: 0 20px;
+    }
+
+    .body {
+        width: 100%;
+        background-color: #fff;
+        overflow: hidden;
+        border-radius: 10px;
+
+        .header {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid $Neutral300;
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .head {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5px 0;
+
+                @include phone {
+                    flex-direction: column;
+                }
+
+                .asd {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    span {
+                        padding: 6px;
+                        border-radius: 6px;
+                        background-color: $Neutral100;
+                        font-size: $fntbase;
+
+                        @include phone {
+                            display: none;
+                        }
+                    }
+                }
+
+                h2 {
+                    font-size: $fntxl;
+                }
+
+
+                .application {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    button {
+                        outline: none;
+                        border: none;
+                        border-radius: 10px;
+                        cursor: pointer;
+                    }
+
+                    .reportBtn {
+                        background-color: transparent;
+
+                        &:hover {
+                            svg {
+                                stroke: $Primary500;
+                                fill: $Primary500;
+                            }
+                        }
+                    }
+
+                    .applyNow {
+                        padding: 12px 16px;
+                        background-color: $Primary500;
+
+                        span {
+                            font-size: $fntbase;
+                        }
+                    }
+
+                    .favourites {
+                        padding: 10px;
+                        border-radius: 10px;
+                        background-color: $Neutral100;
+                    }
+                }
+            }
+
+            .hbody {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .jobType {
+                    display: flex;
+                    gap: 10px;
+
+                    span {
+                        border-radius: 5px;
+
+                        &::after {
+                            content: "";
+                        }
+                    }
+                }
+
+                .skills {
+                    display: flex;
+                    gap: 10px;
+                }
+            }
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px 30px;
+
+            .status {
+                width: auto;
+                padding: 8px 10px;
+                border-radius: 5px;
+                font-size: $fntbase;
+            }
+
+            span[about="Open"] {
+                // width: 65px;
+                background-color: $Success200;
+                color: $Success900;
+            }
+
+            span[about="Closed"] {
+                // width: 75px;
+                background-color: $Error200;
+                color: $Error900;
+            }
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px 30px;
+
+            ul {
+                padding: 10px 40px;
+
+                li {
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+
+    .similar {
+        width: 700px;
+        height: 600px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include phone {
+            display: none;
+        }
+
+        @include landscape {
+            display: none;
+        }
+
+        h2 {
+            font-size: $fntbase;
+        }
+    }
+}

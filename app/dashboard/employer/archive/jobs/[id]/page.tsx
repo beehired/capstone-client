@@ -12,13 +12,9 @@ type Props = {
 export async function generateMetadata({ searchParams }: Props) {
 
 
-    const data = await GraphQLRequest(GetJobPostID, {
-        jobPostId: searchParams.id
-    })
-
     return {
-        title: data?.getJobPostById?.title,
-        description: data?.getJobPostById.description,
+        title: "",
+        description: "",
         icons: "@/favicon.ico",
         authors: [
             { name: "Joshua Rembulat" },

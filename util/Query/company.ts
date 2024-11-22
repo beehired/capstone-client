@@ -45,6 +45,7 @@ export const GetAllCompanies: TypedDocumentNode = gql`
         verified
         user {
           plan
+          email
           myProfile {
             firstname
             lastname

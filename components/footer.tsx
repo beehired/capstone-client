@@ -16,7 +16,7 @@ export default function Footer() {
         <div className={styles.container}>
             <div className={styles.headers}>
                 <div className={styles.onasd}>
-                    <Image src={Word} alt="" height={300} width={300} priority />
+                    <Image src={Word} alt="" fill priority />
                 </div>
                 <div className={styles.links}>
                     <HrefLinkV1 name='Companies' url='#companies' />

@@ -99,8 +99,7 @@ export default function SkillModule({ id, value, setValue }: any) {
                             <div className={styles.sc}>
                                 {
 
-                                    isLoading ? <Spinner /> : isEmpty(data) ?
-
+                                    isLoading ? <Spinner /> : isEmpty(data?.item) ?
                                         <button
                                             type="button"
                                             className={values.skills.includes(search as never) ? `${styles.active}` : ""}
@@ -114,7 +113,7 @@ export default function SkillModule({ id, value, setValue }: any) {
                                                     setFieldValue("skills", [...values.skills, skillToToggle]);
                                                 }
                                             }}
-                                            value={search} // Use the `search` value as the button's value
+                                            value={search}
                                         >
                                             {values.skills.includes(search as never) ?
                                                 <TbX size={18} /> :

@@ -76,7 +76,7 @@ export const GetJobPostID: TypedDocumentNode = gql`
       }
     }
   }
-`
+`;
 
 export const GetMyJobPostPagination: TypedDocumentNode = gql`
   query JobPagination(
@@ -185,6 +185,7 @@ export const JobPostSimilar: TypedDocumentNode = gql`
       createdAt
       updatedAt
       totalApplicant
+      description
       getCompany {
         companyName
         logo {

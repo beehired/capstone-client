@@ -10,13 +10,15 @@ import { FormatterDistance } from '@/util/formatter'
 import { RegularPoppins } from '@/components/typograhy'
 import { useRouter } from 'next/navigation'
 import FavouriteButton from '@/components/favouriteButton'
+import parse from 'html-react-parser'
 
 type SimilarJobPost = {
     jobPostID: string
     title: string
     JobType: string[]
     createdAt: any,
-    updatedAt: any
+    updatedAt: any,
+    description: string
     totalApplicant: number
     getCompany: {
         companyName: string
@@ -31,7 +33,7 @@ export default function SimilarJobs({ id, skillsData }: { id: string, skillsData
 
     const router = useRouter();
 
-    const { data, refetch } = useQuery({
+    const { data } = useQuery({
         queryKey: ["SimilarJobPost", id],
         queryFn: async () => {
             const { getSimilarJobPost } = await GraphQLRequest(JobPostSimilar, {
@@ -45,12 +47,10 @@ export default function SimilarJobs({ id, skillsData }: { id: string, skillsData
             return getSimilarJobPost
         },
     })
-    useEffect(() => {
-        refetch()
-    })
+
     return (
         <div className={styles.container}>
-            {data?.map(({ jobPostID, totalApplicant, title, JobType, createdAt, updatedAt, getCompany: { companyName, logo: { media, mediaID } } }: SimilarJobPost) => (
+            {data?.map(({ jobPostID, totalApplicant, title, description, JobType, createdAt, updatedAt, getCompany: { companyName, logo: { media, mediaID } } }: SimilarJobPost) => (
                 <div className={styles.card} key={jobPostID}>
                     <div className={styles.header}>
                         <div className={styles.hs}>
@@ -70,6 +70,9 @@ export default function SimilarJobs({ id, skillsData }: { id: string, skillsData
                             </div>
                         </div>
                         <FavouriteButton size={24} jobPostId={jobPostID} />
+                    </div>
+                    <div>
+                        {parse(description.slice(0, 200))}
                     </div>
                     <div className={styles.jobType}>
                         {JobType.map((jobType, index) => (

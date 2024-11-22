@@ -143,7 +143,7 @@ export default function SkillModule({ id, value, setValue }: any) {
 
                             </div>
                             {isEmpty(values.skills) ? null : <hr />}
-                            <div className={styles.skillsContainer}>
+                            <div className={styles.sc}>
                                 {values.skills.map((skills) => (
                                     <button key={skills}
                                         className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button"

@@ -79,8 +79,7 @@ export default function Job({ id }: any) {
 
 
             return getJobPostById
-        },
-        enabled: !!id
+        }
     })
 
     const { data: ApplicantData, isLoading: ApplicantLoading } = useQuery({

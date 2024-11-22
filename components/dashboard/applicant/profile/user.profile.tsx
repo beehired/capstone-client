@@ -16,7 +16,7 @@ export default function UserProfile() {
     const user = store.get("UserAccount");
 
     const { data, isLoading } = useQuery({
-        queryKey: ["UserProfile"],
+        queryKey: ["UserProfile", user?.id],
         queryFn: async () => {
             const { getProfileByUser } = await GraphQLRequest(GetMyUserProfile, {
                 userId: user?.id

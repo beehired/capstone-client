@@ -22,7 +22,7 @@ export default function JobPostCard({ id, name, experience, description, endofda
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <Link className={`${styles.h1} ${MediumPoppins.className}`} href={archive ? `/dashboard/employer/archive/jobs/post?id=${id}` : `/dashboard/employer/jobs/post?id=${id}`}>{name.length >= 20 ? `${name.slice(0, 20)}...` : name}</Link>
+                <Link className={`${styles.h1} ${MediumPoppins.className}`} href={archive ? `/dashboard/employer/archive/jobs?id=${id}` : `/dashboard/employer/jobs/post?id=${id}`}>{name.length >= 20 ? `${name.slice(0, 20)}...` : name}</Link>
             </div>
             <div className={styles.subheader}>
                 <span className={RegularPoppins.className}>{experience}</span>

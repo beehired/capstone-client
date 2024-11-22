@@ -75,16 +75,16 @@ export default function ProfilePage() {
         <div className={styles.container}>
             <div>
                 <div>
-                    <Label name='Firstname' required={true} />
+                    <Label name='First Name' required={true} />
                     <InputV1 name={'firstname'} placeholder={''} type={'tel'} value={values.firstname} onChange={handleChange} errors={errors.firstname} touched={touched.firstname} />
                 </div>
                 <div>
-                    <Label name='Lastname' required={true} />
+                    <Label name='Last Name' required={true} />
                     <InputV1 name={'lastname'} placeholder={''} type={'tel'} value={values.lastname} onChange={handleChange} errors={errors.firstname} touched={touched.lastname} />
                 </div>
             </div>
             <div>
-                <h2>Phone Nubmer</h2>
+                <h2>Phone Number</h2>
                 <InputV1 name={'phone'} placeholder={''} type={'tel'} value={values.phone} onChange={handleChange}
                     errors={errors.phone} touched={touched.phone}
                 />

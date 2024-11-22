@@ -24,26 +24,26 @@ export default function JobReview({ title, description, employment, location, du
     return (
         <div className={styles.container}>
             <div>
-                <span className={RegularPoppins.className}>Title:</span>
+                <span className={`${RegularPoppins.className} ${styles.title}`}>Title: </span>
                 <span className={RegularPoppins.className}>{title}</span>
             </div>
             <div>
-                <span>Job Type</span>
+                <span className={`${RegularPoppins.className} ${styles.title}`}>Job Type: </span>
                 {jobType.map((jobType) => (
                     <span key={jobType}>{jobType}</span>
                 ))}
             </div>
             <div className={styles.description}>
-                <h2 className={RegularPoppins.className}>Description: </h2>
+                <h2 className={`${RegularPoppins.className} ${styles.title}`}>Description: </h2>
                 {parse(description)}
             </div>
             <div>
-                <span className={RegularPoppins.className}>Employment: </span>
+                <span className={`${RegularPoppins.className} ${styles.title}`}>Employment: </span>
                 <span>{employment}</span>
             </div>
 
             <div>
-                <span className={RegularPoppins.className}>Location: </span>
+                <span className={`${RegularPoppins.className} ${styles.title}`}>Location: </span>
                 <span>{location}</span>
             </div>
 
@@ -51,6 +51,6 @@ export default function JobReview({ title, description, employment, location, du
             <div>
 
             </div>
-        </div>
+        </div >
     )
 }

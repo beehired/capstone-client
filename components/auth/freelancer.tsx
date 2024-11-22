@@ -1,5 +1,5 @@
 "use client"
-import React, { SyntheticEvent, useState } from 'react'
+import React, { ChangeEvent, SyntheticEvent, useState } from 'react'
 import styles from '@/styles/auth/freelancer.module.scss'
 import { useFormik } from 'formik'
 import { useRouter } from 'next/navigation'
@@ -33,7 +33,6 @@ import { SkillsPagination } from '@/util/Query/skills.query'
 import { MediumPoppins } from '../typograhy'
 import { useDebounce } from '@uidotdev/usehooks'
 import { isEmpty } from 'lodash'
-import NotAvailable from '../notavailable'
 import Spinner from '../spinner'
 export default function Freelancer() {
 
@@ -225,29 +224,74 @@ export default function Freelancer() {
                             <div className={styles.skills}>
                                 <h2>Add Your Skill set</h2>
                                 <span>Enhance your profile by selecting the skills you possess or want to highlight. This will enable recruiters to find the most suitable match for their needs.</span>
-                                <input type="search" placeholder='search javascript, typescript, videographer, virtual assistant, content creator, and etc' onChange={(e) => setSearch(e.target.value)} value={search} className={styles.searchBox} />
+                                <input type="search" placeholder='search javascript, typescript, videographer, virtual assistant, content creator, and etc' onChange={(e) =>
+                                    setSearch(e.target.value)
+                                } value={search} className={styles.searchBox} />
                                 <div className={styles.skillsContainer}>
                                     {
 
-                                        isLoading ? <Spinner /> : isEmpty(data?.item) ? <NotAvailable /> : data?.item.map(({ skillsID, skills }: { skillsID: never, skills: never }) => (
-                                            <button className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button" key={skillsID}
-                                                onClick={(e) => {
+                                        isLoading ? <Spinner /> : isEmpty(data?.item) ?
 
-                                                    const updatedSkills = values.skills.includes(e.currentTarget.value as never)
-                                                        ? values.skills.filter((a: any) => a !== e.currentTarget.value)
-                                                        : [...values.skills, e.currentTarget.value];
+                                            <button
+                                                type="button"
+                                                className={values.skills.includes(search as never) ? `${styles.active}` : ""}
+                                                onClick={(e: SyntheticEvent<HTMLButtonElement>) => {
+                                                    const skillToToggle = e.currentTarget.value;
 
-                                                    setFieldValue("skills", updatedSkills);
-                                                }}>
-                                                {values.skills.includes(skills) ?
+                                                    if (values.skills.includes(skillToToggle as never)) {
+                                                        const updatedSkills = values.skills.filter((a) => a !== skillToToggle);
+                                                        setFieldValue("skills", updatedSkills);
+                                                    } else {
+                                                        setFieldValue("skills", [...values.skills, skillToToggle]);
+                                                    }
+                                                }}
+                                                value={search} // Use the `search` value as the button's value
+                                            >
+                                                {values.skills.includes(search as never) ?
                                                     <TbX size={18} /> :
                                                     <TbPlus size={18} />}
-                                                <span className={MediumPoppins.className}>{skills}</span>
+                                                <span className={MediumPoppins.className}>{search}</span>
                                             </button>
-                                        ))
 
+                                            : data?.item.map(({ skillsID, skills }: { skillsID: never, skills: never }) => (
+                                                <button
+                                                    className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button" key={skillsID}
+                                                    onClick={(e) => {
+
+                                                        const updatedSkills = values.skills.includes(e.currentTarget.value as never)
+                                                            ? values.skills.filter((a: any) => a !== e.currentTarget.value)
+                                                            : [...values.skills, e.currentTarget.value];
+
+                                                        setFieldValue("skills", updatedSkills);
+                                                    }}>
+                                                    {values.skills.includes(skills) ?
+                                                        <TbX size={18} /> :
+                                                        <TbPlus size={18} />}
+                                                    <span className={MediumPoppins.className}>{skills}</span>
+                                                </button>
+                                            ))
                                     }
+                                </div>
+                                {isEmpty(values.skills) ? null : <hr />}
+                                <div className={styles.skillsContainer}>
+                                    {values.skills.map((skills) => (
+                                        <button key={skills}
+                                            className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button"
+                                            onClick={(e) => {
 
+                                                const updatedSkills = values.skills.includes(e.currentTarget.value as never)
+                                                    ? values.skills.filter((a: any) => a !== e.currentTarget.value)
+                                                    : [...values.skills, e.currentTarget.value];
+
+                                                setFieldValue("skills", updatedSkills);
+                                            }}
+                                        >
+                                            {values.skills.includes(skills) ?
+                                                <TbX size={18} /> :
+                                                <TbPlus size={18} />}
+                                            <span className={MediumPoppins.className}>{skills}</span>
+                                        </button>
+                                    ))}
                                 </div>
 
                                 {errors.skills && touched.skills ? <SpanError message={errors.skills} /> : null}

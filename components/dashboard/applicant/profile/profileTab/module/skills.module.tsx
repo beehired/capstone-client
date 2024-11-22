@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { SyntheticEvent, useState } from 'react'
 import styles from '@/styles/dashboard/applicant/profile/module/skillsModule.module.scss';
 import { ButtonIconToggle, PrimaryButton } from '@/components/button';
 import { MediumPoppins, RegularPoppins } from '@/components/typograhy';
@@ -99,27 +99,70 @@ export default function SkillModule({ id, value, setValue }: any) {
                             <div className={styles.sc}>
                                 {
 
-                                    isLoading ? <Spinner /> : isEmpty(data) ? <NotAvailable /> : data?.item.map(({ skillsID, skills }: { skillsID: never, skills: never }) => (
-                                        <button className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button" key={skillsID}
-                                            onClick={(e) => {
+                                    isLoading ? <Spinner /> : isEmpty(data) ?
 
-                                                const updatedSkills = values.skills.includes(e.currentTarget.value as never)
-                                                    ? values.skills.filter((a: any) => a !== e.currentTarget.value)
-                                                    : [...values.skills, e.currentTarget.value];
+                                        <button
+                                            type="button"
+                                            className={values.skills.includes(search as never) ? `${styles.active}` : ""}
+                                            onClick={(e: SyntheticEvent<HTMLButtonElement>) => {
+                                                const skillToToggle = e.currentTarget.value;
 
-                                                setFieldValue("skills", updatedSkills);
-                                            }}>
-                                            {values.skills.includes(skills) ?
+                                                if (values.skills.includes(skillToToggle as never)) {
+                                                    const updatedSkills = values.skills.filter((a) => a !== skillToToggle);
+                                                    setFieldValue("skills", updatedSkills);
+                                                } else {
+                                                    setFieldValue("skills", [...values.skills, skillToToggle]);
+                                                }
+                                            }}
+                                            value={search} // Use the `search` value as the button's value
+                                        >
+                                            {values.skills.includes(search as never) ?
                                                 <TbX size={18} /> :
                                                 <TbPlus size={18} />}
-                                            <span className={MediumPoppins.className}>{skills}</span>
+                                            <span className={MediumPoppins.className}>{search}</span>
                                         </button>
-                                    ))
+
+                                        : data?.item.map(({ skillsID, skills }: { skillsID: never, skills: never }) => (
+                                            <button className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button" key={skillsID}
+                                                onClick={(e) => {
+
+                                                    const updatedSkills = values.skills.includes(e.currentTarget.value as never)
+                                                        ? values.skills.filter((a: any) => a !== e.currentTarget.value)
+                                                        : [...values.skills, e.currentTarget.value];
+
+                                                    setFieldValue("skills", updatedSkills);
+                                                }}>
+                                                {values.skills.includes(skills) ?
+                                                    <TbX size={18} /> :
+                                                    <TbPlus size={18} />}
+                                                <span className={MediumPoppins.className}>{skills}</span>
+                                            </button>
+                                        ))
 
                                 }
 
                             </div>
+                            {isEmpty(values.skills) ? null : <hr />}
+                            <div className={styles.skillsContainer}>
+                                {values.skills.map((skills) => (
+                                    <button key={skills}
+                                        className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button"
+                                        onClick={(e) => {
 
+                                            const updatedSkills = values.skills.includes(e.currentTarget.value as never)
+                                                ? values.skills.filter((a: any) => a !== e.currentTarget.value)
+                                                : [...values.skills, e.currentTarget.value];
+
+                                            setFieldValue("skills", updatedSkills);
+                                        }}
+                                    >
+                                        {values.skills.includes(skills) ?
+                                            <TbX size={18} /> :
+                                            <TbPlus size={18} />}
+                                        <span className={MediumPoppins.className}>{skills}</span>
+                                    </button>
+                                ))}
+                            </div>
                             {errors.skills && touched.skills ? <SpanError message={errors.skills} /> : null}
                         </div>
                     </div>

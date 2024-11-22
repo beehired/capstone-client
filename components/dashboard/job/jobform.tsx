@@ -1,8 +1,8 @@
 "use client"
 import styles from '@/styles/dashboard/job/jobform.module.scss';
-import React, { useState } from 'react'
+import React, { SyntheticEvent, useState } from 'react'
 import { useFormik } from 'formik'
-import { TbCheck, TbPdf, TbPlus, TbTrash, TbUpload } from 'react-icons/tb'
+import { TbCheck, TbPdf, TbPlus, TbTrash, TbUpload, TbX } from 'react-icons/tb'
 import { MediumPoppins, RegularPoppins } from '@/components/typograhy'
 import { CreateJobValidationSchema, UpdateJobPostSchema } from '@/validations/job'
 import { CreateJobPost, UpdateJobPost } from '@/util/Mutation/job.mutation'
@@ -31,6 +31,7 @@ import { queryClient } from '@/lib/provider';
 import { GetJobPostID } from '@/util/Query/job.query';
 import Dropzone from 'react-dropzone';
 import { format } from 'date-fns';
+import { isEmpty } from 'lodash';
 
 type JobPost = {
     jobPostId: string,
@@ -304,7 +305,7 @@ export default function JobForm({ id }: any) {
 
                                 <div className={styles.currency}>
                                     <Label name="Currency" required={true} />
-                                    <SelectForm title='Currency' size={Currencies} value={values.currency} onClick={onHandleCurrencies} errors={errors.currency} touched={errors.currency} />
+                                    <SelectForm title='Currency' size={Currencies} value={values.currency} onClick={onHandleCurrencies} errors={errors.currency} touched={touched.currency} />
                                 </div>
                                 {values.fixed ?
                                     <div className={styles.currency}>
@@ -334,20 +335,41 @@ export default function JobForm({ id }: any) {
                                 <Label name="Add Skills" required={true} />
                                 <input type="search" placeholder='search javascript, typescript, videographer, virtual assistant, content creator, and etc' onChange={(e) => setSearch(e.target.value)} value={search} className={styles.searchBox} />
                                 <div className={styles.skillsContainer}>
-                                    {searchSkills?.item.map(({ skillsID, skills }: { skillsID: never, skills: never }) => (
-                                        <button className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button" key={skillsID}
-                                            onClick={(e) => {
+                                    {isEmpty(searchSkills?.item) ?
+                                        <button
+                                            type="button"
+                                            className={values.skills.includes(search as never) ? `${styles.active}` : ""}
+                                            onClick={(e: SyntheticEvent<HTMLButtonElement>) => {
+                                                const skillToToggle = e.currentTarget.value;
 
-                                                const updatedSkills = values.skills.includes(e.currentTarget.value as never)
-                                                    ? values.skills.filter((a: any) => a !== e.currentTarget.value)
-                                                    : [...values.skills, e.currentTarget.value];
-
-                                                setFieldValue("skills", updatedSkills);
-                                            }}>
-                                            <TbPlus size={18} />
-                                            <span className={MediumPoppins.className}>{skills}</span>
+                                                if (values.skills.includes(skillToToggle as never)) {
+                                                    const updatedSkills = values.skills.filter((a) => a !== skillToToggle);
+                                                    setFieldValue("skills", updatedSkills);
+                                                } else {
+                                                    setFieldValue("skills", [...values.skills, skillToToggle]);
+                                                }
+                                            }}
+                                            value={search} // Use the `search` value as the button's value
+                                        >
+                                            {values.skills.includes(search as never) ?
+                                                <TbX size={18} /> :
+                                                <TbPlus size={18} />}
+                                            <span className={MediumPoppins.className}>{search}</span>
                                         </button>
-                                    ))
+                                        : searchSkills?.item.map(({ skillsID, skills }: { skillsID: never, skills: never }) => (
+                                            <button className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button" key={skillsID}
+                                                onClick={(e) => {
+
+                                                    const updatedSkills = values.skills.includes(e.currentTarget.value as never)
+                                                        ? values.skills.filter((a: any) => a !== e.currentTarget.value)
+                                                        : [...values.skills, e.currentTarget.value];
+
+                                                    setFieldValue("skills", updatedSkills);
+                                                }}>
+                                                <TbPlus size={18} />
+                                                <span className={MediumPoppins.className}>{skills}</span>
+                                            </button>
+                                        ))
                                     }
                                 </div>
 

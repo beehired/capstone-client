@@ -44,6 +44,7 @@ export const FreelancerRegister = Yup.object().shape({
   upload: Yup.mixed().required("You required to upload a document"),
   skills: Yup.array(Yup.string())
     .min(3, "At least three (3) skill")
+    .max(5)
     .required("Add skills at least three"),
   tnc: Yup.boolean()
     .default(false)

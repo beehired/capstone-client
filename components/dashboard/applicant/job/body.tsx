@@ -76,9 +76,9 @@ export default function JobBody({ id }: any) {
                                     ))}
                                 </div>
                                 <div className={styles.skills}>
-                                    {data?.skills.slice(0, 3).map(({ skills }: { skills: any }) => (
+                                    {data?.skills.map(({ skills }: { skills: any }) => (
                                         <span key={skills}>{skills}</span>
-                                    ))} {data?.skills.length > 3 ? `${data?.skills.slice(3, data?.skills.length).length}+ more` : null}
+                                    ))}
                                 </div>
                                 <div className={styles.info2}>
                                     <span>{data?.totalApplicant} Applied</span>

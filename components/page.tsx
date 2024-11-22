@@ -71,6 +71,7 @@ export default function Homepage() {
         <div className={styles.container}>
             <Header>
                 <Web />
+                <Mobile />
             </Header>
             {
                 freelancer ?
@@ -210,43 +211,46 @@ export default function Homepage() {
                 </div>
 
                 <div className={styles.freelancer}>
-                    <div className={styles.gap}>
-                        <Image src={Freelancer} alt="" fill />
-                    </div>
+
                     <div className={styles.text}>
-                        <h2 className={BoldPoppins.className}>Empowering Filipino Freelancers</h2>
-                        <span>Explore Job Oppurtunities and Be Hired Now!</span>
-                        <div className={styles.asd}>
-                            <div className={styles.iconsContainer}>
-                                <div className={styles.iconContainer}>
-                                    <TbUserFilled size={45} style={{
-                                        fill: "#fff"
-                                    }} />
-                                </div>
-                                <span>Create an Account</span>
-                            </div>
-                            <div className={styles.iconsContainer}>
-                                <div className={styles.iconContainer}>
-                                    <TbSearch size={45} />
-                                </div>
-                                <span>Find Jobs</span>
-                            </div>
-                            <div className={styles.iconsContainer}>
-                                <div className={styles.iconContainer}>
-                                    <TbNotes size={45} />
-                                </div>
-                                <span>Apply for Jobs</span>
-                            </div>
-                            <div className={styles.iconsContainer}>
-                                <div className={styles.iconContainer}>
-                                    <TbRocket size={45} />
-                                </div>
-                                <span>Start Work</span>
-                            </div>
+                        <div className={styles.col1}>
+                            <h2 className={BoldPoppins.className}>Empowering Filipino Freelancers</h2>
+                            <span>Explore Job Oppurtunities and Be Hired Now!</span>
+
                         </div>
-                        <button
-                            onClick={onHandleFreelancer}
-                            className={MediumPoppins.className}>How to Apply as Freelancer?</button>
+                        <div className={styles.col2}>
+                            <div className={styles.asd}>
+                                <div className={styles.iconsContainer}>
+                                    <div className={styles.iconContainer}>
+                                        <TbUserFilled size={45} style={{
+                                            fill: "#fff"
+                                        }} />
+                                    </div>
+                                    <span>Create an Account</span>
+                                </div>
+                                <div className={styles.iconsContainer}>
+                                    <div className={styles.iconContainer}>
+                                        <TbSearch size={45} />
+                                    </div>
+                                    <span>Find Jobs</span>
+                                </div>
+                                <div className={styles.iconsContainer}>
+                                    <div className={styles.iconContainer}>
+                                        <TbNotes size={45} />
+                                    </div>
+                                    <span>Apply for Jobs</span>
+                                </div>
+                                <div className={styles.iconsContainer}>
+                                    <div className={styles.iconContainer}>
+                                        <TbRocket size={45} />
+                                    </div>
+                                    <span>Start Work</span>
+                                </div>
+                            </div>
+                            <button
+                                onClick={onHandleFreelancer}
+                                className={MediumPoppins.className}>How to Apply as Freelancer?</button>
+                        </div>
                     </div>
                 </div>
 
@@ -261,7 +265,7 @@ export default function Homepage() {
                             className={MediumPoppins.className}>How to Apply as Employer?</button>
                     </div>
                     <div className={styles.gap}>
-                        <Image src={Employer} alt="" fill />
+
                     </div>
                     <div>
 

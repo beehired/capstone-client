@@ -59,6 +59,18 @@
                     width: 600px;
                     height: auto;
                     padding: 10px;
+
+                    &:nth-child(1) {
+                        width: 700px;
+                    }
+                }
+
+                .td {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+
                 }
 
                 .actionsBtnGrp {

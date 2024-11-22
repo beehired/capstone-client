@@ -1,10 +1,17 @@
+@import "../../mixin.module";
+@import "../../variables.module.scss";
 
 .container {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     @media screen and (min-width: 700px) {
         display: none;
+    }
+
+    @include phone {
+        padding: 0;
     }
 }

@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { RegularPoppins } from '@/components/typograhy';
 import Image from 'next/image'
 import { TbLink } from 'react-icons/tb'
-export default function CompanyCard({ media, companyName, companySize, getJobPostCount, verified, slug, plan }: any) {
+export default function CompanyCard({ media, companyName, companySize, getJobPostCount, verified, slug, plan, email }: any) {
 
     const router = useRouter();
 
@@ -13,12 +13,10 @@ export default function CompanyCard({ media, companyName, companySize, getJobPos
         <div className={styles.tr}>
             <div className={styles.td}>
                 <Image src={media} alt="" height={80} width={80} objectFit='cover' objectPosition='center' />
-            </div>
-            <div className={styles.td}>
                 <span className={RegularPoppins.className}>{companyName}</span>
             </div>
             <div className={styles.td}>
-                <span className={RegularPoppins.className}>{companySize}</span>
+                <span className={RegularPoppins.className}>{email}</span>
             </div>
             <div className={styles.td}>
                 <span className={RegularPoppins.className}>{plan}</span>

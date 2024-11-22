@@ -51,13 +51,10 @@ export default function CompaniesList() {
                 <div className={styles.thead}>
                     <div className={styles.tr}>
                         <div className={styles.th}>
-                            <span className={MediumPoppins.className}>Logo</span>
-                        </div>
-                        <div className={styles.th}>
                             <span className={MediumPoppins.className}>Name</span>
                         </div>
                         <div className={styles.th}>
-                            <span className={MediumPoppins.className}>Size</span>
+                            <span className={MediumPoppins.className}>Email Address</span>
                         </div>
                         <div className={styles.th}>
                             <span className={MediumPoppins.className}>Plan</span>
@@ -74,10 +71,10 @@ export default function CompaniesList() {
                     </div>
                 </div>
                 <div className={styles.tbody}>
-                    {data?.item.map(({ companyID, companyName, companySize, getJobPostCount, slug, logo: { media }, verified, user: { plan } }:
+                    {data?.item.map(({ companyID, companyName, companySize, getJobPostCount, slug, logo: { media }, verified, user: { email, plan } }:
                         { companyID: string, companyName: string, companySize: string, getJobPostCount: number, slug: string, logo: { media: string }, verified: boolean, user: any }
                     ) => (
-                        <CompanyCard key={companyID} companyName={companyName} companySize={companySize} getJobPostCount={getJobPostCount} slug={slug} verified={verified} media={media} plan={plan} />
+                        <CompanyCard key={companyID} companyName={companyName} companySize={companySize} getJobPostCount={getJobPostCount} slug={slug} verified={verified} media={media} plan={plan} email={email} />
                     ))}
                 </div>
             </div>

@@ -22,7 +22,7 @@ export default function Register() {
 
     return (
         <div className={styles.container}>
-            <h2 className={MediumPoppins.className}>Are you a Employer or Freelancer</h2>
+            <h2 className={MediumPoppins.className}>Are you an Employer or a Freelancer</h2>
 
             <div className={styles.users}>
                 {users.map(({ name, icon, url, description }) => (

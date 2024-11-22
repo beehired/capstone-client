@@ -7,7 +7,7 @@
   .body {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 60px;
 
     padding: 0 4rem;
 
@@ -28,12 +28,18 @@
 
       h2 {
         width: 60%;
-        font-size: $fnt4xl;
+        font-size: $fnt3xl;
         text-align: center;
 
         @include phone {
           width: 100%;
           font-size: $fnt2xl;
+        }
+
+        @include landscape {
+          width: 100%;
+          font-size: $fnt2xl;
+          padding: 10px;
         }
       }
 
@@ -45,12 +51,23 @@
         justify-content: center;
         gap: 10px;
 
+        @include phone {
+          padding: 20px;
+        }
+
+        @include landscape {
+          width: 100%;
+          padding: 20px;
+        }
+
         .skillsCard {
           background-color: $Primary500;
           border-radius: 3px;
           padding: 10px;
           user-select: none;
           cursor: pointer;
+
+          color: #000;
 
           &:hover {
             background-color: #000;
@@ -76,8 +93,10 @@
       align-items: center;
       flex-direction: column;
 
+      gap: 60px;
+
       h2 {
-        font-size: 2rem;
+        font-size: $fnt2xl;
         margin-bottom: 1rem;
 
       }
@@ -95,7 +114,7 @@
 
         .description {
           max-width: 1200px;
-          font-size: 1rem;
+          font-size: $fntlg;
           margin-bottom: 2rem;
           text-align: center;
         }
@@ -165,24 +184,24 @@
             @include phone {
               display: none;
             }
+
+            @include landscape {
+              display: none;
+            }
+
+            @include Desktop {
+              display: none;
+            }
           }
         }
 
-        .mission {
-          width: 100%;
-          padding: 1.5rem;
-          border-radius: 8px;
-          gap: 20px;
-        }
-
+        .mission,
         .vision {
           width: 100%;
           padding: 1.5rem;
           border-radius: 8px;
-          gap: 20px;
-
-
-
+          gap: 75px;
+          display: flex;
         }
       }
     }
@@ -213,33 +232,96 @@
     }
 
     .freelancer {
+      width: 100%;
       background-color: $Primary300;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
 
-      .gap {
-        width: 600px;
-        height: 100%;
-        position: relative;
+
+      .col1 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+      }
+
+      .col2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      span {
+        text-align: left;
       }
 
       .text {
         display: flex;
         align-items: center;
-        flex-direction: column;
+        flex-wrap: wrap;
 
-        h2 {
+        @include phone {
+          display: flex;
+          flex-direction: column;
+        }
+
+        @include landscape {
+          width: 100%;
+          font-size: $fnt2xl;
+          flex-wrap: wrap;
           text-align: center;
         }
 
+        @include Desktop {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        h2 {
+
+          @include Desktop {
+            text-align: center;
+          }
+
+          @include phone {
+            width: 100%;
+            font-size: $fnt2xl;
+            flex-wrap: wrap;
+            text-align: center;
+          }
+
+          @include landscape {
+            width: 100%;
+            font-size: $fnt3xl;
+            flex-wrap: wrap;
+            text-align: center;
+          }
+        }
+
+        span {
+          text-align: center;
+          font-size: $fntbase;
+        }
+
         button {
+          width: 350px;
           padding: 20px 40px;
           border-radius: 5px;
           background-color: #000;
           color: #fff;
           font-size: $fntbase;
+
+          @include phone {
+            width: 100%;
+            padding: 10px 20px;
+            font-size: $fntbase;
+            flex-wrap: wrap;
+          }
         }
 
 
@@ -247,8 +329,15 @@
           width: 100%;
           display: flex;
           justify-content: center;
+          align-items: center;
           padding: 20px;
           gap: 40px;
+
+          @include phone {
+            width: 100%;
+            font-size: $fnt2xl;
+            flex-wrap: wrap;
+          }
         }
 
         .iconsContainer {
@@ -257,6 +346,7 @@
           align-items: center;
           flex-direction: column;
           gap: 10px;
+
         }
 
         .iconContainer {
@@ -283,44 +373,95 @@
     .employer {
       width: 100%;
       height: 700px;
-      background-image: url("../app/public/homepage/bgemployer.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+      // background-image: url("../app/public/homepage/bgemployer.png");
+      // background-repeat: no-repeat;
+      // background-position: center;
+      // background-size: cover;
+      background: #1b1b1b;
       display: flex;
       align-items: center;
       justify-content: center;
+
 
       .gap {
         width: 600px;
         height: 100%;
         position: relative;
+
+        @include phone {
+          display: none;
+        }
+
+        @include landscape {
+          display: none;
+        }
       }
 
       .text {
         display: flex;
         flex-direction: column;
 
+        @include phone {
+          width: 100%;
+          font-size: $fnt2xl;
+          flex-wrap: wrap;
+        }
+
+        @include landscape {
+          width: 100%;
+          font-size: $fnt3xl;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+
         button {
-          width: 300px;
+          width: 350px;
           padding: 20px 40px;
           border-radius: 5px;
           background-color: $Primary500;
-          color: #fff;
+          color: #000;
           font-size: $fntbase;
           border: none;
+
+          @include phone {
+            width: 100%;
+            padding: 10px 20px;
+            font-size: $fntbase;
+            flex-wrap: wrap;
+          }
+
         }
 
         h2 {
           width: 750px;
           font-size: $fnt5xl;
           color: $Primary500;
+
+          @include phone {
+            width: 100%;
+            font-size: $fnt2xl;
+            flex-wrap: wrap;
+          }
+
+          @include landscape {
+            width: 100%;
+            font-size: $fnt3xl;
+            flex-wrap: wrap;
+            text-align: center;
+          }
         }
 
         span {
           color: #fff;
           text-align: left;
           padding: 10px 0;
+
+          @include landscape {
+            width: 100%;
+            font-size: $fntbase;
+            flex-wrap: wrap;
+            text-align: center;
+          }
         }
       }
 
@@ -332,9 +473,12 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 20px;
+      gap: 40px;
       padding: 40px 0;
+
+      h2 {
+        font-size: $fnt2xl;
+      }
     }
 
     .pricing {
@@ -365,6 +509,10 @@
 
         @include phone {
           flex-direction: column;
+        }
+
+        @include landscape {
+          flex-wrap: wrap;
         }
 
         .pricingCard {

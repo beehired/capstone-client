@@ -61,7 +61,7 @@ export default function FreelancerAccountSecurity() {
         },
         onSuccess: (data: any) => {
             if (data.updateUserPasswordAccount.userID) {
-                toast.success("Successfully Change Password")
+                toast.success("Successfully Changed PasswordPassword")
             }
             if (data.updateUserPasswordAccount.code) {
                 toast.error(data.updateUserPasswordAccount.message)

@@ -44,11 +44,11 @@ const validIDs = [
 
 const EmployerIds = [
     { name: "Business Permit", value: "Business Permit" },
-    { name: "Tax Identification Number", value: "Tax Identification Number" },
+    { name: "Tax Identification Number (TIN)", value: "Tax Identification Number" },
     { name: "BIR Certificate of Registration", value: "BIR Certificate of Registration" },
     { name: "SEC Registration", value: "SEC Registration" },
     { name: "DTI Registration", value: "DTI Registration" },
-    { name: "Mayor Permit", value: "Mayor Permit" },
+    { name: "Mayor's Permit", value: "Mayor Permit" },
 
 ]
 const randomSkills = ["Data Analyst", "Virtual Assistant", "Product Manager", "3D Illustrator", "Video Creator", "UI/UX Designer", "Marketing", "SEO", "Email Marketing", "Graphics Design"]
@@ -76,7 +76,7 @@ export default function Homepage() {
             {
                 freelancer ?
                     <Dialog>
-                        <Prompt title="How to Apply as Freelancers?">
+                        <Prompt title="How to apply as a freelancer">
                             <div className={PromptStyles.inputHeader}>
                                 <span>
                                     Starting your freelancing career is simple! To apply, you need to provide one of the following valid Philippine government-issued IDs:
@@ -105,9 +105,9 @@ export default function Homepage() {
                         <Prompt title="How to Apply as Employer?">
                             <div className={PromptStyles.inputHeader}>
                                 <span>
-                                    Looking to hire talented freelancers? Here’s what you need to do to apply as an employer:
+                                    Looking to hire talented freelancers? Here’s how to apply as an employer:
 
-                                    To verify the legitimacy of your business, you’ll need to provide valid proof that your company exists. Acceptable documents include::
+                                    To verify the legitimacy of your business, you’ll need to provide valid proof that your company exists. Acceptable documents include:
                                 </span>
                                 <ul>
                                     {EmployerIds.map(({ name, value }) => (
@@ -115,7 +115,7 @@ export default function Homepage() {
                                     ))}
                                 </ul>
                                 <span>
-                                    Once you have your valid ID ready, you can proceed with the application process, ensuring a smooth and hassle-free experience. Start your freelancing career today!
+                                    Once you have the necessary documents ready, you can proceed with the registration process, ensuring a smooth and hassle-free experience. Start building your team of freelancers today!
                                 </span>
                             </div>
                             <div className={PromptStyles.footer}>
@@ -291,7 +291,7 @@ export default function Homepage() {
                             </div>
                             <div className={styles.features}>
                                 <ul>
-                                    <li>21-Day Job Posting</li>
+                                    <li>21-Day Job Posting Duration</li>
                                     <li>1-Day Job Posting Creation Per Post</li>
                                     <li>Application Tracking System</li>
                                     <li>Schedule Management</li>
@@ -315,7 +315,7 @@ export default function Homepage() {
                             <div className={styles.features}>
                                 <ul>
                                     <li>Unlimited Job Posting</li>
-                                    <li>90-Day Job Posting</li>
+                                    <li>90-Day Job Posting Duration</li>
                                     <li>Application Tracking System</li>
                                     <li>Schedule Management</li>
                                     <li>Project Organizer</li>

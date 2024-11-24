@@ -199,7 +199,7 @@ export default function Clients() {
                     {/* <LogoContainer /> */}
                     <div className={styles.si}>
                         <h2>Create an Account</h2>
-                        <span>Welcome to BeeHired, your go-to platform for finding top talent. Creating a recruiter account with us is your gateway to discovering the best candidates for your company.</span>
+                        <span>Welcome to BeeHired, your go-to platform for finding top talent. Creating a employer account with us is your gateway to discovering the best candidates for your company.</span>
                     </div>
                     {
                         step === 1 ?

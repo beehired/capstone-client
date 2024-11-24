@@ -16,14 +16,6 @@ export default function Side() {
 
     const [step, setStep] = useState(1);
 
-    const onHandleNextQoute = () => {
-        setStep(() => step + 1)
-    }
-
-    const onHandlePreviousQoute = () => {
-        setStep(() => step - 1)
-    }
-
     return (
         <div className={styles.container}>
             <div></div>

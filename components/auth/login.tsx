@@ -136,7 +136,7 @@ export default function AuthLogin() {
                     <Notice />
                     <PrimaryButton loading={isSubmitting ? true : false} name={"Login"} type='submit' />
                     <div className={styles.signup}>
-                        <span>Don{"'"}t have any account yet?</span>
+                        <span>Don{"'"}t have an account yet?</span>
                         <HrefLinkV2 name='Sign Up' url='/auth/register'
                         />
                     </div>

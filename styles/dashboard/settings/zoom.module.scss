@@ -1,3 +1,5 @@
+@import "../../variables.module.scss";
+
 .container {
     width: 100%;
     background-color: #fff;
@@ -14,5 +16,40 @@
         width: 100px;
         display: flex;
         justify-content: flex-end;
+    }
+
+    .instruction {
+        height: 450px;
+        overflow-y: auto;
+
+        margin-top: 10px;
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $Neutral200;
+        }
+
+        h1 {
+            font-size: $fntbase;
+        }
+
+        section {
+            padding: 5px 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: $Primary500;
+            font-size: $fntbase;
+        }
+
+        ul {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+
     }
 }

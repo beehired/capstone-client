@@ -14,6 +14,7 @@ import { CreateZoomIntegration, UpdateZoomIntegration } from '@/util/Mutation/zo
 import toast from 'react-hot-toast';
 import { GetMyZoomIntegration } from '@/util/Query/zoom.query';
 import { queryClient } from '@/lib/provider';
+import { RegularPoppins } from '@/components/typograhy';
 
 
 
@@ -129,6 +130,72 @@ export default function ZoomIntegration() {
                 <form onSubmit={handleSubmit}>
                     <PrimaryButton loading={isSubmitting ? true : false} name='Save' type='submit' />
                 </form>
+            </div>
+            <div className={styles.instruction}>
+                <header>
+                    <h1>How to Integrate Zoom into Your Employer Account</h1>
+                </header>
+
+                <section>
+                    <h2>1. Go to the Zoom Marketplace</h2>
+                    <p>Open your browser and visit <a href="https://marketplace.zoom.us/" target="_blank">https://marketplace.zoom.us/</a>.</p>
+                </section>
+
+                <section>
+                    <h2>2. Create a New App</h2>
+                    <ul>
+                        <li>In the top-right corner, click on <strong>Manage</strong>.</li>
+                        <li>Hover over <strong>Develop</strong>, then click on <strong>Build App</strong>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>3. Select OAuth App</h2>
+                    <p>Choose <strong>Server-to-Server OAuth App</strong> as the app type.</p>
+                </section>
+
+                <section>
+                    <h2>4. Name Your App</h2>
+                    <p>For the App Name, enter <strong>BeeHired</strong>.</p>
+                </section>
+
+                <section>
+                    <h2>5. Copy App Credentials</h2>
+                    <ul>
+                        <li>Under <strong>App Credentials</strong>, you will see your Account ID, Client ID, and Client Secret.</li>
+                        <li>Copy these details.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>6. Paste Credentials into BeeHired Integration Page</h2>
+                    <ul>
+                        <li>Log in to your employer account on the BeeHired website.</li>
+                        <li>Go to the Zoom Integration page under <strong>Account Settings</strong>.</li>
+                        <li>Paste the Account ID, Client ID, and Client Secret into the corresponding fields.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>7. Proceed to Features</h2>
+                    <p>For the Information and Feature section, simply click <strong>Next</strong> to continue.</p>
+                </section>
+
+                <section>
+                    <h2>8. Set Scopes</h2>
+                    <p>In the Scopes section, add the following scopes:</p>
+                    <ul>
+                        <li>meeting:write:invite_links:admin</li>
+                        <li>meeting:write:meeting:admin</li>
+                        <li>user:read:list_users:admin</li>
+                        <li>user:read:list_users:master</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>9. Activate the Integration</h2>
+                    <p>Once everything is set, click on <strong>Activate</strong> to complete the integration.</p>
+                </section>
             </div>
         </div>
     )

@@ -13,7 +13,7 @@ export const ClientRegister = Yup.object().shape({
     ),
   confirmPass: Yup.string()
     .required("Confirm Password is required")
-    .oneOf([Yup.ref("password")], "Password is not match"),
+    .oneOf([Yup.ref("password")], "Password does not match"),
   companyName: Yup.string().required("The Company Name is required"),
   description: Yup.string()
     .max(1000, "The max length is only 1000 characters")
@@ -39,11 +39,11 @@ export const FreelancerRegister = Yup.object().shape({
     ),
   confirmPass: Yup.string()
     .required("Confirm Password is required")
-    .oneOf([Yup.ref("password")], "Password is not match"),
+    .oneOf([Yup.ref("password")], "Password does not match"),
   TypeID: Yup.string().trim().required("You need to select a Valid ID"),
   upload: Yup.mixed().required("You required to upload a document"),
   skills: Yup.array(Yup.string())
-    .min(3, "At least three (3) skill")
+    .min(3, "Select at least three (3) skills")
     .max(5)
     .required("Add skills at least three"),
   tnc: Yup.boolean()

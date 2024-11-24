@@ -9,7 +9,7 @@ import { TbUser, TbDevices, } from 'react-icons/tb';
 
 const users = [
     {
-        name: "I am Employer", url: "/auth/register/employer", icon: <TbUser size={30} />, description: "Select this option to post job listings and find skilled freelancers to support your projects. Manage applications and communicate directly with candidates to streamline your hiring process"
+        name: "I am an Employer", url: "/auth/register/employer", icon: <TbUser size={30} />, description: "Select this option to post job listings and find skilled freelancers to support your projects. Manage applications and communicate directly with candidates to streamline your hiring process"
     },
     { name: "I am a Freelancer", url: "/auth/register/freelancer", icon: <TbDevices size={30} />, description: "Select this option to create a detailed profile and showcase your skills to potential employers. Browse job opportunities and apply for projects that align with your expertise and interests." }
 ]

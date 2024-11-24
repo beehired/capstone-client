@@ -50,7 +50,7 @@ export default function EducationModule({ value, setValue, id }: any) {
             })
 
             return getEducationById
-        },
+        },                           
         enabled: !!id
     })
 
@@ -68,7 +68,7 @@ export default function EducationModule({ value, setValue, id }: any) {
 
 
     const mutation = useMutation({
-        mutationKey: ["CreatedE.Background", id],
+        mutationKey: ["UpdateEducationBackground", id],
         mutationFn: async (inputValues: UpdateEducation) => {
             return await GraphQLRequest(UpdateEducationBackground, inputValues)
         },

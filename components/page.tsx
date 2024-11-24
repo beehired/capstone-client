@@ -76,10 +76,10 @@ export default function Homepage() {
             {
                 freelancer ?
                     <Dialog>
-                        <Prompt title="How to Apply as Freelancers?">
+                        <Prompt title="How to apply as Freelancers?">
                             <div className={PromptStyles.inputHeader}>
                                 <span>
-                                    Starting your freelancing career is simple! To apply, you need to provide one of the following valid Philippine government-issued IDs:
+                                    Starting your freelancing career is simple! To apply, you need to provide ANY of the following valid Philippine Government-issued IDs:
                                 </span>
                                 <ul>
                                     {validIDs.map(({ name, value }) => (
@@ -87,7 +87,7 @@ export default function Homepage() {
                                     ))}
                                 </ul>
                                 <span>
-                                    Once you have your valid ID ready, you can proceed with the application process, ensuring a smooth and hassle-free experience. Start your freelancing career today!
+                                Once you have your valid ID ready, you can proceed with the registration process, ensuring a smooth and hassle-free experience. After submitting your application, the administrator will verify your identification. Once approved, you’ll be all set to start your freelancing career today!”
                                 </span>
                             </div>
                             <div className={PromptStyles.footer}>
@@ -102,12 +102,12 @@ export default function Homepage() {
             {
                 employer ?
                     <Dialog>
-                        <Prompt title="How to Apply as Employer?">
+                        <Prompt title="How to apply as Employer?">
                             <div className={PromptStyles.inputHeader}>
                                 <span>
-                                    Looking to hire talented freelancers? Here’s what you need to do to apply as an employer:
+                                Looking to hire talented freelancers? Here’s how to apply as an employer:
 
-                                    To verify the legitimacy of your business, you’ll need to provide valid proof that your company exists. Acceptable documents include::
+                                To verify the legitimacy of your business, you’ll need to provide valid proof that your company exists. Acceptable documents include:
                                 </span>
                                 <ul>
                                     {EmployerIds.map(({ name, value }) => (
@@ -115,7 +115,7 @@ export default function Homepage() {
                                     ))}
                                 </ul>
                                 <span>
-                                    Once you have your valid ID ready, you can proceed with the application process, ensuring a smooth and hassle-free experience. Start your freelancing career today!
+                                Once you have the necessary documents ready, you can proceed with the registration process, ensuring a smooth and hassle-free experience. Start building your team of freelancers today!
                                 </span>
                             </div>
                             <div className={PromptStyles.footer}>
@@ -291,7 +291,7 @@ export default function Homepage() {
                             </div>
                             <div className={styles.features}>
                                 <ul>
-                                    <li>21-Day Job Posting</li>
+                                    <li>21-Day Job Posting Duration</li>
                                     <li>1-Day Job Posting Creation Per Post</li>
                                     <li>Application Tracking System</li>
                                     <li>Schedule Management</li>
@@ -314,8 +314,8 @@ export default function Homepage() {
 
                             <div className={styles.features}>
                                 <ul>
+                                    <li>90-Day Job Posting Duration</li>
                                     <li>Unlimited Job Posting</li>
-                                    <li>90-Day Job Posting</li>
                                     <li>Application Tracking System</li>
                                     <li>Schedule Management</li>
                                     <li>Project Organizer</li>

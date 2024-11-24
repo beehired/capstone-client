@@ -128,7 +128,7 @@ export default function JobForm({ id }: any) {
                 duration: UpdateData?.duration ?? "",
                 jobType: UpdateData?.JobType ?? [],
                 skills: skills ?? [],
-                fixed: UpdateData?.salary.fixed ?? false,
+                fixed: UpdateData?.salary.fixed ? true : false,
                 currency: UpdateData?.salary?.currency ?? "",
                 salary: UpdateData?.salary.fixed ? UpdateData?.salary.fixed : 0,
                 max: UpdateData?.salary?.max ? parseInt(UpdateData?.salary?.max) : 0,

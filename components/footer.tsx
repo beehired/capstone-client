@@ -28,11 +28,6 @@ export default function Footer() {
                     <HrefLinkV1 name='Data Policy' url='/policy/datapolicy' />
                 </div>
             </div>
-            <div className={styles.socialMedia}>
-                <TbBrandX size={30} />
-                <TbBrandInstagram size={30} />
-                <TbBrandFacebook size={30} />
-            </div>
             <div className={styles.footer}>
                 <span>&copy;  {new Date().getFullYear()}  BeeHired. All Rights Reserved.</span>
                 <div className={styles.footerLink}>

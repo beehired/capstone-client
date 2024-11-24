@@ -59,7 +59,7 @@ export default function SecuritySettings() {
         },
         onSuccess: (data: any) => {
             if (data.updateUserPasswordAccount.userID) {
-                toast.success("Successfully Change Password")
+                toast.success("Successfully Changed Password")
             }
             if (data.updateUserPasswordAccount.code) {
                 toast.error(data.updateUserPasswordAccount.message)

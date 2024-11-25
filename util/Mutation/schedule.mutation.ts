@@ -34,3 +34,11 @@ export const UpdateScheduleMeeting: TypedDocumentNode = gql`
     }
   }
 `;
+
+export const DeleteScheduleMeeting: TypedDocumentNode = gql`
+  mutation DeleteSchedule($scheduleId: ID!) {
+    deleteSchedule(scheduleID: $scheduleId) {
+      scheduleID
+    }
+  }
+`;

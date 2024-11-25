@@ -9,13 +9,14 @@ import { GraphQLRequest } from '@/lib/graphQLRequest'
 import { UpdateNotification, ArchiveNotification } from '@/util/Mutation/notification.mutation'
 import { queryClient } from '@/lib/provider'
 import Dialog from '@/components/dialog'
-import { TbTrash, TbX } from 'react-icons/tb'
+import { TbAlertCircleFilled, TbTrash, TbX } from 'react-icons/tb'
 import Image from 'next/legacy/image'
 import Prompt from '@/components/prompt'
 import PromptStyles from '@/styles/components/prompt.module.scss'
 import { useFormik } from 'formik'
 import { CancelBtn, PrimaryButton } from '@/components/button'
 import BeeHiredLogo from '@/app/public/beehired.png'
+import { isEmpty } from 'lodash'
 
 
 
@@ -86,68 +87,61 @@ export default function NotificationCard({ title, notificationID, status, date,
                                     </button>
                                 </div>
                                 <div className={styles.companyHeader}>
-                                    {application?.jobPost ?
-
+                                    {isEmpty(application?.jobPost) && isEmpty(schedule) ? (
                                         <div className={styles.companyInfo}>
-                                            {title.includes("Submitted") || title.includes("Congratulation") || title.includes("Review") || title.includes("Declined") ? <>
-                                                <Image src={application?.company?.logo?.media} alt="" width={120} height={120} />
-                                                <span>
-                                                    <h2 className={RegularPoppins.className}>{application?.company?.companyName}</h2>
-                                                </span>
-                                            </> : null}
-
-                                            {
-                                                title.includes("Created") ?
-                                                    <>
-                                                        <Image src={company?.logo?.media} alt="" width={120} height={120} />
-                                                        <span>
-                                                            <h2 className={RegularPoppins.className}>{company?.companyName}</h2>
-                                                        </span>
-                                                    </> : null
-                                            }
-
-                                            {title.includes("Reschedule") ?
+                                            <Image src={BeeHiredLogo} alt="" width={120} height={120} />
+                                            <span>
+                                                <h2 className={RegularPoppins.className}>BeeHired System</h2>
+                                            </span>
+                                        </div>
+                                    ) : (
+                                        <div className={styles.companyInfo}>
+                                            {application?.jobPost && (
+                                                <>
+                                                    <Image src={application?.company?.logo?.media} alt="" width={120} height={120} />
+                                                    <span>
+                                                        <h2 className={RegularPoppins.className}>{application?.company?.companyName}</h2>
+                                                    </span>
+                                                </>
+                                            )}
+                                            {schedule && (
                                                 <>
                                                     <Image src={company?.logo?.media} alt="" width={120} height={120} />
                                                     <span>
                                                         <h2 className={RegularPoppins.className}>{company?.companyName}</h2>
                                                     </span>
-                                                </> : null}
-
-                                        </div> : <>
-                                            <Image src={BeeHiredLogo} alt="" width={120} height={120} />
-
-                                        </>}
-
-
-
+                                                </>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
-                                {application?.jobPost ?
-                                    <>
-                                        {
-                                            title.includes("Submitted") || title.includes("Congratulation") || title.includes("Review") || title.includes("Declined") ?
-                                                <div className={styles.applicationScore}>
-                                                    <h2 className={RegularPoppins.className}>Your Application ID is {application?.id}</h2>
-                                                    <span className={RegularPoppins.className}>Your application has a score of {application?.score?.score}%</span >
-                                                </div> : null
-                                        }
-                                        {title.includes("Reschedule") ?
-                                            <div className={styles.applicationScore}>
-                                                <span>Start Date: {format(new Date(schedule?.startDate), "MMMM dd, yyyy")} - {schedule.startTime}</span>
-                                                <span>End  Date: {format(new Date(schedule?.endDate), "MMMM dd, yyyy")} - {schedule?.endTime}</span>
-                                            </div> :
-                                            null}
-                                        {title.includes("Created") ?
-                                            <div className={styles.applicationScore}>
-                                                <span>Start Date: {format(new Date(schedule?.startDate), "MMMM dd, yyyy")} - {schedule.startTime}</span>
-                                                <span>End  Date: {format(new Date(schedule?.endDate), "MMMM dd, yyyy")} - {schedule?.endTime}</span>
-                                            </div> :
-                                            null
-                                        }
-                                    </>
 
-                                    : <span className={RegularPoppins.className}> This job post has been deleted and is no longer available. For further information or assistance, please contact our support team.</span>
-                                }
+                                {application?.jobPost ? (
+                                    <div className={styles.applicationScore}>
+                                        <h2 className={RegularPoppins.className}>
+                                            Your Application ID is {application?.id}
+                                        </h2>
+                                        <span className={RegularPoppins.className}>
+                                            Your application has a score of {application?.score?.score}%
+                                        </span>
+                                    </div>
+                                ) : schedule ? (
+                                    <div className={styles.applicationScore}>
+                                        <span>
+                                            Start Date: {format(new Date(schedule?.startDate), "MMMM dd, yyyy")} - {schedule?.startTime}
+                                        </span>
+                                        <span>
+                                            End Date: {format(new Date(schedule?.endDate), "MMMM dd, yyyy")} - {schedule?.endTime}
+                                        </span>
+                                    </div>
+                                ) : (
+                                    <span className={RegularPoppins.className}>
+                                        This job post has been deleted and is no longer available. For further information or assistance, please contact our support team.
+                                    </span>
+                                )}
+
+
+
                             </div>
                         </div>
                     </Dialog> :
@@ -156,7 +150,7 @@ export default function NotificationCard({ title, notificationID, status, date,
             {
                 archive ?
                     <Dialog>
-                        <Prompt title='Do you want to delete this notification?'>
+                        <Prompt title='Do you want to delete this notification?' icon={<TbAlertCircleFilled size={23} />}>
                             <div className={PromptStyles.header}>
                                 <span>Are you sure you want to delete this notification? Once deleted, it cannot be recovered, and you will lose all associated information. Please confirm if you wish to proceed with the deletion.
                                 </span>
@@ -184,6 +178,6 @@ export default function NotificationCard({ title, notificationID, status, date,
             </div>
             <div>
             </div>
-        </div>
+        </div >
     )
 }

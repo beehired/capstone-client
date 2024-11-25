@@ -35,16 +35,16 @@ export default function Notification() {
         refetchInterval: 1000
     })
 
-    // const { data: UnreadNotifData } = useQuery({
-    //     queryKey: ["unread", user?.id],
-    //     queryFn: async () => {
-    //         const { unreadNotification } = await GraphQLRequest(GetUnreadNotification, {
-    //             userId: user?.id
-    //         })
-
-    //         return unreadNotification
-    //     }
-    // })
+    const { data: UnreadNotifData } = useQuery({
+        queryKey: ["unread", user?.id],
+        queryFn: async () => {
+            const { unreadNotification } = await GraphQLRequest(GetUnreadNotification, {
+                userId: user?.id
+            })
+            return unreadNotification
+        },
+        refetchInterval: 1000
+    })
 
     const mutation = useMutation({
         mutationKey: ["MarkAllAsRead"],
@@ -63,7 +63,7 @@ export default function Notification() {
         <div className={styles.container}>
             <div className={styles.po}>
                 <ButtonIconToggle icon={<TbBell size={30} />} value={toggle} setValue={setToggle} />
-                {/* {isEmpty(UnreadNotifData) ? null : <div className={styles.notificationActive} />} */}
+                {UnreadNotifData ? <div className={styles.notificationActive} /> : null}
             </div>
             {toggle ?
                 <div className={styles.notificationContainer}>

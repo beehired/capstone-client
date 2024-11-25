@@ -14,10 +14,9 @@ export default function Web() {
         <div className={styles.container}>
             <TitleContainer image={LogoImage} />
             <LinkContainer>
-                <HrefLinkV1 name='Home' url='/' />
-                <HrefLinkV1 name='Companies' url='#companies' />
-                <HrefLinkV1 name='About Us' url='#about' />
-                <HrefLinkV1 name='Pricing' url='#pricing' />
+                <HrefLinkV1 name='Companies' url='/#companies' />
+                <HrefLinkV1 name='About Us' url='/#about' />
+                <HrefLinkV1 name='Pricing' url='/#pricing' />
             </LinkContainer>
             <div className={styles.authentication}>
                 <RouteButtonV2 name='Login' url='/auth/login' />

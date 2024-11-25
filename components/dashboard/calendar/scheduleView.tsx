@@ -13,7 +13,7 @@ import { CancelBtn, PrimaryButton } from '@/components/button'
 import { InputV1, InputCalendar, InputTime } from '@/components/input'
 import { useFormik } from 'formik'
 import { UpdateScheduleTypes } from '@/types/schudule'
-import { UpdateScheduleMeeting } from '@/util/Mutation/schedule.mutation'
+import { DeleteScheduleMeeting, UpdateScheduleMeeting } from '@/util/Mutation/schedule.mutation'
 import { UpdateScheduleValidation } from '@/validations/schedule.validation'
 import { format } from 'date-fns'
 import Textarea from '@/components/textarea'
@@ -21,19 +21,23 @@ import { useMutation, useQuery } from '@tanstack/react-query'
 import { GraphQLRequest } from '@/lib/graphQLRequest'
 import { GetScheduleById } from '@/util/Query/schedule.query'
 import { RegularPoppins } from '@/components/typograhy'
-import { TbBrandZoom, TbEdit, TbMapPin, TbX } from 'react-icons/tb'
+import { TbAlertCircleFilled, TbBrandZoom, TbEdit, TbMapPin, TbTrash, TbX } from 'react-icons/tb'
 import { Formatter } from '@/util/formatter'
 import { queryClient } from '@/lib/provider'
 
 export default function ScheduleView({ id, close }: any) {
 
     const [edit, setEdit] = useState(false);
+    const [isDelete, setIsDelete] = useState(false);
     const user = store.get("UserAccount");
 
     const onHandleEdit = () => {
         setEdit(() => !edit);
     }
 
+    const onHandleDelete = () => {
+        setIsDelete(() => !isDelete)
+    }
     const { data } = useQuery({
         queryKey: ["GetScheduleByID"],
         queryFn: async () => {
@@ -91,6 +95,27 @@ export default function ScheduleView({ id, close }: any) {
                 },
             })
             setSubmitting(false)
+        }
+    })
+
+
+    const deleteMutation = useMutation({
+        mutationKey: ["DeleteInterviewSchedule"],
+        mutationFn: async (inputValues: { scheduleId: string }) => {
+            return await GraphQLRequest(DeleteScheduleMeeting, inputValues)
+        },
+        onSuccess(data, variables, context) {
+            toast.success("Interview Schedule is Successfully Deleted")
+        },
+    })
+
+    const formik = useFormik({
+        initialValues: {},
+        enableReinitialize: true,
+        onSubmit: async () => {
+            await deleteMutation.mutateAsync({
+                scheduleId: id
+            })
         }
     })
 
@@ -161,8 +186,28 @@ export default function ScheduleView({ id, close }: any) {
                     </div>
                 </Dialog> : null
             }
+            {
+                isDelete ? <Dialog>
+                    <div className={styles.deleteContainer}>
+                        <Prompt title='Do you want to delete the Interview Schedule?' icon={<TbAlertCircleFilled size={23} />}>
+                            <div className={PromptStyles.header}>
+                                <span>Applicant will be notified once you delete the interview schedule</span>
+                            </div>
+                            <div className={PromptStyles.footer}>
+                                <CancelBtn onClose={onHandleDelete} />
+                                <form>
+                                    <PrimaryButton loading={formik.isSubmitting ? true : false} name='Confirm' type='submit' />
+                                </form>
+                            </div>
+                        </Prompt>
+                    </div>
+                </Dialog> : null
+            }
             <div className={styles.scheduleContainer}>
                 <div className={styles.head}>
+                    {user?.role === "freelance" ? null : <button onClick={onHandleDelete}>
+                        <TbTrash size={23} />
+                    </button>}
                     {user?.role === "freelance" ? null : <button onClick={onHandleEdit}>
                         <TbEdit size={23} />
                     </button>}
@@ -200,6 +245,6 @@ export default function ScheduleView({ id, close }: any) {
                 </div>
             </div>
             <ToastNotification />
-        </div>
+        </div >
     )
 }

@@ -93,12 +93,12 @@ export default function ReportPage() {
                     </div>
 
                     <div className={styles.header}>
-                        <span>Duration: {duration}</span>
-                        <span>Experince Level: {experience}</span>
-                        <span>Location: {location}</span>
-                        <span>End of Filing: {format(new Date(endDate), "MMMM dd, yyyy")}</span>
-                        <span>Status: {status}</span>
-                        <span>Date Posted: {format(new Date(createdAt), "MMMM dd, yyyy")}</span>
+                        <span><b>Duration:</b> {duration}</span>
+                        <span><b>Experience Level:</b> {experience}</span>
+                        <span><b>Location:</b> {location}</span>
+                        <span><b>Location:</b> {format(new Date(endDate), "MMMM dd, yyyy")}</span>
+                        <span><b>Status:</b> {status}</span>
+                        <span><b>Date Posted:</b> {format(new Date(createdAt), "MMMM dd, yyyy")}</span>
                     </div>
                     <div>
                         {parse(description)}

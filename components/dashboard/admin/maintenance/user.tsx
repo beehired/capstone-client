@@ -166,7 +166,6 @@ export default function UserTemplate() {
             {
                 onDelete ? <Dialog>
                     <Prompt title='Delete User Admin' icon={<TbAlertCircleFilled size={23} />}>
-                        {id}
                         <div className={PromptStyles.header}>
                             <span className={RegularPoppins.className}>
                                 Are you sure you want to delete this admin user? This action is irreversible and will permanently remove all associated data.

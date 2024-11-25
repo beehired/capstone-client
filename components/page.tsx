@@ -79,7 +79,7 @@ export default function Homepage() {
                         <Prompt title="How to apply as a freelancer">
                             <div className={PromptStyles.inputHeader}>
                                 <span>
-                                    Starting your freelancing career is simple! To apply, you need to provide one of the following valid Philippine government-issued IDs:
+                                    Starting your freelancing career is simple! To apply, you need to provide ANY of the following valid Philippine Government-issued IDs:
                                 </span>
                                 <ul>
                                     {validIDs.map(({ name, value }) => (
@@ -87,7 +87,7 @@ export default function Homepage() {
                                     ))}
                                 </ul>
                                 <span>
-                                    Once you have your valid ID ready, you can proceed with the application process, ensuring a smooth and hassle-free experience. Start your freelancing career today!
+                                    Once you have your valid ID ready, you can proceed with the registration process, ensuring a smooth and hassle-free experience. After submitting your application, the administrator will verify your identification. Once approved, you’ll be all set to start your freelancing career today!
                                 </span>
                             </div>
                             <div className={PromptStyles.footer}>
@@ -292,7 +292,7 @@ export default function Homepage() {
                             <div className={styles.features}>
                                 <ul>
                                     <li>21-Day Job Posting Duration</li>
-                                    <li>1-Day Job Posting Creation Per Post</li>
+                                    <li>1 Job Post Creation Per Day</li>
                                     <li>Application Tracking System</li>
                                     <li>Schedule Management</li>
                                     <li>Project Organizer</li>

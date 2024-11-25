@@ -105,7 +105,15 @@ export const DeleteMyAdminAcc: TypedDocumentNode = gql`
 export const UpdateUserProfile: TypedDocumentNode = gql`
   mutation UpdateUserProfile($userId: ID!, $input: ProfileInput) {
     updateUserProfile(userID: $userId, input: $input) {
-      userID
+      ... on ErrorObject {
+        code
+        message
+      }
+      ... on profile {
+        firstname
+        lastname
+        profileID
+      }
     }
   }
 `;

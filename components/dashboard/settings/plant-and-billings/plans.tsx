@@ -182,10 +182,10 @@ export default function PlansAndBillings() {
                                 <div>
                                     <span>Features: </span>
                                     <ul>
-                                        <li>90-Day Job Posting</li>
                                         <li>Unlimited Job Posting</li>
-                                        <li>Schedule Mangement</li>
+                                        <li>90-Day Job Posting Duration</li>
                                         <li>Application Tracking System</li>
+                                        <li>Schedule Management</li>
                                         <li>Project Organizer</li>
                                     </ul>
                                 </div>
@@ -202,17 +202,17 @@ export default function PlansAndBillings() {
                                     <div>
                                         <span>Features: </span>
                                         <ul>
-                                            <li>21-Day Job Posting</li>
-                                            <li>1-Day Job Posting Creation Per Post</li>
-                                            <li>Schedule Mangement</li>
+                                            <li>21-Day Job Posting Duration</li>
+                                            <li>1 Job Post Creation Per Day</li>
                                             <li>Application Tracking System</li>
+                                            <li>Schedule Management</li>
                                             <li>Project Organizer</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div className={styles.footer}>
                                     <button onClick={onHandleUpgrade}>
-                                        Upgrade your Plan
+                                        <b>Upgrade your Plan</b>
                                     </button>
                                 </div>
                             </>

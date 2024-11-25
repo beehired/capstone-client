@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
     return (
-        <BodyTemplate title="Job Create" goback={true}>
+        <BodyTemplate title="Create Job Post" goback={true}>
             <JobForm />
         </BodyTemplate>
     )

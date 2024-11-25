@@ -15,7 +15,7 @@ export default function CompanyJobPost({ data }: any) {
                         <div className={styles.companies}>
                             <span>Duration: {duration}</span>
                             <span>End of Filling: {endDate}</span>
-                            <span>Experiecne: {experience}</span>
+                            <span>Experience: {experience}</span>
                         </div>
                         <div>{parse(description.slice(0, 300))}</div>
                     </div>

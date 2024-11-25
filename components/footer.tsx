@@ -21,8 +21,8 @@ export default function Footer() {
                 <div className={styles.links}>
                     <HrefLinkV1 name='Home' url='/' />
                     <HrefLinkV1 name='Companies' url='#companies' />
-                    <HrefLinkV1 name='Pricing' url='#pricing' />
                     <HrefLinkV1 name='About Us' url='#about' />
+                    <HrefLinkV1 name='Pricing' url='#pricing' />
                 </div>
                 <div className={styles.links}>
                     <HrefLinkV1 name='Terms and Condition' url='/policy/terms&condition' />

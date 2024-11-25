@@ -69,7 +69,7 @@ export default function ProfileSettings() {
                         </div>
                     </div>
                     <div className={styles.EmailAddress}>
-                        <h2>Emaill Address</h2>
+                        <h2>Email Address</h2>
                         <div className={styles.email}>
                             <span className={RegularPoppins.className}>{data?.email}</span>
                             <button onClick={onHandleEditEmail}>

@@ -8,7 +8,7 @@ import { RegularPoppins } from '@/components/typograhy'
 import { useInfiniteQuery, useMutation, useQuery } from '@tanstack/react-query'
 import store from 'store2'
 import { GraphQLRequest } from '@/lib/graphQLRequest'
-import { GetAllNotificationByUserID } from '@/util/Query/notification.query'
+import { GetAllNotificationByUserID, GetUnreadNotification } from '@/util/Query/notification.query'
 import NotificationCard from './notificationCard'
 import { MarkAllAsRead } from '@/util/Mutation/notification.mutation'
 import { queryClient } from '@/lib/provider'
@@ -38,13 +38,12 @@ export default function Notification() {
     // const { data: UnreadNotifData } = useQuery({
     //     queryKey: ["unread", user?.id],
     //     queryFn: async () => {
-    //         const { unreadNotification } = await GraphQLRequest(GetUnReadNotification, {
+    //         const { unreadNotification } = await GraphQLRequest(GetUnreadNotification, {
     //             userId: user?.id
     //         })
 
     //         return unreadNotification
-    //     },
-    //     refetchInterval: 1000
+    //     }
     // })
 
     const mutation = useMutation({

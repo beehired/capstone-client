@@ -36,8 +36,8 @@ const plans = [
     {
         name: "Basic Plan", value: "BASIC", price: 0, features: [
             {
-                post: "21-Day Job Posting",
-                f1: "1-Day Job Posting Creation Per Post",
+                post: "21-Day Job Posting Duration",
+                f1: "1 Job Post Creation Per Day",
                 f2: "Application Tracking System",
                 f3: "Schedule Management",
                 f4: "Project Organizer",
@@ -48,7 +48,7 @@ const plans = [
         name: "Pro Plan", price: 2999, value: "PRO", features: [
             {
                 post: "Unlimited Job Posting",
-                f1: "90-Day Job Posting",
+                f1: "90-Day Job Posting Duration",
                 f2: "Application Tracking System",
                 f3: "Schedule Management",
                 f4: "Project Organizer",
@@ -163,7 +163,7 @@ export default function Clients() {
 
         if (step === 1 && formErrors.plan) {
             setStep(1)
-            toast.error("Oops! Some fields are incomplete. Please fill in all required fields.");
+            toast.error("Please choose a subscription plan.");
         } else if (step === 2 && formErrors.firstname && formErrors.firstname && formErrors.email && formErrors.password && formErrors.confirmPass) {
             setStep(2)
             toast.error("Oops! Some fields are incomplete. Please fill in all required fields.");
@@ -263,7 +263,7 @@ export default function Clients() {
                                     value={values.password}
                                     type={toggle ? "text" : "password"}
                                     errors={errors.password}
-                                    touched={errors.password}
+                                    touched={touched.password}
                                 />
                             </div>
 
@@ -391,25 +391,17 @@ export default function Clients() {
                                     disabled={step > 4}
                                     name='Next'
                                     onHandleClick={async () => {
-
                                         if (step === 4) {
-                                            EmailMutation()
-                                        } else {
-                                            onHandleIncrementStep()
-                                        }
-
-                                        if (EmailData?.checkMyEmailAddress.code) {
+                                            await EmailMutation()
+                                            return
+                                        } else if (EmailData?.checkMyEmailAddress.code) {
                                             return
                                         } else {
                                             onHandleIncrementStep()
                                         }
-
-
-
                                     }}
                                     icon2={<TbChevronRight size={20} />} />
                         }
-
                         {values.plan === "BASIC" && step === 4 ?
                             <PrimaryButton
                                 loading={isSubmitting ? true : false}

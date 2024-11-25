@@ -105,9 +105,7 @@ export default function TermsAndCondition({ accept, onChange }: any) {
                         <span> 5. Subscription
                         </span>
                         <span>BeeHired offers two subscriptions plans for Employers: </span>
-                        <span>Basic Plan: This plan is free of charge and allows employers to post up to five job listings that will be featured for 21 days. Employers on this plan must comply with the same obligations as those on paid plans.
 
-                        </span>
                         <span>
                             <b>Basic Plan</b>: This plan is free of charge and allows employers to post up to five job listings that will be featured for 21 days. Employers on this plan must comply with the same obligations as those on paid plans.
 
@@ -178,6 +176,6 @@ export default function TermsAndCondition({ accept, onChange }: any) {
                     <button onClick={onHandleRoute} className={`${styles.disagree} ${RegularPoppins.className}`}>Disagree</button>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

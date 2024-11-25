@@ -46,8 +46,14 @@ export default function ProfilePage() {
         }) => {
             return await GraphQLRequest(UpdateUserProfile, inputValues)
         },
-        onSuccess: () => {
-            toast.success("Successfully Saved")
+        onSuccess: (data) => {
+            if (data.updateUserProfile.profileID) {
+                toast.success("Successfully Saved")
+            }
+
+            if (data.updateUserProfile.code) {
+                toast.error(data.updateUserProfile.message)
+            }
         }
     })
 

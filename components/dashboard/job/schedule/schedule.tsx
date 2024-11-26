@@ -148,10 +148,12 @@ export default function CalendarSchedule({ close, id, applicantId }: any) {
 
             <div className={styles.scheduleContainer}>
                 <div className={styles.header}>
+                    <h2 className={RegularPoppins.className}>Create Interview Schedule</h2>
                     <button className={styles.btn} onClick={close}>
                         <TbX size={28} />
                     </button>
                 </div>
+
 
                 {data ?
                     <form onSubmit={handleSubmit}>

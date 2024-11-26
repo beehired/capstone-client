@@ -1,6 +1,6 @@
 "use client"
 
-import React, { ChangeEvent, useState, useRef } from 'react'
+import React, { ChangeEvent, useState, useRef, KeyboardEvent } from 'react'
 import styles from '@/styles/dashboard/applicant/message/message.module.scss'
 import { useMutation } from '@apollo/client'
 import { useQuery } from '@tanstack/react-query';
@@ -168,6 +168,12 @@ export default function Message() {
             fileRef.current.click()
         }
     }
+    const handleKeyPress = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault()
+            handleSubmit()
+        }
+    }
 
 
     const onHandleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -250,7 +256,7 @@ export default function Message() {
                                                     </div>
                                                 ))}
                                             </div>
-                                            : <textarea className={lato.className} name="message" aria-placeholder='Aa' id="" value={values.message} onChange={handleChange} placeholder='Aa'></textarea>}
+                                            : <textarea className={lato.className} name="message" aria-placeholder='Aa' id="" value={values.message} onKeyDown={handleKeyPress} onChange={handleChange} placeholder='Aa'></textarea>}
                                     </div>
 
                                     {

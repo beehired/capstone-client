@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
+import React, { ChangeEvent, useEffect, useRef, useState, KeyboardEvent } from 'react'
 import styles from '@/styles/dashboard/message/message.view.module.scss';
 import store from 'store2';
 import { useQuery } from '@tanstack/react-query';
@@ -105,6 +105,7 @@ export default function MessageView() {
     })
 
 
+
     const maxFileSize = 10 * 1024 * 1024;
 
     const onHandleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -149,6 +150,13 @@ export default function MessageView() {
     }
 
 
+    const handleKeyPress = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault()
+            handleSubmit()
+        }
+    }
+
 
     return (
         <div className={styles.container}>
@@ -178,7 +186,7 @@ export default function MessageView() {
                                 <ImageArray index={index} key={index} file={file} onHandleRemoveFiles={() => onHandleRemoveFiles(index)} />
                             ))}
                         </div>
-                        : <textarea className={lato.className} name="message" aria-placeholder='Aa' id="" value={values.message} onChange={handleChange} placeholder='Aa'></textarea>}
+                        : <textarea onKeyDown={handleKeyPress} className={lato.className} name="message" aria-placeholder='Aa' id="" value={values.message} onChange={handleChange} placeholder='Aa' ></textarea>}
                 </div>
                 {
                     values.message || selectedFiles ? <div>

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { ChangeEvent, useRef, useState } from 'react'
+import React, { ChangeEvent, KeyboardEvent, useRef, useState } from 'react'
 import styles from '@/styles/dashboard/job/message.module.scss';
 import { TbPhotoScan, TbSend2, TbX } from 'react-icons/tb';
 import { RegularPoppins } from '@/components/typograhy';
@@ -140,6 +140,17 @@ export default function Message({ close, id }: any) {
             fileRef.current.click()
         }
     }
+
+
+
+    const handleKeyPress = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault()
+            handleSubmit()
+        }
+    }
+
+
     return (
         <div className={styles.container}>
             <div className={styles.messageContainer}>
@@ -178,7 +189,7 @@ export default function Message({ close, id }: any) {
                                     </div>
                                 ))}
                             </div>
-                            : <textarea className={lato.className} name="message" aria-placeholder='Aa' id="" value={values.message} onChange={handleChange} placeholder='Aa'></textarea>}
+                            : <textarea className={lato.className} name="message" aria-placeholder='Aa' id="" value={values.message} onChange={handleChange} placeholder='Aa' onKeyDown={handleKeyPress} rows={4}></textarea>}
                     </div>
 
                     {

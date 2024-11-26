@@ -106,6 +106,9 @@ export default function ScheduleView({ id, close }: any) {
         },
         onSuccess(data, variables, context) {
             toast.success("Interview Schedule is Successfully Deleted")
+            queryClient.invalidateQueries({
+                queryKey: ["CalendarDate"]
+            })
         },
     })
 

@@ -400,7 +400,7 @@ export const SettingsCompany = [
 
 export const SettingsWorkpac = [
   {
-    name: "Plans or Subscription Plan",
+    name: "Subscription Plan",
     url: "/dashboard/employer/settings/plans",
   },
   {

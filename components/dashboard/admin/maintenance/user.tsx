@@ -9,7 +9,7 @@ import { GraphQLRequest } from '@/lib/graphQLRequest';
 import { GetAllUsersByRole } from '@/util/Query/user.query';
 import { Formatter } from '@/util/formatter';
 import { MediumPoppins, RegularPoppins } from '@/components/typograhy';
-import { TbEye, TbAlertCircleFilled, TbTrash } from 'react-icons/tb';
+import { TbEye, TbAlertCircleFilled, TbTrash, TbSearch } from 'react-icons/tb';
 import Dialog from '@/components/dialog';
 import Prompt from '@/components/prompt';
 import PromptStyles from "@/styles/components/prompt.module.scss"
@@ -181,7 +181,10 @@ export default function UserTemplate() {
                 </Dialog> : null
             }
             <div className={styles.header}>
-                <Search onChange={onHandleChange} />
+                <div className={styles.searchContainer}>
+                    <TbSearch size={23} />
+                    <input type="Search" placeholder='Search here...' onChange={onHandleChange} />
+                </div>
                 <button onClick={onHandleAddUser}>
                     <span className={RegularPoppins.className}>
                         Add New

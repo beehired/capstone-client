@@ -25,8 +25,12 @@ export const GetCompany: TypedDocumentNode = gql`
 `;
 
 export const GetAllCompanies: TypedDocumentNode = gql`
-  query GetAllCompanies($input: PaginationInput!, $search: String) {
-    getAllCompanies(input: $input, search: $search) {
+  query GetAllCompanies(
+    $input: PaginationInput!
+    $search: String
+    $verified: Boolean
+  ) {
+    getAllCompanies(input: $input, search: $search, verified: $verified) {
       currentPage
       totalItems
       totalPages

@@ -38,7 +38,6 @@ export default function ForgotPassword() {
             return GraphQLRequest(FINDEmailAddress, inputValues)
         },
         onSuccess: (data) => {
-            toast.success("Successfully Sent!");
             if (data.findMyEmailAddress.userID) {
                 toast.success("Successfuly Email Sent!")
                 resetForm();

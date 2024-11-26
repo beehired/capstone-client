@@ -10,6 +10,7 @@
     justify-content: flex-end;
     align-items: center;
     border-radius: 8px;
+    gap: 20px;
 
     .btnTrash {
         display: none;
@@ -23,12 +24,18 @@
         flex-direction: column;
 
         .senderContainer {
-            max-width: 300px;
+            width: 300px;
+            max-height: auto;
             background-color: $Primary500;
             border-radius: 10px;
             flex-wrap: wrap;
             flex-direction: column;
             padding: 15px;
+            overflow: hidden;
+
+            span {
+                word-wrap: break-word
+            }
         }
 
         .dateContainer {
@@ -99,6 +106,10 @@
         align-items: flex-start;
         gap: 5px;
         flex-direction: column;
+
+        span {
+            word-wrap: break-word
+        }
     }
 
     .dateContainer {

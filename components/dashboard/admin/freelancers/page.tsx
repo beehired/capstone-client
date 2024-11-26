@@ -4,29 +4,33 @@ import React, { useState, ChangeEvent } from 'react'
 import { GraphQLRequest } from '@/lib/graphQLRequest'
 import { GetAllUsersByRole } from '@/util/Query/user.query'
 import { useQuery } from '@tanstack/react-query'
-import { MediumPoppins } from '@/components/typograhy'
+import { MediumPoppins, RegularPoppins } from '@/components/typograhy'
 import styles from '@/styles/dashboard/admin/freelance.module.scss'
 import FreelanceCard from './freelanceCard'
-import Search from '../../search'
 import Pagination from '@/components/pagination'
+import { TbSearch } from 'react-icons/tb'
+import { isEmpty } from 'lodash'
+import NotAvailable from '@/components/notavailable'
 
 
 export default function FreelancerList() {
 
     const [search, setSearch] = useState("")
     const [page, setPage] = useState(1);
+    const [isVerified, setIsVerified] = useState(true);
     const itemsPerPage = 20;
 
     const { data } = useQuery({
-        queryKey: ["Freelancers", search],
+        queryKey: ["Freelancers", search, isVerified, page],
         queryFn: async () => {
             const { getAllUserAccountByRole } = await GraphQLRequest(GetAllUsersByRole, {
                 role: "freelance",
                 search,
                 input: {
-                    take: 20,
-                    page: 1
-                }
+                    take: itemsPerPage,
+                    page: page
+                },
+                verified: isVerified
             })
 
             return getAllUserAccountByRole
@@ -47,7 +51,27 @@ export default function FreelancerList() {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <Search onChange={onHandleChange} />
+                <select onChange={(e) => {
+                    switch (e.target.value) {
+                        case "true":
+                            setIsVerified(true);
+                            break;
+                        case "false":
+                            setIsVerified(false);
+                            break;
+                        default:
+                            setIsVerified(false)
+                            break;
+                    }
+                }}>
+                    <option value="true" className={RegularPoppins.className}>Verified</option>
+                    <option value="false" className={RegularPoppins.className}>Not Verified</option>
+                </select>
+                <div className={styles.searchContainer}>
+                    <TbSearch size={23} />
+                    <input type="Search" placeholder='Search here...' onChange={onHandleChange} />
+                </div>
+
             </div>
             <div className={styles.body}>
                 <div className={styles.thead}>
@@ -70,7 +94,7 @@ export default function FreelancerList() {
                     </div>
                 </div>
                 <div className={styles.tbody}>
-                    {data?.item.map(({ userID, email, verified, myProfile: { firstname, lastname, avatar } }: any) => (
+                    {isEmpty(data?.item) ? <NotAvailable /> : data?.item.map(({ userID, email, verified, myProfile: { firstname, lastname, avatar } }: any) => (
                         <FreelanceCard key={userID} name={`${firstname} ${lastname}`} userID={userID} verified={verified} email={email} avatar={avatar?.media} />
                     ))}
                 </div>
@@ -85,6 +109,6 @@ export default function FreelancerList() {
                 totalItems={data?.totalItems}
                 totalPages={data?.totalPages}
             />
-        </div>
+        </div >
     )
 }

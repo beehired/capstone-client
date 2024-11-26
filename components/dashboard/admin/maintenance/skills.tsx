@@ -22,6 +22,7 @@ import ToastNotification from '@/components/notification'
 import { queryClient } from '@/lib/provider'
 import Search from '../../search'
 import Spinner from '@/components/spinner'
+import { TbSearch } from 'react-icons/tb'
 
 export default function SkillsMaintenance() {
 
@@ -120,7 +121,10 @@ export default function SkillsMaintenance() {
 
                 </Dialog> : null}
             <div className={styles.header}>
-                <Search onChange={onHandleChange} />
+                <div className={styles.searchContainer}>
+                    <TbSearch size={23} />
+                    <input type="Search" placeholder='Search here...' onChange={onHandleChange} />
+                </div>
                 <button onClick={() => setToggle(() => !toggle)}>
                     <span className={RegularPoppins.className}>
                         Add New

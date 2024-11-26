@@ -41,12 +41,11 @@ export default function SkillsCard({
             return await GraphQLRequest(DeleteSkill, inputValues)
         },
         onSuccess: (data, variables, context) => {
-            if (data.deleteSkills.skillsID) {
-                toast.success("Successfully Deleted")
-                queryClient.invalidateQueries({
-                    queryKey: ["GetSkills"],
-                })
-            }
+            toast.success("Successfully Deleted")
+            queryClient.invalidateQueries({
+                queryKey: ["GetSkills"],
+            })
+
         },
     })
 
@@ -109,6 +108,7 @@ export default function SkillsCard({
                         </form>
                     </div>
                 </Prompt>
+                <ToastNotification />
             </Dialog> : null}
             {toggleEdit ?
                 <Dialog>

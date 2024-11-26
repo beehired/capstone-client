@@ -31,6 +31,7 @@ import SpanError from '@/components/Error/spanError'
 import ToastNotification from '@/components/notification'
 import { isEmpty } from 'lodash'
 import NotAvailable from '@/components/notavailable'
+import { TbSearch } from 'react-icons/tb'
 
 export default function ThemeTemplate() {
 
@@ -130,7 +131,10 @@ export default function ThemeTemplate() {
                 </Dialog> : null
             }
             <div className={styles.header}>
-                <Search onChange={onHandleChange} />
+                <div className={styles.searchContainer}>
+                    <TbSearch size={23} />
+                    <input type="Search" placeholder='Search here...' onChange={onHandleChange} />
+                </div>
                 <button onClick={() => setToggle(() => !toggle)}>
                     <span className={RegularPoppins.className}>
                         Add New

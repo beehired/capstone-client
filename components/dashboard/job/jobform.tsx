@@ -128,7 +128,7 @@ export default function JobForm({ id }: any) {
                 duration: UpdateData?.duration ?? "",
                 jobType: UpdateData?.JobType ?? [],
                 skills: skills ?? [],
-                fixed: UpdateData?.salary.fixed ?? false,
+                fixed: Boolean(UpdateData?.salary?.fixed) || false,
                 currency: UpdateData?.salary?.currency ?? "",
                 salary: UpdateData?.salary.fixed ? UpdateData?.salary.fixed : 0,
                 max: UpdateData?.salary?.max ? parseInt(UpdateData?.salary?.max) : 0,
@@ -326,7 +326,7 @@ export default function JobForm({ id }: any) {
                                     </div>}
                             </div>
                             <div className={styles.fixed}>
-                                <CheckboxV2 name='fixed' onChange={handleChange} onBlur={handleBlur} />
+                                <CheckboxV2 name='fixed' onChange={handleChange} onBlur={handleBlur} value={values.fixed} checked={values.fixed ? true : false} />
                                 <span className={RegularPoppins.className}>This Project is based on Fixed price.</span>
                             </div>
                             {errors.fixed && touched.fixed ? <SpanError message={errors.fixed} /> : null}

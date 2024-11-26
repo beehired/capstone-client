@@ -21,8 +21,14 @@ export const GetAllUsersByRole: TypedDocumentNode = gql`
     $input: PaginationInput
     $role: String
     $search: String
+    $verified: Boolean
   ) {
-    getAllUserAccountByRole(input: $input, role: $role, search: $search) {
+    getAllUserAccountByRole(
+      input: $input
+      role: $role
+      search: $search
+      verified: $verified
+    ) {
       item {
         userID
         email

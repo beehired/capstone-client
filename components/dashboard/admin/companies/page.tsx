@@ -7,23 +7,28 @@ import { useQuery } from '@tanstack/react-query'
 import Pagination from '@/components/pagination'
 import styles from '@/styles/dashboard/admin/companies.module.scss';
 import Search from '../../search'
-import { MediumPoppins } from '@/components/typograhy'
+import { MediumPoppins, RegularPoppins } from '@/components/typograhy'
 import CompanyCard from './companyCard'
+import { TbSearch } from 'react-icons/tb'
+import { isEmpty } from 'lodash'
+import NotAvailable from '@/components/notavailable'
 
 export default function CompaniesList() {
     const [page, setPage] = useState(1);
     const itemsPerPage = 20;
     const [search, setSearch] = useState("");
+    const [isVerified, setIsVerified] = useState(true);
 
     const { data } = useQuery({
-        queryKey: ["GetAllCompaniesList", search],
+        queryKey: ["GetAllCompaniesList", search, isVerified, page],
         queryFn: async () => {
             const { getAllCompanies } = await GraphQLRequest(GetAllCompanies, {
                 input: {
                     take: itemsPerPage,
                     page: page
                 },
-                search
+                search,
+                verified: isVerified
             })
 
             return getAllCompanies
@@ -45,7 +50,27 @@ export default function CompaniesList() {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <Search onChange={onHandleChange} />
+                <select onChange={(e) => {
+                    switch (e.target.value) {
+                        case "true":
+                            setIsVerified(true);
+                            break;
+                        case "false":
+                            setIsVerified(false);
+                            break;
+                        default:
+                            setIsVerified(false)
+                            break;
+                    }
+                }}>
+                    <option value="true" className={RegularPoppins.className}>Verified</option>
+                    <option value="false" className={RegularPoppins.className}>Not Verified</option>
+                </select>
+                <div className={styles.searchContainer}>
+                    <TbSearch size={23} />
+                    <input type="Search" placeholder='Search here...' onChange={onHandleChange} />
+                </div>
+
             </div>
             <div className={styles.body}>
                 <div className={styles.thead}>
@@ -71,7 +96,7 @@ export default function CompaniesList() {
                     </div>
                 </div>
                 <div className={styles.tbody}>
-                    {data?.item.map(({ companyID, companyName, companySize, getJobPostCount, slug, logo: { media }, verified, user: { email, plan } }:
+                    {isEmpty(data?.item) ? <NotAvailable /> : data?.item.map(({ companyID, companyName, companySize, getJobPostCount, slug, logo: { media }, verified, user: { email, plan } }:
                         { companyID: string, companyName: string, companySize: string, getJobPostCount: number, slug: string, logo: { media: string }, verified: boolean, user: any }
                     ) => (
                         <CompanyCard key={companyID} companyName={companyName} companySize={companySize} getJobPostCount={getJobPostCount} slug={slug} verified={verified} media={media} plan={plan} email={email} />

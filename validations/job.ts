@@ -56,7 +56,11 @@ export const UpdateJobPostSchema = Yup.object().shape({
   fixed: Yup.boolean().required("Fix this"),
   salary: Yup.number().when("fixed", {
     is: true,
-    then: () => Yup.number().min(1, "Fixed price should not less than to 1"),
+    then: () =>
+      Yup.number()
+        .min(1, "Fixed price should not less than to 1")
+        .required("Salary is required"),
+    otherwise: () => Yup.number().required("Salary is required"),
   }),
   min: Yup.number().when("fixed", {
     is: false,

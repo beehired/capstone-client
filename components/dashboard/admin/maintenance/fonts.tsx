@@ -30,6 +30,7 @@ import { GetAllFontFamily } from '@/util/Query/font.query';
 import FontCard from './fontCard';
 import { isEmpty } from 'lodash';
 import NotAvailable from '@/components/notavailable';
+import { TbSearch } from 'react-icons/tb';
 
 export default function FontTemplate() {
     const [page, setPage] = useState(1);
@@ -124,7 +125,10 @@ export default function FontTemplate() {
                 </Dialog> : null
             }
             <div className={styles.header}>
-                <Search onChange={onHandleChange} />
+                <div className={styles.searchContainer}>
+                    <TbSearch size={23} />
+                    <input type="Search" placeholder='Search here...' onChange={onHandleChange} />
+                </div>
                 <button onClick={() => setToggle(() => !toggle)}>
                     <span className={RegularPoppins.className}>
                         Add New

@@ -147,7 +147,7 @@ export default function Homepage() {
                     <h2>Top Companies</h2>
                     <Companies />
                 </div>
-                <div className={styles.about}>
+                <div id="#about" className={styles.about}>
 
                     <div className={styles.ey}>
                         <div className={styles.aboutMain}>

@@ -135,17 +135,7 @@ export default function ScheduleView({ id, close }: any) {
                                     onChange={handleChange}
                                     placeholder='Topic'
                                     type='text' />
-                                <div>
-                                    <Label name='Description' required={false} />
-                                    <Textarea
-                                        name={'description'}
-                                        errors={errors.description}
-                                        touched={touched.description}
-                                        onChange={handleChange}
-                                        placeholder='optional'
-                                        value={values.description}
-                                    />
-                                </div>
+
                                 <Label name='Start Date and Time' required={true} />
                                 <div className={styles.statDate}>
 
@@ -175,6 +165,17 @@ export default function ScheduleView({ id, close }: any) {
                                         <InputTime errors={errors.endTime} name={"endTime"} onChange={handleChange} touched={touched.endTime} value={values.endTime} />
                                     </div>
                                 </div>
+                                <div>
+                                    <Label name='Description' required={false} />
+                                    <Textarea
+                                        name={'description'}
+                                        errors={errors.description}
+                                        touched={touched.description}
+                                        onChange={handleChange}
+                                        placeholder='optional'
+                                        value={values.description}
+                                    />
+                                </div>
                             </div>
                             <div className={PromptStyles.footer}>
                                 <CancelBtn onClose={onHandleEdit} />
@@ -191,11 +192,11 @@ export default function ScheduleView({ id, close }: any) {
                     <div className={styles.deleteContainer}>
                         <Prompt title='Do you want to delete the Interview Schedule?' icon={<TbAlertCircleFilled size={23} />}>
                             <div className={PromptStyles.header}>
-                                <span>Applicant will be notified once you delete the interview schedule</span>
+                                <span>The applicant will be notified once you delete the interview schedule</span>
                             </div>
                             <div className={PromptStyles.footer}>
                                 <CancelBtn onClose={onHandleDelete} />
-                                <form>
+                                <form onSubmit={formik.handleSubmit}>
                                     <PrimaryButton loading={formik.isSubmitting ? true : false} name='Confirm' type='submit' />
                                 </form>
                             </div>

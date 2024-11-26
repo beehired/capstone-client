@@ -47,18 +47,18 @@ export default function Default({ id }: any) {
 
     const [fonts, setFont] = useState("")
 
-    // useEffect(() => {
-    //     if (data?.getMyFont?.font) {
-    //         switch (data?.getMyFont.font) {
-    //             case "Lato":
-    //                 setFont(lato.className);
-    //                 break
-    //             case "Poppins":
-    //                 setFont(poppins.className);
-    //                 break
-    //         }
-    //     }
-    // }, [data])
+    useEffect(() => {
+        if (data?.getMyFont?.font) {
+            switch (data?.getMyFont.font) {
+                case "Lato":
+                    setFont(lato.className);
+                    break
+                case "Poppins":
+                    setFont(poppins.className);
+                    break
+            }
+        }
+    }, [data])
 
     return (
 
@@ -143,7 +143,7 @@ export default function Default({ id }: any) {
                                         <span className={fonts}>{degree} in {study} </span>
                                     </div>
                                     <div>
-                                        <span className={fonts}> {startMonth} {startYear} -  {endMonth} - {endYear}</span>
+                                        <span className={fonts}> {startMonth} {startYear} -  {endMonth} {endYear}</span>
                                     </div>
                                 </div>
                             ))}

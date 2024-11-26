@@ -115,8 +115,7 @@ export default function NotificationCard({ title, notificationID, status, date,
                                         </div>
                                     )}
                                 </div>
-
-                                {application?.jobPost ? (
+                                {["Submitted", "Congratulation", "Review", "Declined"].some(keyword => title.includes(keyword)) && (
                                     <div className={styles.applicationScore}>
                                         <h2 className={RegularPoppins.className}>
                                             Your Application ID is {application?.id}
@@ -125,7 +124,8 @@ export default function NotificationCard({ title, notificationID, status, date,
                                             Your application has a score of {application?.score?.score}%
                                         </span>
                                     </div>
-                                ) : schedule ? (
+                                )}
+                                {["Created", "Reschedule"].some(keyword => schedule && title.includes(keyword)) ? (
                                     <div className={styles.applicationScore}>
                                         <span>
                                             Start Date: {format(new Date(schedule?.startDate), "MMMM dd, yyyy")} - {schedule?.startTime}
@@ -134,14 +134,9 @@ export default function NotificationCard({ title, notificationID, status, date,
                                             End Date: {format(new Date(schedule?.endDate), "MMMM dd, yyyy")} - {schedule?.endTime}
                                         </span>
                                     </div>
-                                ) : (
-                                    <span className={RegularPoppins.className}>
-                                        This job post has been deleted and is no longer available. For further information or assistance, please contact our support team.
-                                    </span>
-                                )}
-
-
-
+                                ) : application?.jobPost ? null : <span className={RegularPoppins.className}>
+                                    This schedule is not found. Please contact our support team for assistance.
+                                </span>}
                             </div>
                         </div>
                     </Dialog> :

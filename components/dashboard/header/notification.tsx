@@ -25,7 +25,7 @@ export default function Notification() {
         queryFn: async ({ pageParam }) => {
             const { getNotificationByUserID } = await GraphQLRequest(GetAllNotificationByUserID, {
                 userId: user?.id,
-                limit: 10,
+                limit: 30,
                 cursor: pageParam,
             })
             return getNotificationByUserID

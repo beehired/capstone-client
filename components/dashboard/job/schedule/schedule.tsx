@@ -165,15 +165,7 @@ export default function CalendarSchedule({ close, id, applicantId }: any) {
                                 onChange={handleChange}
                                 placeholder='Topic'
                                 type='text' />
-                            <Label name='Description' required={false} />
-                            <Textarea
-                                name={'description'}
-                                errors={errors.description}
-                                touched={touched.description}
-                                onChange={handleChange}
-                                placeholder='optional'
-                                value={values.description}
-                            />
+
                             <Label name='Start Date and Time' required={true} />
                             <div className={styles.time}>
                                 <InputCalendar
@@ -198,6 +190,15 @@ export default function CalendarSchedule({ close, id, applicantId }: any) {
                                 />
                                 <InputTime errors={errors.endTime} name={"endTime"} onChange={handleChange} touched={touched.endTime} value={values.endTime} />
                             </div>
+                            <Label name='Description' required={false} />
+                            <Textarea
+                                name={'description'}
+                                errors={errors.description}
+                                touched={touched.description}
+                                onChange={handleChange}
+                                placeholder='optional'
+                                value={values.description}
+                            />
                             <Label name='Duration' required={true} />
                             <SelectForm errors={errors.duration} touched={touched.duration} size={scheduleDuration} title='Select meeting duration' value={values.duration} onClick={onHandleDuration} />
                         </div>

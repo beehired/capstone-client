@@ -206,7 +206,9 @@ export default function ProfileHeader({ id }: { id: string }) {
       {fileUpload ? (
         <div className={styles.formContainer}>
           <form onSubmit={onHandleSubmit}>
-            {loading ? null : <CancelBtn onClose={removedFileUpload} />}
+            {loading ? null : (
+              <CancelBtn onClose={removedFileUpload} name="Cancel" />
+            )}
             <PrimaryButton
               type="submit"
               loading={loading ? true : false}

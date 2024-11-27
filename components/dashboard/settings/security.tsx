@@ -167,7 +167,9 @@ export default function SecuritySettings() {
               />
             </div>
             <div className={PromptStyles.footer}>
-              {isSubmitting ? null : <CancelBtn onClose={onHandlePassword} />}
+              {isSubmitting ? null : (
+                <CancelBtn onClose={onHandlePassword} name="Cancel" />
+              )}
               <form onSubmit={ChangePass}>
                 <PrimaryButton
                   loading={isPassword ? true : false}

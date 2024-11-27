@@ -119,7 +119,7 @@ export default function FreelancerAccountSecurity() {
                                 <span>Are you sure you want to deactivate your account? This action will temporarily suspend your account and all associated data. You can reactivate it anytime by logging back in.</span>
                             </div>
                             <div className={PromptStyles.footer}>
-                                <CancelBtn onClose={onHandleDeactivation} />
+                                < onClose={onHandleDeactivation} />
                                 <form onSubmit={DeactivationAccount}>
                                     <PrimaryButton loading={isSubmitting ? true : false} name='Confirm' type='submit' />
                                 </form>
@@ -150,7 +150,7 @@ export default function FreelancerAccountSecurity() {
                                 />
                             </div>
                             <div className={PromptStyles.footer}>
-                                {isSubmitting ? null : <CancelBtn onClose={onHandlePassword} />}
+                                {isSubmitting ? null : <CancelBtn onClose={onHandlePassword} name="Cancel"/>}
                                 <form onSubmit={ChangePass}>
                                     <PrimaryButton loading={isPassword ? true : false} name='Confirm' type='submit' />
                                 </form>

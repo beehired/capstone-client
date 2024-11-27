@@ -186,7 +186,7 @@ export default function ProjectCard({ title, status, startDate, endDate, amount,
                                     </div>
                                     <div className={PromptStyles.footer}>
                                         {submitting ? null :
-                                            <CancelBtn onClose={onHandleEditStatus} />}
+                                            <CancelBtn onClose={onHandleEditStatus} name="Cancel" />}
                                         <form onSubmit={StatusSubmit}>
                                             <PrimaryButton loading={submitting ? true : false} name='Confirm' type='submit' />
                                         </form>

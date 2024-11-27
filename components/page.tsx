@@ -92,7 +92,7 @@ export default function Homepage() {
                             </div>
                             <div className={PromptStyles.footer}>
                                 <div>
-                                    <CancelBtn onClose={onHandleFreelancer} />
+                                    <CancelBtn onClose={onHandleFreelancer} name='Close' />
                                 </div>
                             </div>
                         </Prompt>
@@ -120,7 +120,7 @@ export default function Homepage() {
                             </div>
                             <div className={PromptStyles.footer}>
                                 <div>
-                                    <CancelBtn onClose={onHandleEmlpoyer} />
+                                    <CancelBtn onClose={onHandleEmlpoyer} name='Close' />
                                 </div>
                             </div>
                         </Prompt>

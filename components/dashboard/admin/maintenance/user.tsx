@@ -155,7 +155,7 @@ export default function UserTemplate() {
                                 <InputV1 name='phone' onChange={handleChange} type="text" placeholder='9123456789' max={10} value={values.phone} errors={errors.phone} touched={touched.phone} />
                             </div>
                             <div className={PromptStyles.footer}>
-                                {isSubmitting ? null : <CancelBtn onClose={onHandleAddUser} />}
+                                {isSubmitting ? null : <CancelBtn onClose={onHandleAddUser} name="Cancel"/>}
                                 <form onSubmit={handleSubmit}>
                                     <PrimaryButton loading={isSubmitting ? true : false} name='Submit' type='submit' />
                                 </form>
@@ -172,7 +172,7 @@ export default function UserTemplate() {
                             </span>
                         </div>
                         <div className={PromptStyles.footer}>
-                            <CancelBtn onClose={onHandleDeleteChange} />
+                            <CancelBtn onClose={onHandleDeleteChange} name="Cancel"/>
                             <form onSubmit={formik.handleSubmit}>
                                 <PrimaryButton loading={formik.isSubmitting ? true : false} name='Confirm' type='submit' />
                             </form>

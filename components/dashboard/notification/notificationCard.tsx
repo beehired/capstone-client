@@ -135,7 +135,7 @@ export default function NotificationCard({
                       <span>{title}</span>
                       <span className={RegularPoppins.className}>{name}</span>
                       <span>
-                        Applicant ID: {application.id} | Application Score:{" "}
+                        Applicant ID: {application.id} | Skill Match:{" "}
                         {application.score?.score}% |{" "}
                         <a
                           href={`${application?.resume.resume}`}
@@ -172,7 +172,7 @@ export default function NotificationCard({
                   </>
                 ) : (
                   <span>
-                    A job post has been deleted due to multiple reports of
+                    This job post has been deleted due to multiple reports of
                     policy violations. This action is final, and all associated
                     data has been permanently removed. If you believe this was
                     done in error or need further assistance, please contact our

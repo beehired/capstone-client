@@ -6,6 +6,12 @@ export const experience: string[] = [
 ];
 export const jobtype: string[] = ["Full-Time", "Part-Time", "Contract"];
 
+export const locations = [
+  { name: "On site", value: "On site" },
+  { name: "Remote", value: "Remote" },
+  { name: "Hybrid", value: "Hybrid" },
+];
+
 export const durations = [
   { name: "Less than one week", value: "Less than one week" },
   { name: "1 to 2 weeks", value: "1 to 2 weeks" },
@@ -339,11 +345,11 @@ export const bachelorDegree = [
 ];
 
 export const AStatus = ["Pending", "Review", "Interview", "Hired", "Rejected"];
-
+export const BStatus = ["Review", "Interview", "Hired", "Rejected"];
 export const PStatus = [
   "Not Started",
   "In Progress",
-  "For Review",
+  "For Validation",
   "Completed",
 ];
 

@@ -6,11 +6,17 @@
     width: 100%;
     max-height: auto;
 
+    h2 {
+        margin: 20px 0;
+        padding: 0 15px;
+        font-size: $fntlg
+    }
+
     .applications {
         padding: 10px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
 
         .applicationCard {
             width: 100%;

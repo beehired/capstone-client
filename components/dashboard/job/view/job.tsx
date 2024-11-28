@@ -293,7 +293,7 @@ export default function Job({ id }: any) {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Status</th>
-                            <th>Match</th>
+                            <th>Skill Match</th>
                             <th>Date Applied</th>
                             <th>Action</th>
                         </tr>

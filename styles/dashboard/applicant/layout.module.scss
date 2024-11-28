@@ -7,6 +7,11 @@
     background-color: $Neutral200;
     padding: 20px 40px;
 
+
+    @include phone {
+        padding: 10px;
+    }
+
     &::-webkit-scrollbar {
         width: 0;
     }

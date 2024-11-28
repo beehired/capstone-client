@@ -71,6 +71,7 @@ export default function Project() {
                     null
             }
             <div className={styles.generate}>
+                <h2 className={RegularPoppins.className}>My Projects</h2>
                 <button onClick={onHandleGenerateReport}>
                     <TbCloudDownload size={20} />
                     <span className={RegularPoppins.className}>Generate Report</span>

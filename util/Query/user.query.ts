@@ -12,6 +12,14 @@ export const GetMyUserProfile: TypedDocumentNode = gql`
         mediaID
         media
       }
+      user {
+        getMyCompany {
+          companyName
+          logo {
+            media
+          }
+        }
+      }
     }
   }
 `;

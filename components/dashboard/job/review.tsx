@@ -46,10 +46,14 @@ export default function JobReview({ title, description, employment, location, du
                 <span className={`${RegularPoppins.className} ${styles.title}`}>Location: </span>
                 <span>{location}</span>
             </div>
-
-
             <div>
+                <span className={`${RegularPoppins.className} ${styles.title}`}>Skills: </span>
 
+            </div>
+            <div className={styles.skillsContainer}>
+                {skills.map((skills) => (
+                    <span key={skills}>{skills}</span>
+                ))}
             </div>
         </div >
     )

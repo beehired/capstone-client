@@ -27,7 +27,7 @@ export default function Side() {
                         {quote.map(({ name, count }) => (
                             step === count ?
                                 <div className={styles.quote} key={count}>
-                                    <span className={BoldPoppins.className}>“{name}</span>
+                                    <span className={BoldPoppins.className}>{name}</span>
                                 </div> : null
                         ))
                         }
@@ -55,7 +55,7 @@ export default function Side() {
                     </div>
                 </div>
                 <div className={styles.policy}>
-                    <Link href="/policy/terms&condition">Terms and Condition</Link>
+                    <Link href="/policy/terms&condition">Terms and Conditions</Link>
                     <Link href="/">Data Policy</Link>
                 </div>
             </div>

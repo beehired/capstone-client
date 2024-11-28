@@ -141,16 +141,16 @@ export default function ScheduleView({ id, close }: any) {
       {edit ? (
         <Dialog>
           <div className={styles.editContainer}>
-            <Prompt title="Update Scehdule Calendar">
+            <Prompt title="Update Interview Schedule">
               <div className={PromptStyles.inputHeader}>
-                <Label name="Topic" required={true} />
+                <Label name="Meeting Title" required={true} />
                 <InputV1
                   name="title"
                   errors={errors.title}
                   touched={touched.title}
                   value={values.title}
                   onChange={handleChange}
-                  placeholder="Topic"
+                  placeholder="Meeting Title"
                   type="text"
                 />
 
@@ -195,7 +195,7 @@ export default function ScheduleView({ id, close }: any) {
                   </div>
                 </div>
                 <div>
-                  <Label name="Description" required={false} />
+                  <Label name="Note" required={false} />
                   <Textarea
                     name={"description"}
                     errors={errors.description}
@@ -276,12 +276,6 @@ export default function ScheduleView({ id, close }: any) {
         </div>
         <div className={styles.links}>
           <div>
-            <TbMapPin size={25} />
-          </div>
-          <span>{data?.link.slice(0, 50)}...</span>
-        </div>
-        <div className={styles.links}>
-          <div>
             <TbBrandZoom size={25} />
           </div>
           <div className={styles.zoom}>
@@ -290,7 +284,7 @@ export default function ScheduleView({ id, close }: any) {
           </div>
         </div>
         <div className={styles.description}>
-          <span>Description</span>
+          <span>Note</span>
           <p>{data?.description}</p>
         </div>
       </div>

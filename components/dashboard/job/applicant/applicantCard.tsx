@@ -81,7 +81,7 @@ export default function ApplicantCard({ applicationID, email, appID, createdAt, 
                     {
                         toggleCalendar &&
                         <Dialog>
-                            <CalendarSchedule close={onHandleToggleCalendar} id={id} applicantId={applicationID} />
+                            <CalendarSchedule close={onHandleToggleCalendar} id={id} applicantId={applicationID} firstname={firstname} lastname={lastname} />
                         </Dialog>
                     }
                     {

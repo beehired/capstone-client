@@ -12,6 +12,7 @@ import parse from 'html-react-parser'
 import Pagination from '@/components/pagination';
 import { isEmpty } from 'lodash';
 import NotAvailable from '@/components/notavailable';
+import { RegularPoppins } from '@/components/typograhy';
 
 const ApplicationTab = dynamic(() => import("./applicationTab"), {
     ssr: false
@@ -54,6 +55,7 @@ export default function Applications() {
     }
     return (
         <div className={styles.container}>
+            <h2 className={RegularPoppins.className}>My Applications</h2>
             <ApplicationTab click={onHandleChangeValue} value={value} />
             <div className={styles.applications}>
                 {isEmpty(data?.item) ? <NotAvailable /> : data?.item.map(({ id, jobPost: { title, description, JobType, isOpen, duration, location, experience, getCompany: { companyName, logo: { media } } } }: any) => (

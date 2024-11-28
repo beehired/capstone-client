@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 
 const urls = [
-    { name: "Terms and Condition", url: "/policy/terms&condition" },
+    { name: "Terms & Conditions", url: "/policy/terms&condition" },
     { name: "Data Policy", url: "/policy/datapolicy" },
 ]
 

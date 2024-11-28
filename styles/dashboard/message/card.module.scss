@@ -24,7 +24,7 @@
         flex-direction: column;
 
         .senderContainer {
-            width: 300px;
+            max-width: 300px;
             max-height: auto;
             background-color: $Primary500;
             border-radius: 10px;

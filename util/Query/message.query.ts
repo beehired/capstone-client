@@ -116,6 +116,12 @@ export const GetMessageList: TypedDocumentNode = gql`
     getMessages(userID: $userId, search: $search) {
       userID
       user {
+        getMyCompany {
+          companyName
+          logo {
+            media
+          }
+        }
         myProfile {
           firstname
           lastname

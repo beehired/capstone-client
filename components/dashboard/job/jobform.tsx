@@ -1,6 +1,6 @@
 "use client"
 import styles from '@/styles/dashboard/job/jobform.module.scss';
-import React, { SyntheticEvent, useState } from 'react'
+import React, { SyntheticEvent, useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 import { TbCheck, TbPdf, TbPlus, TbTrash, TbUpload, TbX } from 'react-icons/tb'
 import { MediumPoppins, RegularPoppins } from '@/components/typograhy'
@@ -25,7 +25,7 @@ import RichTextEditor from '@/components/richtext/richtex'
 import { CheckboxV2 } from '@/components/checkbox'
 import { PrimaryButton } from '@/components/button'
 import { InputNumber, InputV1 } from '@/components/input'
-import { durations, experience, jobtype, stepInfo, } from '@/util';
+import { durations, experience, jobtype, locations, stepInfo, } from '@/util';
 import store from 'store2';
 import { queryClient } from '@/lib/provider';
 import { GetJobPostID } from '@/util/Query/job.query';
@@ -239,6 +239,10 @@ export default function JobForm({ id }: any) {
         setFieldValue("duration", e.target.value)
     }
 
+    const onHandleLocations = (e: any) => {
+        setFieldValue("location", e.target.value)
+    }
+
     const [step, setStep] = useState(1)
 
     return (
@@ -294,7 +298,7 @@ export default function JobForm({ id }: any) {
                             <div className={styles.first}>
                                 <div className={styles.title}>
                                     <Label name="Location" required={true} />
-                                    <InputV1 name='location' onChange={handleChange} value={values.location} type='text' placeholder='Location' errors={errors.location} touched={touched.location} />
+                                    <SelectForm title='' size={locations} value={values.location} onClick={onHandleLocations} errors={errors.location} touched={touched.location} />
                                 </div>
                                 <div className={styles.calendar}>
                                     <Label name="Project Duration" required={true} />
@@ -375,6 +379,29 @@ export default function JobForm({ id }: any) {
 
                                 {errors.skills && touched.skills ? <SpanError message={errors.skills} /> : null}
                             </div>
+                            {isEmpty(values.skills) ? null : <hr />}
+                            <div className={styles.skills}>
+                                <div className={styles.skillsContainer}>
+                                    {values.skills.map((skills) => (
+                                        <button key={skills}
+                                            className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button"
+                                            onClick={(e) => {
+
+                                                const updatedSkills = values.skills.includes(e.currentTarget.value as never)
+                                                    ? values.skills.filter((a: any) => a !== e.currentTarget.value)
+                                                    : [...values.skills, e.currentTarget.value];
+
+                                                setFieldValue("skills", updatedSkills);
+                                            }}
+                                        >
+                                            {values.skills.includes(skills) ?
+                                                <TbX size={18} /> :
+                                                <TbPlus size={18} />}
+                                            <span className={MediumPoppins.className}>{skills}</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     }
                     {
@@ -424,7 +451,7 @@ export default function JobForm({ id }: any) {
                                                     <div className={styles.uploading}>
                                                         <TbUpload size={45} />
                                                     </div>
-                                                    <p className={RegularPoppins.className}>Drag and Drop your Disclosure Agreement, or click to select files</p>
+                                                    <p className={RegularPoppins.className}>Drag and Drop your Disclosure Agreement, or click to select files (PDF Only)</p>
                                                 </div>
                                             </section>
                                         )}

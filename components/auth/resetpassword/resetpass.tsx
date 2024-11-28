@@ -51,7 +51,7 @@ export default function ResetPass() {
         checkMutation.mutate({
             reset: params.code
         })
-    })
+    }, [])
 
 
     // const [mutate] = useMutation(UpdateUserAccountPassword)

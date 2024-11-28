@@ -53,13 +53,23 @@
                 font-size: $fntbase;
             }
 
-            div {
+            .first {
                 display: flex;
                 flex-direction: column;
-                gap: 5px;
+                gap: 10px;
 
                 ul {
-                    padding: 0 30px;
+                    padding: 0 50px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                .second {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding: 0 40px;
                 }
             }
         }

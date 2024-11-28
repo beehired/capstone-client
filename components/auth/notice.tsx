@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Notice() {
     return (
         <div className={styles.container}>
-            <span>By clicking Login or Signing up, you agree to our {" "}
+            <span>By clicking Login or Sign up, you agree to our {" "}
                 <Link href="/policy/terms&condition">Terms and Conditions</Link> and <Link href="/policy/datapolicy">Data Policy</Link>.
             </span>
         </div>

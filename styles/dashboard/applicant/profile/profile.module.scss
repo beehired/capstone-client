@@ -1,0 +1,42 @@
+@import "../../../variables.module.scss";
+@import "../../../mixin.module";
+
+
+.container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+
+    @include Desktop {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    @include landscape {
+        flex-wrap: wrap;
+    }
+
+    .body {
+        width: 100%;
+
+        @include Desktop {
+            width: 100%;
+        }
+
+        @include landscape {
+            width: 100%
+        }
+
+        @include phone {
+            width: 600px
+        }
+    }
+
+    .preview {
+        width: 100%;
+
+        @include phone {
+            display: none;
+        }
+    }
+}

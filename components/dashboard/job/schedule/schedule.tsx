@@ -33,7 +33,7 @@ const app = gql`mutation Zoom_access($userId: ID!) {
 
 
 
-export default function CalendarSchedule({ close, id, applicantId }: any) {
+export default function CalendarSchedule({ close, id, applicantId, firstname, lastname }: any) {
 
 
     const user = store.get("UserAccount");
@@ -110,7 +110,7 @@ export default function CalendarSchedule({ close, id, applicantId }: any) {
 
     const { values, errors, touched, handleSubmit, handleChange, setFieldValue, isSubmitting } = useFormik({
         initialValues: {
-            title: "",
+            title: `${firstname} ${lastname} Interview`,
             description: "",
             startDate: "",
             endDate: "",
@@ -158,14 +158,14 @@ export default function CalendarSchedule({ close, id, applicantId }: any) {
                 {data ?
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <Label name='Topic' required={true} />
+                            <Label name='Meeting Title' required={true} />
                             <InputV1
                                 name='title'
                                 errors={errors.title}
                                 touched={touched.title}
                                 value={values.title}
                                 onChange={handleChange}
-                                placeholder='Topic'
+                                placeholder='Meeting Title'
                                 type='text' />
 
                             <Label name='Start Date and Time' required={true} />
@@ -192,7 +192,7 @@ export default function CalendarSchedule({ close, id, applicantId }: any) {
                                 />
                                 <InputTime errors={errors.endTime} name={"endTime"} onChange={handleChange} touched={touched.endTime} value={values.endTime} />
                             </div>
-                            <Label name='Description' required={false} />
+                            <Label name='Note' required={false} />
                             <Textarea
                                 name={'description'}
                                 errors={errors.description}

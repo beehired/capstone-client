@@ -1,7 +1,7 @@
 "use client"
 
 import styles from '@/styles/auth/client.module.scss'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik';
 import { ClientRegister } from '@/validations/registerSchema';
 import { MediumPoppins, RegularPoppins } from '../typograhy';
@@ -199,7 +199,7 @@ export default function Clients() {
                     {/* <LogoContainer /> */}
                     <div className={styles.si}>
                         <h2>Create an Account</h2>
-                        <span>Welcome to BeeHired, your go-to platform for finding top talent. Creating a employer account with us is your gateway to discovering the best candidates for your company.</span>
+                        <span>Welcome to BeeHired, your go-to platform for finding top talent. Creating an employer account with us is your gateway to discovering the best candidates for your company.</span>
                     </div>
                     {
                         step === 1 ?
@@ -208,7 +208,7 @@ export default function Clients() {
                                 <div className={styles.pcontainer}>
                                     <div className={styles.p}>
                                         {plans.map(({ name, icon, value, features }) => (
-                                            <div className={styles.planContainer} key={name}>
+                                            <div className={values.plan === value ? `${styles.planContainer} ${styles.planActive}` : `${styles.planContainer}`} key={name}>
                                                 <div className={styles.header}>
                                                     <div className={styles.planHeader}>
                                                         {icon}

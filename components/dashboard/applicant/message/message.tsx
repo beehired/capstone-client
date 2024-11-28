@@ -215,12 +215,12 @@ export default function Message() {
                     userList ?
                         <>
                             <div className={styles.currentMessage}>
-                                <div className={styles.messageHeader}>
+                                <div onClick={onHandleRemoveUser} className={styles.messageHeader}>
                                     <div className={styles.avatar}>
-                                        <Image src={isEmpty(UserMessageData?.avatar) ? DefaulImage : UserMessageData?.avatar.media} alt="" fill objectFit='cover' objectPosition='center' />
+                                        <Image src={isEmpty(UserMessageData?.user?.getMyCompany?.logo) ? DefaulImage : UserMessageData?.user?.getMyCompany?.logo?.media} alt="" fill objectFit='cover' objectPosition='center' />
                                     </div>
                                     <span className={RegularPoppins.className}>
-                                        {UserMessageData?.firstname} {UserMessageData?.lastname}
+                                        {UserMessageData?.user?.getMyCompany?.companyName}
                                     </span>
                                 </div>
                                 <button onClick={onHandleRemoveUser} className={styles.toggle}>
@@ -277,7 +277,7 @@ export default function Message() {
                         </> : null
                 }
             </div>
-            <div className={styles.mssc}>
+            <div onClick={onHandleMessagClose} className={styles.mssc}>
                 <div className={styles.message}>
                     <div className={styles.messageHeader}>
                         <div className={styles.info}>
@@ -290,7 +290,7 @@ export default function Message() {
                             <span className={RegularPoppins.className}>{CountData}</span>
                         </div>}
                     </div>
-                    <button onClick={onHandleMessagClose} className={styles.toggle}>
+                    <button className={styles.toggle}>
                         {open ? <TbChevronDown size={23} /> : <TbChevronUp size={23} />}
                     </button>
                 </div>
@@ -301,13 +301,13 @@ export default function Message() {
                         <input type="text" placeholder='Search message' onChange={onHandleChange} />
                     </div>
                     <div className={styles.messageList}>
-                        {data?.map(({ userID, user: { myProfile: { firstname, lastname, avatar } }, message: { media, message, messageStatus: { messageStatusID, isRead }, sendUser } }: any) => (
+                        {data?.map(({ userID, user: { getMyCompany: { companyName, logo }, myProfile: { firstname, lastname, avatar } }, message: { media, message, messageStatus: { messageStatusID, isRead }, sendUser } }: any) => (
                             <MessageCard
                                 key={userID}
                                 message={message}
                                 id={userID}
-                                fullname={`${firstname} ${lastname}`}
-                                avatar={avatar?.media}
+                                fullname={`${companyName}`}
+                                avatar={logo?.media}
                                 media={media}
                                 read={isRead}
                                 readID={messageStatusID}

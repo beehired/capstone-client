@@ -125,6 +125,11 @@
       }
     }
 
+    .planActive {
+      border: 2.5px solid $Primary500;
+      box-shadow: 0;
+    }
+
     .active {
       width: 100%;
       background-color: $Primary300;

@@ -142,15 +142,15 @@ export default function NotificationCard({
               {["Submitted", "Congratulation", "Review", "Declined"].some(
                 (keyword) => title.includes(keyword)
               ) && (
-                <div className={styles.applicationScore}>
-                  <h2 className={RegularPoppins.className}>
-                    Your Application ID is {application?.id}
-                  </h2>
-                  <span className={RegularPoppins.className}>
-                    Your application has a score of {application?.score?.score}%
-                  </span>
-                </div>
-              )}
+                  <div className={styles.applicationScore}>
+                    <h2 className={RegularPoppins.className}>
+                      Your Application ID is {application?.id}
+                    </h2>
+                    <span className={RegularPoppins.className}>
+                      Skill Match:  {application?.score?.score}%
+                    </span>
+                  </div>
+                )}
               {["Created", "Reschedule"].some(
                 (keyword) => schedule && title.includes(keyword)
               ) ? (

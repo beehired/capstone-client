@@ -11,7 +11,7 @@ import Spinner from '@/components/spinner';
 import { RegularPoppins } from '@/components/typograhy';
 import { isEmpty } from 'lodash';
 import Image from 'next/image';
-import { AStatus } from '@/util';
+import { AStatus, BStatus } from '@/util';
 import { UpdateApplicationTypes } from '@/types/application';
 import toast from 'react-hot-toast';
 import { useFormik } from 'formik';
@@ -22,7 +22,7 @@ import DefaultImage from '@/app/public/l60Hf.png'
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-export default function ApplicantView({ applicantId, close }: any) {
+export default function ApplicantView({ applicantId, close, firstname, lastname }: any) {
 
 
     const [activeToggle, setActtiveToggle] = useState(false);
@@ -88,7 +88,7 @@ export default function ApplicantView({ applicantId, close }: any) {
                     <div className={styles.profile}>
                         <div className={styles.info}>
                             <div className={styles.avatar}>
-                                <Image src={isEmpty(data?.user?.myProfile?.avatar) ? DefaultImage : data?.user?.myProfile?.avatar?.media} alt="asd" fill objectFit='cover' priority objectPosition='center' />
+                                <Image src={isEmpty(data?.user?.myProfile?.avatar) ? DefaultImage : data?.user?.myProfile?.avatar?.media} alt="avatar" fill objectFit='cover' priority objectPosition='center' />
                             </div>
                             <div className={styles.name}>
                                 <div className={styles.headerName}>
@@ -102,7 +102,7 @@ export default function ApplicantView({ applicantId, close }: any) {
                                 </div>
                                 <div className={styles.subInfo}>
                                     <a target="_blank" href={`${data?.resume?.resume}`}>
-                                        View my Resume</a> &#x2022; <span>{data?.status}</span> &#x2022; <span>{data?.score.score}%</span>
+                                        View my Resume</a> &#x2022; <span>{data?.status}</span> &#x2022; <span>Skill Match: {data?.score.score}%</span>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +113,7 @@ export default function ApplicantView({ applicantId, close }: any) {
                             {
                                 activeToggle && <div className={styles.statusContainer}>
                                     <form onSubmit={handleSubmit}>
-                                        {isSubmitting ? <Spinner /> : AStatus.map((status) => (
+                                        {isSubmitting ? <Spinner /> : BStatus.map((status) => (
                                             <button value={status} onClick={() => setFieldValue("status", status)} key={status}>
                                                 <span className={RegularPoppins.className}>{status}</span>
                                             </button>

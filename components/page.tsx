@@ -12,8 +12,6 @@ import PricingPro from '@/app/public/homepage/pricingpro.png'
 import PricingBasic from '@/app/public/homepage/pricingbasic.png'
 import Mission from '@/app/public/homepage/mission.jpg';
 import Vision from '@/app/public/homepage/vision.jpg';
-import Freelancer from '@/app/public/homepage/freelancer.png'
-import Employer from '@/app/public/homepage/employer.png';
 import PromptStyles from '@/styles/components/prompt.module.scss'
 import { TbNotes, TbRocket, TbSearch, TbUserFilled } from "react-icons/tb";
 import { useState } from "react";
@@ -153,7 +151,7 @@ export default function Homepage() {
                         <div className={styles.aboutMain}>
                             <h2>About Us</h2>
                             <p className={styles.description}>
-                                At BeeHired, we channel the spirit of hard work and teamwork to connect Filipino freelancers with valuable opportunities. Our platform is establish to bring togetherdedicated freelancers and employers, fostering an environment where collaboration lead to success.
+                                At BeeHired, we channel the spirit of hard work and teamwork to connect Filipino freelancers with valuable opportunities. Our platform is established to bring together dedicated freelancers and employers, fostering an environment where collaboration leads to success
                             </p>
                         </div>
 

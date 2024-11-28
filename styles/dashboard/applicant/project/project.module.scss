@@ -7,8 +7,12 @@
     .generate {
         width: 100%;
         display: flex;
-        justify-content: flex-end;
-        padding: 0 20px;
+        justify-content: space-between;
+        padding: 0 10px;
+
+        h2 {
+            font-size: $fntlg
+        }
 
         button {
             height: 45px;

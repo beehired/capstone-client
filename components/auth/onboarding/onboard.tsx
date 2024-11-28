@@ -21,7 +21,7 @@ export default function Onboard() {
                 router.push('/dashboard/employer/overview?filter=week')
                 break;
             case "freelance":
-                router.push("/freelancer/my-projects")
+                router.push("/freelancer/find-job")
                 break;
         }
     })

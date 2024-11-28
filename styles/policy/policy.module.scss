@@ -46,7 +46,7 @@
             gap: 10px;
 
             .title {
-                font-size: $fntlg;
+                font-size: $fntbase;
             }
 
             .xd {
@@ -56,6 +56,13 @@
                     list-style: square;
                     padding: 5px;
                 }
+            }
+
+            .second {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 0 40px;
             }
 
             ul {

@@ -4,6 +4,7 @@ import ProfileExperience from '@/components/dashboard/applicant/profile/profileT
 import ProfileSocial from '@/components/dashboard/applicant/profile/profileTab/social'
 import Default from '@/components/dashboard/applicant/themes/default'
 import React from 'react'
+import styles from '@/styles/dashboard/applicant/profile/profile.module.scss'
 
 
 type Props = {
@@ -34,14 +35,14 @@ export const generateMetadata = async () => {
 export default function Page({ params, searchParams }: Props) {
 
     return (
-        <div style={{ display: "flex", gap: "20px" }}>
-            <div style={{ width: "800px" }}>
+        <div className={styles.container}>
+            <div className={styles.body}>
                 {params.prof === "about" && <ProfileAbout id={params.id} />}
                 {params.prof === "social" && <ProfileSocial id={params.id} />}
                 {params.prof === "experience" && <ProfileExperience id={params.id} />}
                 {params.prof === "design" && <ProfileDesign id={params.id} />}
             </div>
-            <div style={{ width: "100%", }}>
+            <div className={styles.preview}>
                 <Default id={params.id} />
             </div>
         </div>

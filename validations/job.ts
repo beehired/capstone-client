@@ -3,7 +3,9 @@ import * as Yup from "yup";
 export let CreateJobValidationSchema = Yup.object().shape({
   title: Yup.string().trim().required("Job Title is required"),
   description: Yup.string().trim().required("Job Description is required"),
-  location: Yup.string().trim().required("Location is required"),
+  location: Yup.string()
+    .oneOf(["On site", "Remote", "Hybrid"])
+    .required("Location is required"),
   duration: Yup.string().trim().required("Duration is required"),
   employment: Yup.string().trim().required("Employment Type is required"),
   fixed: Yup.boolean().required("Fix this"),

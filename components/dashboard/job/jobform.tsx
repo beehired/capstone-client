@@ -93,7 +93,7 @@ export default function JobForm({ id }: any) {
         onCompleted: (data) => {
             if (data.createJobPost.jobPostID) {
                 toast.success("Successfully Added")
-                router.push('/dashboard/employer/jobs?archive=false')
+                router.push(`/dashboard/employer/jobs/post?id=${data.createJobPost.jobPostID}`)
                 queryClient.invalidateQueries({ queryKey: ["JobPosts"] })
                 resetForm()
             }

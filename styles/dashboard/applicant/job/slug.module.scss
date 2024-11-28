@@ -120,6 +120,12 @@
                 .skills {
                     display: flex;
                     gap: 10px;
+
+                    span {
+                        background-color: $Neutral200;
+                        padding: 5px 8px;
+                        border-radius: 5px;
+                    }
                 }
             }
         }

@@ -28,7 +28,6 @@ import {
   TbAlertCircleFilled,
   TbBrandZoom,
   TbEdit,
-  TbMapPin,
   TbTrash,
   TbX,
 } from "react-icons/tb";
@@ -87,13 +86,13 @@ export default function ScheduleView({ id, close }: any) {
   } = useFormik({
     initialValues: {
       scheduleId: id,
-      title: data?.title,
-      description: data?.description,
-      startDate: data?.startDate,
-      endDate: data?.endDate,
-      duration: data?.duration,
-      startTime: data?.startTime,
-      endTime: data?.endTime,
+      title: data?.title ?? "",
+      description: data?.description ?? "",
+      startDate: data?.startDate ?? "",
+      endDate: data?.endDate ?? "",
+      duration: data?.duration ?? "",
+      startTime: data?.startTime ?? "",
+      endTime: data?.endTime ?? "",
     },
     enableReinitialize: true,
     validationSchema: UpdateScheduleValidation,
@@ -112,7 +111,6 @@ export default function ScheduleView({ id, close }: any) {
       setSubmitting(false);
     },
   });
-
   const deleteMutation = useMutation({
     mutationKey: ["DeleteInterviewSchedule"],
     mutationFn: async (inputValues: { scheduleId: string }) => {

@@ -125,10 +125,9 @@ export default function Resume({ id }: { id: string }) {
         </Dialog>
       ) : null}
 
-      {isEmpty(ResumeData) ? (
-        ResumeisLoading ? (
-          <Spinner />
-        ) : fileUpload ? (
+
+      {
+        fileUpload ? (
           <div className={styles.file}>
             <div className={styles.pdf}>
               <TbPdf size={35} />
@@ -142,7 +141,7 @@ export default function Resume({ id }: { id: string }) {
               </span>
             </div>
           </div>
-        ) : (
+        ) :
           <div className={styles.fileUpload}>
             <Dropzone
               onDropRejected={(err) => {
@@ -169,7 +168,23 @@ export default function Resume({ id }: { id: string }) {
               )}
             </Dropzone>
           </div>
-        )
+      }
+      {fileUpload ? (
+        <div className={styles.formContainer}>
+          <form onSubmit={onHandleSubmit}>
+            <CancelBtn onClose={removedFileUpload} name="Cancel" />
+            <PrimaryButton
+              type="submit"
+              loading={loading ? true : false}
+              name="Submit"
+            />
+          </form>
+        </div>
+      ) : null}
+      {isEmpty(ResumeData) ? (
+        ResumeisLoading ? (
+          <Spinner />
+        ) : null
       ) : (
         ResumeData.map(
           ({
@@ -203,18 +218,7 @@ export default function Resume({ id }: { id: string }) {
         )
       )}
 
-      {fileUpload ? (
-        <div className={styles.formContainer}>
-          <form onSubmit={onHandleSubmit}>
-            <CancelBtn onClose={removedFileUpload} name="Cancel" />
-            <PrimaryButton
-              type="submit"
-              loading={loading ? true : false}
-              name="Submit"
-            />
-          </form>
-        </div>
-      ) : null}
+
     </div>
   );
 }

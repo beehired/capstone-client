@@ -38,7 +38,7 @@ export default function ReviewCard({ reviewID, rating, review, name }: any) {
               <span>{review}</span>
             </div>
             <div className={PromptStyles.footer}>
-              <CancelBtn onClose={onHandleToggle} name="Cancel" />
+              <CancelBtn onClose={onHandleToggle} name="Close" />
             </div>
           </Prompt>
         </Dialog>

@@ -257,11 +257,11 @@ export default function ProjectCard({
                 <h2 className={RegularPoppins.className}>{title}</h2>
                 <div className={styles.grpBtn}>
                   {status === "Completed" ? null : (
-                    <button onClick={onHandleEditStatus}>
+                    <button className={styles.changeStatus} onClick={onHandleEditStatus}>
                       <TbStatusChange size={23} />
                     </button>
                   )}
-                  <button onClick={onHandleEditToggle}>
+                  <button className={styles.Edit} onClick={onHandleEditToggle}>
                     <TbEdit size={23} />
                   </button>
                   <button onClick={onHandleToggleView}>

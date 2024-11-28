@@ -151,12 +151,53 @@
                     align-items: center;
                     justify-content: center;
                     cursor: pointer;
+                    position: relative;
 
                     &:hover {
                         background-color: $Neutral100;
                     }
                 }
+
+                .changeStatus {
+                    &::before {
+                        width: 100px;
+                        padding: 10px;
+                        background-color: $Primary500;
+                        position: absolute;
+                        top: 50px;
+                        content: "Change Status";
+                        border-radius: 5px;
+                        display: none;
+                    }
+
+                    &:hover {
+                        &::before {
+                            display: block;
+                        }
+                    }
+                }
+
+                .Edit {
+                    &::before {
+                        width: 100px;
+                        padding: 10px;
+                        background-color: $Primary500;
+                        position: absolute;
+                        top: 50px;
+                        content: "Edit Project";
+                        border-radius: 5px;
+                        display: none;
+                    }
+
+                    &:hover {
+                        &::before {
+                            display: block;
+                        }
+                    }
+                }
+
             }
+
 
             .projectBody {
                 width: 100%;

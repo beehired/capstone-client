@@ -15,7 +15,6 @@ import { Lato, Poppins } from 'next/font/google';
 import NotAvailable from '@/components/notavailable';
 import { Rating, RoundedStar } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
-import Footer from '@/components/footer';
 import Spinner from '@/components/spinner';
 
 const lato = Lato({

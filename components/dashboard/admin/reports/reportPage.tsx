@@ -127,11 +127,11 @@ export default function ReportPage() {
                   <b>Location:</b> {location}
                 </span>
                 <span>
-                  <b>Location:</b> {format(new Date(endDate), "MMMM dd, yyyy")}
+                  <b>Date:</b> {format(new Date(endDate), "MMMM dd, yyyy")}
                 </span>
                 <span>
                   <b>Status:</b> {status}
-                </span>
+                </span> 
                 <span>
                   <b>Date Posted:</b>{" "}
                   {format(new Date(createdAt), "MMMM dd, yyyy")}

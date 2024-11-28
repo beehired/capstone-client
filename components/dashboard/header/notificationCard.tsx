@@ -139,7 +139,7 @@ export default function NotificationCard({
                   </div>
                 )}
               </div>
-              {["Submitted", "Congratulation", "Review", "Declined"].some(
+              {["submitted", "Congratulation", "review", "Declined"].some(
                 (keyword) => title.includes(keyword)
               ) && (
                   <div className={styles.applicationScore}>

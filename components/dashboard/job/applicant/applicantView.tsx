@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import styles from '@/styles/dashboard/job/applicantview.module.scss';
 import { UpdateApplication } from '@/util/Mutation/application.mutation';
-import { TbDiamond, TbDots, TbLink, TbX } from 'react-icons/tb';
+import { TbChevronDown, TbDiamond, TbDots, TbLink, TbX } from 'react-icons/tb';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { GraphQLRequest } from '@/lib/graphQLRequest';
 import { GetApplicantById } from '@/util/Query/application.query';
@@ -80,7 +80,7 @@ export default function ApplicantView({ applicantId, close, firstname, lastname 
             <ToastNotification />
             <div className={styles.applicantContainer}>
                 <div className={styles.header}>
-                    <button className={styles.btn} onClick={close}>
+                    <button className={styles.xbtn} onClick={close}>
                         <TbX size={28} />
                     </button>
                 </div>
@@ -96,32 +96,35 @@ export default function ApplicantView({ applicantId, close, firstname, lastname 
                                         {data?.user?.myProfile?.firstname} {" "}
                                         {data?.user?.myProfile?.lastname}
                                     </h1>
-                                    <Link target='_blank' href={`/bee/${data?.user?.myProfile.profileID}`}>
-                                        <TbLink size={18} />
-                                    </Link>
                                 </div>
                                 <div className={styles.subInfo}>
                                     <a target="_blank" href={`${data?.resume?.resume}`}>
-                                        View my Resume</a> &#x2022; <span>{data?.status}</span> &#x2022; <span>Skill Match: {data?.score.score}%</span>
+                                        <span className={RegularPoppins.className}>View My Profile</span>
+                                    </a>
+                                    <a target='_blank' href={`/bee/${data?.user?.myProfile.profileID}`}>
+                                        <span className={RegularPoppins.className}>View My Resume</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        {data?.status === "Reject" || data?.status === "Hired" ? null : <div className={styles.updateStatus}>
-                            <button className={styles.btn} onClick={onHandleActiveToggle}>
-                                <TbDots size={23} />
-                            </button>
-                            {
-                                activeToggle && <div className={styles.statusContainer}>
-                                    <form onSubmit={handleSubmit}>
-                                        {isSubmitting ? <Spinner /> : BStatus.map((status) => (
-                                            <button value={status} onClick={() => setFieldValue("status", status)} key={status}>
-                                                <span className={RegularPoppins.className}>{status}</span>
-                                            </button>
-                                        ))}
-                                    </form>
-                                </div>
-                            }
-                        </div>}
+                        {data?.status === "Reject" || data?.status === "Hired" ? null :
+                            <div className={styles.updateStatus}>
+                                <button className={styles.btn} onClick={onHandleActiveToggle}>
+                                    <TbChevronDown size={23} />
+                                </button>
+                                {
+                                    activeToggle && <div className={styles.statusContainer}>
+                                        <form onSubmit={handleSubmit}>
+                                            {isSubmitting ? <Spinner /> : BStatus.map((status) => (
+                                                <button value={status} onClick={() => setFieldValue("status", status)} key={status}>
+                                                    <span className={RegularPoppins.className}>{status}</span>
+                                                </button>
+                                            ))}
+                                        </form>
+                                    </div>
+                                }
+                            </div>
+                        }
                     </div>
                 }
                 {
@@ -191,6 +194,6 @@ export default function ApplicantView({ applicantId, close, firstname, lastname 
                         </div>
                 }
             </div>
-        </div>
+        </div >
     )
 }

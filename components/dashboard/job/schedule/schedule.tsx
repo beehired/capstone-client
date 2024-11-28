@@ -104,6 +104,7 @@ export default function CalendarSchedule({ close, id, applicantId, firstname, la
                 queryClient.invalidateQueries({
                     queryKey: ["CalendarDate"]
                 })
+                close()
             }
         }
     })

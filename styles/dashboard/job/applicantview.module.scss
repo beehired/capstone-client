@@ -30,7 +30,7 @@
         font-size: $fntbase;
     }
 
-    .btn {
+    .xbtn {
         width: 40px;
         height: 40px;
         background-color: transparent;
@@ -46,8 +46,49 @@
         }
     }
 
+    .btn {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        border: none;
+        gap: 10px;
+        padding: 8px;
+
+        &::before {
+            width: 200px;
+            padding: 10px;
+            right: 0;
+            background-color: $Primary500;
+            position: absolute;
+            top: 50px;
+            content: "Application Status";
+            border-radius: 5px;
+            display: none;
+        }
+
+        span {
+            font-size: $fntbase;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: $Neutral100;
+
+            &::before {
+                display: block;
+            }
+        }
+    }
+
     .applicantContainer {
-        width: 600px;
+        width: 700px;
         height: 100vh;
         overflow-y: auto;
         background-color: #fff;
@@ -63,7 +104,7 @@
         }
 
         .profile {
-            height: 100px;
+            height: 150px;
             display: flex;
             align-items: center;
 
@@ -118,14 +159,15 @@
                         align-items: center;
                         gap: 10px;
 
-                        span {
-                            font-size: $fntbase;
-                        }
-
                         a {
-                            font-size: $fntbase;
-                            display: flex;
-                            align-items: center;
+                            background-color: $Primary500;
+                            padding: 8px;
+                            border: none;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            color: #000;
+                            font-size: $fnttiny;
+
                         }
                     }
                 }

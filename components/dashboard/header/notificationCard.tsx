@@ -141,23 +141,25 @@ export default function NotificationCard({
               </div>
               {["submitted", "Congratulation", "review", "Declined"].some(
                 (keyword) => title.includes(keyword)
-              ) ? (
-                <div className={styles.applicationScore}>
+              ) ? isEmpty(application?.jobPost) ?
+                <span className={RegularPoppins.className}>The job post has been deleted due to multiple reports of policy violations. This action is final, and all associated data has been permanently removed. If you believe this was done in error or need further assistance, please contact our support team for more details.</span>
+                : <div className={styles.applicationScore}>
                   <h2 className={RegularPoppins.className}>
                     Your Application ID is {application?.id}
                   </h2>
                   <span className={RegularPoppins.className}>
                     Skill Match:  {application?.score?.score}%
                   </span>
-                </div>
-              ) : isEmpty(schedule) || schedule ? null : "The job post has been deleted due to multiple reports of policy violations. This action is final, and all associated data has been permanently removed. If you believe this was done in error or need further assistance, please contact our support team for more details."}
+                </div> : null}
 
 
 
-              {["Created", "Reschedule"].some(
-                (keyword) => schedule && title.includes(keyword)
-              ) ? (
-                <div className={styles.applicationScore}>
+              {["Created", "Reschedule", "Scheduled"].some(
+                (keyword) => title.includes(keyword)
+              ) ? isEmpty(schedule) ?
+                <span className={RegularPoppins.className}>This schedule is not found. Please contact our support team
+                  for assistance.</span>
+                : <div className={styles.applicationScore}>
                   <span>
                     Start Date:{" "}
                     {format(new Date(schedule?.startDate), "MMMM dd, yyyy")} -{" "}
@@ -169,12 +171,7 @@ export default function NotificationCard({
                     {schedule?.endTime}
                   </span>
                 </div>
-              ) : application?.jobPost ? null : (
-                <span className={RegularPoppins.className}>
-                  This schedule is not found. Please contact our support team
-                  for assistance.
-                </span>
-              )}
+                : null}
             </div>
           </div>
         </Dialog>

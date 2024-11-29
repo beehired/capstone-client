@@ -141,16 +141,19 @@ export default function NotificationCard({
               </div>
               {["submitted", "Congratulation", "review", "Declined"].some(
                 (keyword) => title.includes(keyword)
-              ) && (
-                  <div className={styles.applicationScore}>
-                    <h2 className={RegularPoppins.className}>
-                      Your Application ID is {application?.id}
-                    </h2>
-                    <span className={RegularPoppins.className}>
-                      Skill Match:  {application?.score?.score}%
-                    </span>
-                  </div>
-                )}
+              ) ? (
+                <div className={styles.applicationScore}>
+                  <h2 className={RegularPoppins.className}>
+                    Your Application ID is {application?.id}
+                  </h2>
+                  <span className={RegularPoppins.className}>
+                    Skill Match:  {application?.score?.score}%
+                  </span>
+                </div>
+              ) : isEmpty(schedule) || schedule ? null : "The job post has been deleted due to multiple reports of policy violations. This action is final, and all associated data has been permanently removed. If you believe this was done in error or need further assistance, please contact our support team for more details."}
+
+
+
               {["Created", "Reschedule"].some(
                 (keyword) => schedule && title.includes(keyword)
               ) ? (

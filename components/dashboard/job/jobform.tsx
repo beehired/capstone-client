@@ -95,7 +95,6 @@ export default function JobForm({ id }: any) {
         onCompleted: (data) => {
             if (data.createJobPost.jobPostID) {
                 toast.success("Successfully Added")
-                store.remove("jobPost");
                 queryClient.invalidateQueries({ queryKey: ["JobPosts"] })
                 router.push(`/dashboard/employer/jobs/post?id=${data.createJobPost.jobPostID}`)
                 resetForm()
@@ -125,18 +124,18 @@ export default function JobForm({ id }: any) {
         isSubmitting, setFieldValue, handleBlur, resetForm } = useFormik<JobPost>({
             initialValues: {
                 jobPostId: id,
-                title: post?.title || (UpdateData?.title ?? ""),
-                description: post?.description || (UpdateData?.description ?? ""),
-                employment: post?.employmenty || (UpdateData?.experience ?? ""),
-                location: post?.location || (UpdateData?.location ?? ""),
-                duration: post?.duration || (UpdateData?.duration ?? ""),
-                jobType: (UpdateData?.JobType ?? []) || post?.jobType,
+                title: UpdateData?.title ?? "",
+                description: UpdateData?.description ?? "",
+                employment: UpdateData?.experience ?? "",
+                location: UpdateData?.location ?? "",
+                duration: UpdateData?.duration ?? "",
+                jobType: UpdateData?.JobType ?? [],
                 skills: skills ?? [],
-                fixed: post?.fixed || (Boolean(UpdateData?.salary?.fixed) || false),
-                currency: post?.currency || (UpdateData?.salary?.currency ?? ""),
-                salary: post?.salary || (UpdateData?.salary.fixed ? UpdateData?.salary.fixed : 0),
-                max: parseInt(post?.max) || (UpdateData?.salary?.max ? parseInt(UpdateData?.salary?.max) : 0),
-                min: parseInt(post?.min) || (UpdateData?.salary?.min ? parseInt(UpdateData?.salary?.min) : 0),
+                fixed: Boolean(UpdateData?.salary?.fixed) || false,
+                currency: UpdateData?.salary?.currency ?? "",
+                salary: UpdateData?.salary.fixed ? UpdateData?.salary.fixed : 0,
+                max: UpdateData?.salary?.max ? parseInt(UpdateData?.salary?.max) : 0,
+                min: UpdateData?.salary?.min ? parseInt(UpdateData?.salary?.min) : 0,
                 agreement: "",
             },
             enableReinitialize: true,
@@ -248,10 +247,6 @@ export default function JobForm({ id }: any) {
     }
 
     const [step, setStep] = useState(1)
-
-    useEffect(() => {
-        store.set("jobPost", { ...values })
-    }, [])
 
     return (
         <div className={styles.container}>

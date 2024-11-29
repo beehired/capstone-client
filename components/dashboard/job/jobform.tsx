@@ -250,7 +250,7 @@ export default function JobForm({ id }: any) {
 
     useEffect(() => {
         store.set("jobPost", { ...values })
-    }, [values])
+    }, [])
 
     return (
         <div className={styles.container}>

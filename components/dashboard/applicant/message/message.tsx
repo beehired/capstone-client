@@ -277,9 +277,9 @@ export default function Message() {
                         </> : null
                 }
             </div>
-            <div onClick={onHandleMessagClose} className={styles.mssc}>
+            <div className={styles.mssc}>
                 <div className={styles.message}>
-                    <div className={styles.messageHeader}>
+                    <div onClick={onHandleMessagClose} className={styles.messageHeader}>
                         <div className={styles.info}>
                             <div className={styles.avatar}>
                                 <Image src={isEmpty(ProfileData?.avatar?.media) ? DefaulImage : ProfileData?.avatar?.media} alt="" objectFit='cover' objectPosition='center' fill />

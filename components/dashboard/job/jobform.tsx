@@ -70,6 +70,8 @@ export default function JobForm({ id }: any) {
     const user = store.get("UserAccount");
     const router = useRouter();
     const [search, setSearch] = useState("")
+    const post = store.get("jobPost")
+
 
     const { data: searchSkills } = useQuery({
         queryKey: ["SearchQuery", search],
@@ -95,6 +97,7 @@ export default function JobForm({ id }: any) {
                 toast.success("Successfully Added")
                 router.push(`/dashboard/employer/jobs/post?id=${data.createJobPost.jobPostID}`)
                 queryClient.invalidateQueries({ queryKey: ["JobPosts"] })
+                store.remove("jobPost")
                 resetForm()
             }
             if (data.createJobPost.code) {
@@ -121,18 +124,18 @@ export default function JobForm({ id }: any) {
         isSubmitting, setFieldValue, handleBlur, resetForm } = useFormik<JobPost>({
             initialValues: {
                 jobPostId: id,
-                title: UpdateData?.title ?? "",
-                description: UpdateData?.description ?? "",
-                employment: UpdateData?.experience ?? "",
-                location: UpdateData?.location ?? "",
-                duration: UpdateData?.duration ?? "",
-                jobType: UpdateData?.JobType ?? [],
+                title: post?.title || (UpdateData?.title ?? ""),
+                description: post?.description || (UpdateData?.description ?? ""),
+                employment: post?.employmenty || (UpdateData?.experience ?? ""),
+                location: post?.location || (UpdateData?.location ?? ""),
+                duration: post?.duration || (UpdateData?.duration ?? ""),
+                jobType: post?.jobType || (UpdateData?.JobType ?? []),
                 skills: skills ?? [],
-                fixed: Boolean(UpdateData?.salary?.fixed) || false,
-                currency: UpdateData?.salary?.currency ?? "",
-                salary: UpdateData?.salary.fixed ? UpdateData?.salary.fixed : 0,
-                max: UpdateData?.salary?.max ? parseInt(UpdateData?.salary?.max) : 0,
-                min: UpdateData?.salary?.min ? parseInt(UpdateData?.salary?.min) : 0,
+                fixed: post?.fixed || (Boolean(UpdateData?.salary?.fixed) || false),
+                currency: post?.currency || (UpdateData?.salary?.currency ?? ""),
+                salary: post?.salary || (UpdateData?.salary.fixed ? UpdateData?.salary.fixed : 0),
+                max: parseInt(post?.max) || (UpdateData?.salary?.max ? parseInt(UpdateData?.salary?.max) : 0),
+                min: parseInt(post?.min) || (UpdateData?.salary?.min ? parseInt(UpdateData?.salary?.min) : 0),
                 agreement: "",
             },
             enableReinitialize: true,
@@ -245,6 +248,10 @@ export default function JobForm({ id }: any) {
 
     const [step, setStep] = useState(1)
 
+    useEffect(() => {
+        store.set("jobPost", { ...values })
+    }, [values])
+
     return (
         <div className={styles.container}>
             <div className={styles.steps}>
@@ -320,11 +327,11 @@ export default function JobForm({ id }: any) {
                                     :
                                     <div className={styles.temp}>
                                         <div className={styles.pay}>
-                                            <Label name="Minimum" required={true} />
+                                            <Label name="Minimum Salary" required={true} />
                                             <InputNumber name='min' value={values.min} onChange={handleChange} errors={errors.min} touched={touched.min} />
                                         </div>
                                         <div className={styles.pay}>
-                                            <Label name="Maximum" required={true} />
+                                            <Label name="Maximum Salay" required={true} />
                                             <InputNumber name='max' value={values.max} onChange={handleChange} errors={errors.max} touched={touched.max} />
                                         </div>
                                     </div>}
@@ -379,7 +386,7 @@ export default function JobForm({ id }: any) {
 
                                 {errors.skills && touched.skills ? <SpanError message={errors.skills} /> : null}
                             </div>
-                            {isEmpty(values.skills) ? null : <hr />}
+                            {isEmpty(skills) ? null : <hr />}
                             <div className={styles.skills}>
                                 <div className={styles.skillsContainer}>
                                     {values.skills.map((skills) => (

@@ -129,7 +129,7 @@ export default function JobForm({ id }: any) {
                 employment: post?.employmenty || (UpdateData?.experience ?? ""),
                 location: post?.location || (UpdateData?.location ?? ""),
                 duration: post?.duration || (UpdateData?.duration ?? ""),
-                jobType: post?.jobType || (UpdateData?.JobType ?? []),
+                jobType: (UpdateData?.JobType ?? []) || post?.jobType,
                 skills: skills ?? [],
                 fixed: post?.fixed || (Boolean(UpdateData?.salary?.fixed) || false),
                 currency: post?.currency || (UpdateData?.salary?.currency ?? ""),

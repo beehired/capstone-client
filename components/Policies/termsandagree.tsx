@@ -38,7 +38,7 @@ export default function TermsAndCondition({ accept, onChange }: any) {
                         </span>
                         <span>Users are required to provide accurate, complete, and up-to-date information during the registration process. Each user is responsible for maintaining the confidentiality of their account credentials. BeeHired reserves the right to suspend or terminate accounts that violate these T&C, applicable laws, or DTI regulations.</span>
                         <span>
-                            Required Documentation
+                            <b>Required Documentations: </b>
                         </span>
                         <span>For Employers</span>
                         <span>Employers are required to submit the following documents during the registration process.</span>

@@ -290,7 +290,7 @@ export default function Message() {
                             <span className={RegularPoppins.className}>{CountData}</span>
                         </div>}
                     </div>
-                    <button className={styles.toggle}>
+                    <button onClick={onHandleMessagClose} className={styles.toggle}>
                         {open ? <TbChevronDown size={23} /> : <TbChevronUp size={23} />}
                     </button>
                 </div>

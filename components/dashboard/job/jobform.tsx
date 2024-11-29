@@ -108,6 +108,7 @@ export default function JobForm({ id }: any) {
     const [UdpateMutation] = useMutation(UpdateJobPost, {
         onCompleted: (data) => {
             toast.success("Successfully Updated")
+            router.push(`/dashboard/employer/jobs/post?id=${data.updateJobPost.jobPostID}`)
             queryClient.invalidateQueries({ queryKey: ["JobPosts"] })
         }
     })

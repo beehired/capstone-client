@@ -15,7 +15,6 @@ import Underline from '@tiptap/extension-underline';
 import Strikethrough from '@tiptap/extension-strike'
 import Paragraph from '@tiptap/extension-paragraph';
 import styles from '@/styles/components/richtext/index.module.scss'
-import Placeholder from '@tiptap/extension-placeholder';
 import TextAlign from '@tiptap/extension-text-align';
 
 
@@ -30,9 +29,6 @@ export default function RichTextEditor({ value, setFieldValue }: any) {
             Strikethrough,
             TextAlign.configure({
                 types: ['heading', 'paragraph']
-            }),
-            Placeholder.configure({
-                placeholder: "Write something here..."
             }),
             Paragraph,
             Heading.configure({

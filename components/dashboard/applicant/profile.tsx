@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { RegularPoppins } from '@/components/typograhy'
 import { GraphQLRequest } from '@/lib/graphQLRequest'
 import { GetMyUserProfile } from '@/util/Query/user.query'
@@ -19,11 +19,13 @@ import { HrefLinkV3 } from '@/components/link'
 import DefaultImage from '@/app/public/l60Hf.png'
 import Image from 'next/image'
 
-export default function Profile() {
+const Profile: React.FC = () => {
 
     const user = store.get("UserAccount")
     const router = useRouter();
     const [open, setOpen] = useState(false)
+    const divRef = useRef<HTMLDivElement>(null);
+
 
     const [toggle, setToggle] = useState(false)
     const { data, isLoading } = useQuery({
@@ -66,8 +68,23 @@ export default function Profile() {
         { name: "Account Settings", url: "/freelancer/settings/profile", icon: <TbSettings size={18} /> }
     ]
 
+    useEffect(() => {
+        const onHandleClickOutSide = (event: MouseEvent) => {
+            if (divRef.current && !divRef.current.contains(event.target as Node)) {
+                setToggle(false)
+            }
+        }
+
+        document.addEventListener('mousedown', onHandleClickOutSide);
+
+
+        return () => {
+            document.removeEventListener('mousedown', onHandleClickOutSide)
+        }
+    }, [])
+
     return (
-        <div >
+        <div>
             <div className={styles.profile}>
                 {isLoading ? <Spinner /> : <div className={styles.bgProfile}>
                     {data?.avatar ? <Image src={data?.avatar.media} alt="" height={44} width={60} style={{
@@ -79,18 +96,21 @@ export default function Profile() {
                     }} priority />}
                 </div>}
                 <ButtonIconToggle icon={<TbChevronDown size={23} />} setValue={setToggle} value={toggle} />
-                {toggle ? <div id="profile" className={styles.profileContainer}>
+                {toggle && <div ref={divRef} id="profile" className={styles.profileContainer}>
                     <UserProfile />
                     {ApplicationLink.map(({ icon, name, url }) => (
-                        <HrefLinkV3 key={name} icon={icon} name={name} url={url} />
+                        <HrefLinkV3 setState={setToggle} key={name} icon={icon} name={name} url={url} />
                     ))}
                     <hr />
                     <button onClick={onHandleLogout} className={styles.logout}>
                         <TbLogout2 size={18} />
                         <span className={RegularPoppins.className}>Logout</span>
                     </button>
-                </div> : null}
+                </div>}
             </div>
         </div>
     )
 }
+
+
+export default Profile;

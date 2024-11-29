@@ -117,7 +117,7 @@ export default function Default({ id }: any) {
                                         <span className={fonts}> {companyName} &#x2022; {locationType}</span>
                                     </div>
                                     <div>
-                                        <span className={fonts}> {startMonth} {startYear} -  {endMonth} - {endYear}</span>
+                                        <span className={fonts}> {startMonth} {startYear} -  {endMonth} {endYear}</span>
                                     </div>
                                     <div>
                                         <span className={fonts}> {location} &#x2022;  {employmentType}</span>

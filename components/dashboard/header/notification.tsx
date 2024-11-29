@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { ButtonIconToggle, } from '@/components/button'
 import { TbBell, TbChecks } from 'react-icons/tb'
 import styles from '@/styles/components/notification.module.scss'
@@ -15,10 +15,11 @@ import { queryClient } from '@/lib/provider'
 import { isEmpty } from 'lodash'
 
 
-export default function Notification() {
+const Notification = () => {
 
     const user = store.get("UserAccount");
     const [toggle, setToggle] = useState(false);
+    const divRef = useRef<HTMLDivElement>(null);
 
     const { data, fetchNextPage, hasNextPage, isFetching } = useInfiniteQuery({
         queryKey: ['notification', user?.id],
@@ -59,6 +60,24 @@ export default function Notification() {
             })
         }
     })
+
+
+    useEffect(() => {
+        const onHandleClickOutSide = (event: MouseEvent) => {
+            if (divRef.current && !divRef.current.contains(event.target as Node)) {
+                setToggle(false)
+            }
+        }
+
+        document.addEventListener('mousedown', onHandleClickOutSide);
+
+
+        return () => {
+            document.removeEventListener('mousedown', onHandleClickOutSide)
+        }
+    }, [])
+
+
     return (
         <div className={styles.container}>
             <div className={styles.po}>
@@ -66,7 +85,7 @@ export default function Notification() {
                 {UnreadNotifData ? <div className={styles.notificationActive} /> : null}
             </div>
             {toggle ?
-                <div className={styles.notificationContainer}>
+                <div ref={divRef} className={styles.notificationContainer}>
                     <div className={styles.notificationHeader}>
                         <h2 className={RegularPoppins.className}>Notifications</h2>
                         <button onClick={() => {
@@ -88,3 +107,6 @@ export default function Notification() {
         </div>
     )
 }
+
+
+export default Notification;

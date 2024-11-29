@@ -26,11 +26,12 @@ interface V3 {
     url: string
     name: string
     icon: any
+    setState?: any
 }
 
-export function HrefLinkV3({ url, name, icon }: V3) {
+export function HrefLinkV3({ url, name, icon, setState }: V3) {
     return (
-        <Link className={`${styles.linkv3} ${RegularPoppins.className}`} href={url} >
+        <Link onClick={() => setState(false)} className={`${styles.linkv3} ${RegularPoppins.className}`} href={url} >
             {icon} {name}
         </Link>
     )

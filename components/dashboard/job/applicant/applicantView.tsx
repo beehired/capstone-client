@@ -99,10 +99,10 @@ export default function ApplicantView({ applicantId, close, firstname, lastname 
                                 </div>
                                 <div className={styles.subInfo}>
                                     <a target="_blank" href={`${data?.resume?.resume}`}>
-                                        <span className={RegularPoppins.className}>View My Profile</span>
+                                        <span className={RegularPoppins.className}>View My Resume</span>
                                     </a>
                                     <a target='_blank' href={`/bee/${data?.user?.myProfile.profileID}`}>
-                                        <span className={RegularPoppins.className}>View My Resume</span>
+                                        <span className={RegularPoppins.className}>View My Profile</span>
                                     </a>
                                 </div>
                             </div>

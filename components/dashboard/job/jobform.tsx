@@ -95,9 +95,9 @@ export default function JobForm({ id }: any) {
         onCompleted: (data) => {
             if (data.createJobPost.jobPostID) {
                 toast.success("Successfully Added")
-                router.push(`/dashboard/employer/jobs/post?id=${data.createJobPost.jobPostID}`)
+                store.remove("jobPost");
                 queryClient.invalidateQueries({ queryKey: ["JobPosts"] })
-                store.remove("jobPost")
+                router.push(`/dashboard/employer/jobs/post?id=${data.createJobPost.jobPostID}`)
                 resetForm()
             }
             if (data.createJobPost.code) {

@@ -272,7 +272,7 @@ export default function JobForm({ id }: any) {
                             <h2 className={RegularPoppins.className}>Basic Information</h2>
                             <div className={styles.first}>
                                 <div className={styles.title}>
-                                    <Label name='Job title' required={true} />
+                                    <Label name='Job Title' required={true} />
                                     <InputV1 name='title' onChange={handleChange} placeholder='Job Title' type='text' value={values.title} errors={errors.title} touched={touched.title} />
                                 </div>
                             </div>
@@ -331,7 +331,7 @@ export default function JobForm({ id }: any) {
                                             <InputNumber name='min' value={values.min} onChange={handleChange} errors={errors.min} touched={touched.min} />
                                         </div>
                                         <div className={styles.pay}>
-                                            <Label name="Maximum Salay" required={true} />
+                                            <Label name="Maximum Salary" required={true} />
                                             <InputNumber name='max' value={values.max} onChange={handleChange} errors={errors.max} touched={touched.max} />
                                         </div>
                                     </div>}

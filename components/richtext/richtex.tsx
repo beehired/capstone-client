@@ -36,7 +36,7 @@ export default function RichTextEditor({ value, setFieldValue }: any) {
             }),
             List],
         injectCSS: true,
-        content: value ? value: null,
+        content: value ? value : null,
         onBlur: ({ editor }) => {
             setFieldValue("description", editor.getHTML())
         }
@@ -44,7 +44,13 @@ export default function RichTextEditor({ value, setFieldValue }: any) {
 
     useEffect(() => {
         if (editor && value) {
-            editor.commands.setContent(value)
+            let { from, to } = editor.state.selection;
+
+            editor.commands.setContent(value, false, {
+                preserveWhitespace: "full"
+            })
+
+            editor.commands.setTextSelection({ from, to })
         }
     }, [editor, value])
 
@@ -86,7 +92,7 @@ export default function RichTextEditor({ value, setFieldValue }: any) {
                     </button>
                 </div>
             </div>
-            <EditorContent  className={styles.tiptap} editor={editor} />
+            <EditorContent className={styles.tiptap} editor={editor} />
         </div >
     )
 }

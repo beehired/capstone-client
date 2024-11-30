@@ -75,6 +75,19 @@ export default function JobPost({ search, debounce, values }: any) {
     }
     return (
         <div className={styles.container}>
+            {
+                itemsPerPage >= data?.totalItems ?
+                    null : <Pagination
+                        itemsPerPage={itemsPerPage}
+                        currentPage={data?.currentPage}
+                        hasNextPage={data?.hasNextPage}
+                        hasPrevPage={data?.hasPrevPage}
+                        nextButton={NextPage}
+                        prevButton={PrevPage}
+                        totalItems={data?.totalItems}
+                        totalPages={data?.totalPages}
+                    />
+            }
             {isEmpty(data?.item) ?
                 <NotAvailable />
                 : isLoading ? <Spinner /> :
@@ -111,19 +124,7 @@ export default function JobPost({ search, debounce, values }: any) {
                         ))}
                     </div>
             }
-            {
-                itemsPerPage >= data?.totalItems ?
-                    null : <Pagination
-                        itemsPerPage={itemsPerPage}
-                        currentPage={data?.currentPage}
-                        hasNextPage={data?.hasNextPage}
-                        hasPrevPage={data?.hasPrevPage}
-                        nextButton={NextPage}
-                        prevButton={PrevPage}
-                        totalItems={data?.totalItems}
-                        totalPages={data?.totalPages}
-                    />
-            }
+
 
         </div >
     )

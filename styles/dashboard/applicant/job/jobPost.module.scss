@@ -10,8 +10,11 @@
 
     .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, 450px);
-        grid-template-rows: repeat(auto-fit, 270px);
+        grid-template-columns: repeat(3, auto);
         gap: 20px;
+
+        @include landscape {
+            grid-template-columns: repeat(1, auto);
+        }
     }
 }

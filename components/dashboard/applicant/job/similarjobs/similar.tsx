@@ -40,7 +40,7 @@ export default function SimilarJobs({ id, skillsData }: { id: string, skillsData
                 jobPostId: id,
                 skills: skillsData,
                 input: {
-                    take: 10,
+                    take: 5,
                     page: 1
                 }
             })

@@ -41,7 +41,6 @@ export default function Default({ id }: any) {
 
             return getUserProfileById
         },
-        refetchInterval: 50000,
     })
 
     const [fonts, setFont] = useState("")

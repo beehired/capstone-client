@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import styles from '@/styles/dashboard/applicant/layout.module.scss'
 import Message from '@/components/dashboard/applicant/message/message'
 import dynamic from 'next/dynamic'
+import Footer from '@/components/footer'
 const Header = dynamic(() => import("@/components/dashboard/applicant/header"))
 
 interface Props {
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: Props) {
                 {children}
                 <Message />
             </div>
+            <Footer />
         </div>
     )
 }

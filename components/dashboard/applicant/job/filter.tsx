@@ -24,7 +24,7 @@ export default function JobFiltering({ handleChange, setFieldValue, values, onHa
             const { skillsPagination } = await GraphQLRequest(SkillsPagination, {
                 search,
                 input: {
-                    take: 10,
+                    take: 15,
                     page: 1
                 }
             })

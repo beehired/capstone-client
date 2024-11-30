@@ -24,8 +24,7 @@ export default function Sidebar() {
                 userId: user?.id
             })
             return getUnreadCountMessage
-        },
-        refetchInterval: 1000
+        }
     })
     return (
         <div className={styles.container}>

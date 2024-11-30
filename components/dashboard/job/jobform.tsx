@@ -11,7 +11,7 @@ import { toast } from 'react-hot-toast'
 import { GraphQLRequest } from '@/lib/graphQLRequest'
 import { useQuery } from '@tanstack/react-query'
 import Currencies from '@/util/currencies.json'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname, } from 'next/navigation'
 import { useMutation } from '@apollo/client';
 
 import Form from '@/components/form'
@@ -70,9 +70,10 @@ export default function JobForm({ id }: any) {
     const user = store.get("UserAccount");
     const router = useRouter();
     const [search, setSearch] = useState("")
+    const params = usePathname()
     const post = store.get("jobPost")
 
-
+    console.log()
     const { data: searchSkills } = useQuery({
         queryKey: ["SearchQuery", search],
         queryFn: async () => {
@@ -413,8 +414,8 @@ export default function JobForm({ id }: any) {
                             <Label name='Job Description' required={true} />
                             <RichTextEditor value={values.description} setFieldValue={setFieldValue} />
                             {errors.description && touched.description ? <SpanError message={errors.description} /> : null}
-                            <Label name='Upload your Disclosure Agreement' required={true} />
-                            {fileUpload ?
+                            {params.includes("edit") ? null : <Label name='Upload your Disclosure Agreement' required={true} />}
+                            {params.includes("edit") ? null : fileUpload ?
                                 <div className={styles.file}>
                                     <div className={styles.info}>
                                         <div className={styles.pdf}>

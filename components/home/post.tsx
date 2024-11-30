@@ -16,7 +16,7 @@ export default function Post() {
         queryFn: async () => {
             return await GraphQLRequest(GetAllJobPost, {
                 input: {
-                    take: 10,
+                    take: 12,
                     page: 1
                 }
             })

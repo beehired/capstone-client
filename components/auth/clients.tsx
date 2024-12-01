@@ -138,6 +138,10 @@ export default function Clients() {
             email: values.email
         },
         onCompleted: (data) => {
+
+            if (data.checkMyEmailAddress.email === null) {
+                onHandleIncrementStep()
+            }
             if (data.checkMyEmailAddress.code) {
                 toast.error(data.checkMyEmailAddress.message)
             }
@@ -394,10 +398,11 @@ export default function Clients() {
                                         if (step === 4) {
                                             await EmailMutation()
                                             return
-                                        } else if (EmailData?.checkMyEmailAddress.code) {
-                                            return
+                                        }
+                                        if (EmailData?.checkMyEmailAddress?.code) {
+                                            return;
                                         } else {
-                                            onHandleIncrementStep()
+                                            onHandleIncrementStep();
                                         }
                                     }}
                                     icon2={<TbChevronRight size={20} />} />

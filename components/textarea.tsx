@@ -19,7 +19,7 @@ export default function Textarea({ name, placeholder, onChange, value, errors, t
 
     return (
         <div>
-            <textarea className={`${styles.container} ${RegularPoppins.className}`} name={name} placeholder={placeholder} value={value} onChange={onChange} />
+            <textarea aria-label={name} className={`${styles.container} ${RegularPoppins.className}`} name={name} placeholder={placeholder} value={value} onChange={onChange} />
             <div className={styles.limit}>
                 <span style={value?.length > 10000 ? { color: "red" } : {}}>{value?.length}/1000</span>
             </div>

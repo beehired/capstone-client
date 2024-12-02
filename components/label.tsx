@@ -6,9 +6,9 @@ interface Props {
     required: boolean
 }
 
-export default function Label({ name, required}: Props) {
+export default function Label({ name, required }: Props) {
     return (
-        <label className={`${styles.label} ${RegularPoppins.className}`}>
+        <label aria-label={name} className={`${styles.label} ${RegularPoppins.className}`}>
             {name} {required ? <span className={styles.required}>*</span> : null}
         </label>
     )

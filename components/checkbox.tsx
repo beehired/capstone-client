@@ -60,6 +60,6 @@ type CheckboxV2Props = {
 }
 export function CheckboxV2({ name, onChange, onBlur, value, checked }: CheckboxV2Props) {
     return (
-        <input className={styles.checkbox} type="checkbox" name={name} id={name} value={value} checked={checked} onChange={onChange} onBlur={onBlur} />
+        <input className={styles.checkbox} type="checkbox" name={name} aria-label={name} id={name} value={value} checked={checked} onChange={onChange} onBlur={onBlur} />
     )
 }

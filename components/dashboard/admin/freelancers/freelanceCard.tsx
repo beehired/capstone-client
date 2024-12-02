@@ -21,7 +21,7 @@ export default function FreelanceCard({ name, userID, email, avatar, verified }:
             <div className={styles.td}>{verified ? "Verified" : "Not Verified"}</div>
             <div className={styles.td}>
                 <div className={styles.actionsBtnGrp}>
-                    <button onClick={() => router.push(`/dashboard/admin/freelancers/${userID}`)}>
+                    <button name={name} onClick={() => router.push(`/dashboard/admin/freelancers/${userID}`)}>
                         <TbLink size={23} />
                     </button>
                 </div>

@@ -18,14 +18,14 @@ interface Props {
     max?: number
 }
 
-export function InputV1({ name, placeholder, onChange, value, type, icon, errors, touched, max}: Props) {
+export function InputV1({ name, placeholder, onChange, value, type, icon, errors, touched, max }: Props) {
 
 
     return (
         <div className={styles.container}>
             <div className={styles.input}>
                 {icon}
-                <input className={RegularPoppins.className} maxLength={max} name={name} id={name} placeholder={placeholder} type={type} value={value} onChange={onChange} />
+                <input className={RegularPoppins.className} maxLength={max} name={name} id={name} placeholder={placeholder} type={type} value={value} onChange={onChange} aria-label={name} />
             </div>
             <div className={styles.errors}>
                 {errors && touched ? <SpanError message={errors} /> : null}
@@ -60,7 +60,7 @@ export function InputV2({ name, placeholder, onChange, value, type, icon, icon2,
                 <div>
                     {icon}
                 </div>
-                <input className={RegularPoppins.className} name={name} id={name} placeholder={placeholder} type={type} value={value} onChange={onChange} />
+                <input className={RegularPoppins.className} name={name} id={name} placeholder={placeholder} type={type} value={value} onChange={onChange} aria-label={name} />
                 <button onClick={onHandleToggle} type='button'>
                     {icon2}
                 </button>
@@ -108,7 +108,7 @@ export const InputCalendar = ({ name, placeholder, value, onChange, errors, touc
     return (
         <div className={styles.InputCalendar}>
             <div className={styles.ic}>
-                <input type="text" value={formattedDate} id={name} name={name} placeholder={placeholder} readOnly />
+                <input type="text" value={formattedDate} id={name} name={name} aria-label={name} placeholder={placeholder} readOnly />
                 <button type="button" onClick={() => setToggle(() => !toggle)}>
                     <TbCalendar size={26} />
                 </button>
@@ -137,7 +137,7 @@ export const InputNumber = ({ name, value, onChange, errors, touched }: InputNum
     return (
         <div className={styles.InputNumber}>
             <div className={styles.ic}>
-                <input className={RegularPoppins.className} type="number" id={name} name={name} value={value} onChange={onChange} />
+                <input className={RegularPoppins.className} type="number" id={name} name={name} aria-label={name} value={value} onChange={onChange} />
             </div>
             <div className={styles.errors}>
                 {errors && touched ? <SpanError message={errors} /> : null}
@@ -159,7 +159,7 @@ export const InputTime = ({ name, value, onChange, errors, touched }: InputTime)
     return (
         <div className={styles.inputTime}>
             <div className={styles.ic}>
-                <input type="time" name={name} id={name} value={value} onChange={onChange} />
+                <input type="time" name={name} id={name} value={value} aria-label={name} onChange={onChange} />
             </div>
             <div className={styles.errors}>
                 {errors && touched ? <SpanError message={errors} /> : null}

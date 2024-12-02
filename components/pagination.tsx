@@ -26,13 +26,13 @@ export default function Pagination({ itemsPerPage, nextButton, totalPages, hasPr
             </div>
 
             <div className={styles.paginate}>
-                <button disabled={hasPrevPage ? false : true} onClick={prevButton}>
+                <button aria-label='Previous Button' disabled={hasPrevPage ? false : true} onClick={prevButton}>
                     <TbChevronLeft size={20} />
                 </button>
                 <div>
                     <span className={MediumPoppins.className}>{currentPage}</span>
                 </div>
-                <button disabled={hasNextPage ? false : true} onClick={nextButton}>
+                <button aria-label='Next button' disabled={hasNextPage ? false : true} onClick={nextButton}>
                     <TbChevronRight size={20} />
                 </button>
             </div>

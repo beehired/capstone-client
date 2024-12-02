@@ -45,7 +45,7 @@ export default function Skill({ id }: { id: string }) {
                         {data.map(({ skillsID, skills }: { skillsID: string, skills: string }) => (
                             <div className={styles.skillset} key={skillsID}>
                                 <span>{skills}</span>
-                                <button onClick={async () => {
+                                <button aria-label={skills} onClick={async () => {
                                     await mutation.mutateAsync({
                                         skillsId: skillsID,
                                         profileId: id

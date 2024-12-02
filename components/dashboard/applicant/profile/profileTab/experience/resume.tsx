@@ -209,7 +209,7 @@ export default function Resume({ id }: { id: string }) {
                 </div>
               </div>
               <div className={styles.deleteBtn}>
-                <button onClick={onHandleDeleteToggle}>
+                <button aria-label="trash" name="trash" onClick={onHandleDeleteToggle}>
                   <TbTrash size={22} />
                 </button>
               </div>

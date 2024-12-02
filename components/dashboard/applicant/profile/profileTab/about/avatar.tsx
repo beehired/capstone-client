@@ -133,14 +133,14 @@ export default function Avatar({ id }: { id: string }) {
       </div>
       <div className={styles.btnGrp}>
         {isEmpty(data?.avatar) ? (
-          <button onClick={onHandleAddToggle} className={styles.change}>
+          <button aria-label="hello" onClick={onHandleAddToggle} className={styles.change}>
             <span className={RegularPoppins.className}>
               {data?.avatar ? `Change Profile` : `Upload your image`}
             </span>
           </button>
         ) : null}
         {isEmpty(data?.avatar) ? null : (
-          <button onClick={onHandleDeleteToggle} className={styles.removed}>
+          <button aria-label="hello" onClick={onHandleDeleteToggle} className={styles.removed}>
             <TbTrash size={22} />
           </button>
         )}

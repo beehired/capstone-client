@@ -75,19 +75,19 @@ export default function Default({ id }: any) {
                         <h2 style={data?.header?.media ? { color: "#fff" } : {}}>{data?.firstname} {data?.lastname}</h2>
                         <div className={data?.header?.media ? `${styles.activeLinks}` : `${styles.socialLinks}`}>
 
-                            <Link target="_blank" href={`${data?.social?.instagram}`}>
+                            <Link aria-label='instagram' target="_blank" href={`${data?.social?.instagram}`}>
                                 <TbBrandInstagram size={25} />
                             </Link>
-                            <Link target="_blank" href={`${data?.social?.facebook}`}>
+                            <Link aria-label='facebook' target="_blank" href={`${data?.social?.facebook}`}>
                                 <TbBrandFacebook size={25} />
                             </Link>
-                            <Link target="_blank" href={`${data?.social?.Github}`}>
+                            <Link aria-label='github' target="_blank" href={`${data?.social?.Github}`}>
                                 <TbBrandGithub size={25} />
                             </Link>
-                            <Link target="_blank" href={`${data?.social?.X}`}>
+                            <Link aria-label='x' target="_blank" href={`${data?.social?.X}`}>
                                 <TbBrandX size={25} />
                             </Link>
-                            <Link target="_blank" href={`${data?.social?.Web}`}>
+                            <Link aria-label='web' target="_blank" href={`${data?.social?.Web}`}>
                                 <TbWorldWww size={25} />
                             </Link>
 

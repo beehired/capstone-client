@@ -33,7 +33,7 @@ export default function Side() {
                         }
                     </div>
                     <div className={styles.grpbtn}>
-                        <button onClick={
+                        <button aria-label='side' onClick={
                             () => {
                                 setStep(() => step - 1)
                                 if (step <= 1) {
@@ -44,7 +44,7 @@ export default function Side() {
                         }>
                             <TbChevronLeft size={30} />
                         </button>
-                        <button onClick={() => {
+                        <button aria-label='side' onClick={() => {
                             setStep(() => step + 1)
                             if (step >= 4) {
                                 setStep(() => 1)
@@ -55,8 +55,8 @@ export default function Side() {
                     </div>
                 </div>
                 <div className={styles.policy}>
-                    <Link href="/policy/terms&condition">Terms and Conditions</Link>
-                    <Link href="/">Data Policy</Link>
+                    <Link aria-label='links' href="/policy/terms&condition">Terms and Conditions</Link>
+                    <Link aria-label='links' href="/">Data Policy</Link>
                 </div>
             </div>
         </div >

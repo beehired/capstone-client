@@ -10,7 +10,7 @@ export default function Search({ onChange }: Props) {
     return (
         <div className={styles.container}>
             <TbSearch size={23} />
-            <input type="text" placeholder='Search here...' onChange={onChange} />
+            <input aria-label='search' type="text" placeholder='Search here...' onChange={onChange} />
         </div>
     )
 }

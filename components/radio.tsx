@@ -11,6 +11,6 @@ type RadioInputProps = {
 
 export default function InputRadio({ name, onChange, value, checked }: RadioInputProps) {
     return (
-        <input className={styles.container} value={value} type="radio" checked={checked} name={name} id={name} onChange={onChange} />
+        <input className={styles.container} aria-label={name} value={value} type="radio" checked={checked} name={name} id={name} onChange={onChange} />
     )
 }

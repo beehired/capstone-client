@@ -236,8 +236,8 @@ export default function Message() {
                                 </div>
                                 <div className={styles.footer}>
                                     <div className={styles.fileUpload}>
-                                        <input name="file" type='file' ref={fileRef} hidden multiple accept='image/jpg,image/jpeg, image/png, image/webp, image/avif' onChange={onHandleFileUpload} />
-                                        <button className={styles.imageBtn} onClick={handleButtonClick}>
+                                        <input aria-label='file' name="file" type='file' ref={fileRef} hidden multiple accept='image/jpg,image/jpeg, image/png, image/webp, image/avif' onChange={onHandleFileUpload} />
+                                        <button name='toggle' className={styles.imageBtn} onClick={handleButtonClick}>
                                             <TbPhotoScan size={23} />
                                         </button>
                                     </div>
@@ -262,7 +262,7 @@ export default function Message() {
                                     {
                                         values.message || selectedFiles ? <div>
                                             <form onSubmit={handleSubmit}>
-                                                <button className={styles.submitBtn} type="submit">
+                                                <button aria-label='submit' className={styles.submitBtn} type="submit">
                                                     <TbSend2 size={23} />
                                                 </button>
                                             </form>
@@ -290,7 +290,7 @@ export default function Message() {
                             <span className={RegularPoppins.className}>{CountData}</span>
                         </div>}
                     </div>
-                    <button onClick={onHandleMessagClose} className={styles.toggle}>
+                    <button aria-label='toggle' onClick={onHandleMessagClose} className={styles.toggle}>
                         {open ? <TbChevronDown size={23} /> : <TbChevronUp size={23} />}
                     </button>
                 </div>

@@ -72,6 +72,7 @@ export default function JobFiltering({ handleChange, setFieldValue, values, onHa
                                     className={styles.inputArray}
                                     type="checkbox"
                                     name="skills"
+                                    aria-label={skills}
                                     onChange={(e) => {
                                         const skill = skills;
                                         if (e.target.checked) {

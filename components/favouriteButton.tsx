@@ -93,14 +93,14 @@ export default function FavouriteButton({ size, jobPostId }: any) {
     return (
         data ?
             <form onSubmit={DelFavourite}>
-                <button type="submit" className={styles.active}>
+                <button type="submit" className={styles.active} aria-label='submitbtn'>
                     <TbBookmark size={size} />
                 </button>
                 <ToastNotification />
             </form >
             :
             <form onSubmit={AddFavourite}>
-                <button type="submit" className={styles.favourite}>
+                <button type="submit" className={styles.favourite} aria-label='submitbtn'>
                     <TbBookmark size={size} />
                 </button>
                 <ToastNotification />

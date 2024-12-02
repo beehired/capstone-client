@@ -8,7 +8,7 @@ export default function ProjectTabs({ click, value }: any) {
     return (
         <div className={styles.container}>
             {PStatus.map((ProjectStatus) => (
-                <button value={ProjectStatus} onClick={click} className={ProjectStatus === value ? `${styles.active} ${RegularPoppins.className}` : `${RegularPoppins.className}`} key={ProjectStatus}>
+                <button aria-label={ProjectStatus} value={ProjectStatus} onClick={click} className={ProjectStatus === value ? `${styles.active} ${RegularPoppins.className}` : `${RegularPoppins.className}`} key={ProjectStatus}>
                     {ProjectStatus}
                 </button>
             ))}

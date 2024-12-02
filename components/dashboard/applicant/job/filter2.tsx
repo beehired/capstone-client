@@ -10,7 +10,7 @@ export default function Filter({ onHandleFilter, filters }: any) {
     return (
         <div className={styles.container}>
             {filter.map((post) => (
-                <button key={post} value={post} onClick={onHandleFilter} className={post === filters ? `${styles.active} ${RegularPoppins.className}` : `${RegularPoppins.className}`}>{post}</button>
+                <button aria-label='post' key={post} value={post} onClick={onHandleFilter} className={post === filters ? `${styles.active} ${RegularPoppins.className}` : `${RegularPoppins.className}`}>{post}</button>
             ))}
         </div>
     )

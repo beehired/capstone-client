@@ -24,7 +24,7 @@ export default function ProfileTab() {
     return (
         <div className={styles.container}>
             {Tab.map(({ name }) => (
-                <button className={styles.active} onClick={() => router.push(`/freelancer/profile/${name}/${user?.user?.myProfile.profileID}`)} key={name}>
+                <button aria-label={name} className={styles.active} onClick={() => router.push(`/freelancer/profile/${name}/${user?.user?.myProfile.profileID}`)} key={name}>
                     <span className={RegularPoppins.className}>{name}</span>
                 </button>
             ))}

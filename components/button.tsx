@@ -15,7 +15,7 @@ interface Props {
 
 export function PrimaryButton({ name, type, loading }: Props) {
   return (
-    <button type={type} disabled={loading} className={styles.container}>
+    <button type={type} aria-label={name} disabled={loading} className={styles.container}>
       {loading ? (
         <Spinner />
       ) : (
@@ -31,7 +31,7 @@ interface CancelBtnProps {
 }
 export function CancelBtn({ onClose, name }: CancelBtnProps) {
   return (
-    <button onClick={onClose} className={styles.cancelBtn} type="button">
+    <button onClick={onClose} aria-label={name} className={styles.cancelBtn} type="button">
       <span className={RegularPoppins.className}>{name}</span>
     </button>
   );
@@ -39,7 +39,7 @@ export function CancelBtn({ onClose, name }: CancelBtnProps) {
 
 export function DeleteBtn() {
   return (
-    <button className={styles.deleteBtn} type="submit">
+    <button className={styles.deleteBtn} aria-label="deleteBtn" type="submit">
       <span className={RegularPoppins.className}>Delete</span>
     </button>
   );
@@ -62,6 +62,7 @@ export function RouteButtonV1({ name, url }: RouteBtn) {
       type="button"
       onClick={onHandleRoute}
       className={styles.routingBtnV1}
+      aria-label={name}
     >
       <span className={RegularPoppins.className}>{name}</span>
     </button>
@@ -78,7 +79,7 @@ export function RouteButtonV2({ name, url }: RouteBtn) {
     <button
       type="button"
       onClick={onHandleRoute}
-      className={styles.routingBtnV2}
+      className={styles.routingBtnV2} aria-label={name}
     >
       <span className={RegularPoppins.className}>{name}</span>
     </button>
@@ -132,7 +133,7 @@ export function ButtonIconToggle({
   };
 
   return (
-    <button className={styles.toggleBtn} onClick={onHandleToggleBtn}>
+    <button className={styles.toggleBtn} aria-label={'toggle'} onClick={onHandleToggleBtn}>
       {icon}
     </button>
   );
@@ -158,7 +159,7 @@ export function ButtonStepState({
       disabled={disabled}
       className={styles.ButtonStepState}
       type="button"
-      onClick={onHandleClick}
+      onClick={onHandleClick} aria-label={name}
     >
       {icon}
       <span className={RegularPoppins.className}>{name}</span>
@@ -182,7 +183,7 @@ export const ButtonState = ({ name, value, setValue }: ButtonStateProps) => {
     <button
       className={value === name ? styles.activeState : styles.buttonState}
       onClick={onHandleClick}
-      value={name}
+      value={name} aria-label={name}
     >
       <span className={RegularPoppins.className}>{name}</span>
     </button>
@@ -196,7 +197,7 @@ interface ButtonIconRouteProps {
 export const ButtonIconRoute = ({ icon, url }: ButtonIconRouteProps) => {
   const router = useRouter();
   return (
-    <button onClick={() => router.push(url)} className={styles.ButtonIconRoute}>
+    <button onClick={() => router.push(url)} aria-label={url} className={styles.ButtonIconRoute}>
       {icon}
     </button>
   );
@@ -206,7 +207,7 @@ export const ButtonGoBack = () => {
   const router = useRouter();
 
   return (
-    <button className={styles.goback} onClick={() => router.back()}>
+    <button className={styles.goback} aria-label="goback" onClick={() => router.back()}>
       <TbChevronLeft size={23} />
       <span className={RegularPoppins.className}> Go Back</span>
     </button>

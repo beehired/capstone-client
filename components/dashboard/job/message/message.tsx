@@ -156,7 +156,7 @@ export default function Message({ close, id }: any) {
             <div className={styles.messageContainer}>
                 <div className={styles.header}>
                     <h2 className={styles.name}>{UserProfile?.firstname} {UserProfile?.lastname}</h2>
-                    <button onClick={close}>
+                    <button aria-label="button" onClick={close}>
                         <TbX size={23} />
                     </button>
                 </div>
@@ -167,10 +167,10 @@ export default function Message({ close, id }: any) {
                 </div>
                 <div className={styles.footer}>
                     <div className={styles.fileUpload}>
-                        <input type='file' ref={fileRef} hidden multiple accept='image/jpg,image/jpeg, image/png, image/webp, image/avif'
+                        <input aria-label="file" type='file' ref={fileRef} hidden multiple accept='image/jpg,image/jpeg, image/png, image/webp, image/avif'
                             onChange={onHandleFileUpload}
                         />
-                        <button className={styles.imageBtn} onClick={handleButtonClick}>
+                        <button aria-label="button" className={styles.imageBtn} onClick={handleButtonClick}>
                             <TbPhotoScan size={23} />
                         </button>
                     </div>
@@ -183,19 +183,19 @@ export default function Message({ close, id }: any) {
                                         <div className={styles.image}>
                                             <Image src={URL.createObjectURL(file)} alt="" fill objectFit='cover' objectPosition='center' priority />
                                         </div>
-                                        <button onClick={() => onHandleRemoveFiles(index)}>
+                                        <button aria-label="button" onClick={() => onHandleRemoveFiles(index)}>
                                             <TbX size={18} />
                                         </button>
                                     </div>
                                 ))}
                             </div>
-                            : <textarea className={lato.className} name="message" aria-placeholder='Aa' id="" value={values.message} onChange={handleChange} placeholder='Aa' onKeyDown={handleKeyPress} rows={4}></textarea>}
+                            : <textarea aria-label="textarea" className={lato.className} name="message" aria-placeholder='Aa' id="" value={values.message} onChange={handleChange} placeholder='Aa' onKeyDown={handleKeyPress} rows={4}></textarea>}
                     </div>
 
                     {
                         values.message || selectedFiles ? <div>
                             <form onSubmit={handleSubmit}>
-                                <button className={styles.submitBtn} type="submit">
+                                <button aria-label="button" className={styles.submitBtn} type="submit">
                                     <TbSend2 size={23} />
                                 </button>
                             </form>

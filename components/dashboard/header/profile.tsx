@@ -71,7 +71,7 @@ export default function Profile() {
             {
                 toggle ?
                     <div className={styles.toggleContainer}>
-                        <button onClick={onHandleLogout} className={styles.logoutBtn}>
+                        <button aria-label="button" onClick={onHandleLogout} className={styles.logoutBtn}>
                             <TbLogout2 size={18} />
                             <span className={RegularPoppins.className}>Logout</span>
                         </button>

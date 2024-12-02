@@ -27,7 +27,7 @@ export default function CompanyDocu({ data }: any) {
                                 <span>{format(new Date(createdAt), "MMMM dd, yyyy")}</span>
                             </div>
                             <div className={styles.td}>
-                                <a target="_blank" href={requirement}>
+                                <a aria-label='View' target="_blank" href={requirement}>
                                     <TbEye size={23} />
                                 </a>
                             </div>

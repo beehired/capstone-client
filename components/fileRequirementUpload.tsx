@@ -14,7 +14,7 @@ export default function FileFreelancer(props: any) {
     const onDrop = useCallback((acceptedFiles: Array<File>) => {
         setFieldValue("fileUpload", acceptedFiles[0])
     }, [setFieldValue])
-    
+
     const { acceptedFiles, getRootProps, getInputProps, open, } = useDropzone({
         noDrag: true,
         noKeyboard: true,
@@ -39,7 +39,7 @@ export default function FileFreelancer(props: any) {
         <div className={styles.container}>
             <div {...getRootProps({ className: "dropzone" })}>
                 <input {...getInputProps()} />
-                <button className={styles.filebtn} type="button" onClick={open}>
+                <button aria-label="button" className={styles.filebtn} type="button" onClick={open}>
                     <span className={RegularPoppins.className}>
                         {acceptedFiles[0] ? acceptedFiles[0].name : "Upload Your Document"}
                     </span>
@@ -48,7 +48,7 @@ export default function FileFreelancer(props: any) {
             </div>
             {
                 acceptedFiles[0] ?
-                    <button type="button" onClick={onHandleRemoveFile}>
+                    <button aria-label="button" type="button" onClick={onHandleRemoveFile}>
                         <TbTrash size={23} />
                     </button> : null
 

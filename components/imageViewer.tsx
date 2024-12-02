@@ -12,7 +12,7 @@ export default function ImageViewer({ image, close }: any) {
         <Dialog>
             <div className={styles.imageViewer}>
                 <div className={styles.header}>
-                    <button onClick={close}>
+                    <button aria-label="button" onClick={close}>
                         <TbX size={23} />
                     </button>
                 </div>

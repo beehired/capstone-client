@@ -200,6 +200,7 @@ export default function FontCard({ fontID, font, image, createdAt }: Props) {
           <button
             onClick={onHandleToggleDeleteBtn}
             className={styles.deleteBtn}
+            aria-label={'trash'}
           >
             <TbTrash size={20} />
           </button>

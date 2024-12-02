@@ -56,7 +56,7 @@ export default function MessageList() {
             <div className={styles.header}>
                 <h2 className={MediumPoppins.className}>Message</h2>
                 <div className={styles.message}>
-                    <input type="search" placeholder='Search message' onChange={(e) => setSearch(e.target.value)} />
+                    <input aria-label='search' type="search" placeholder='Search message' onChange={(e) => setSearch(e.target.value)} />
                 </div>
             </div>
             <div className={styles.opi}>

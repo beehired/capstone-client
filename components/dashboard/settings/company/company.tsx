@@ -228,7 +228,7 @@ export default function Company() {
           />
         </div>
         <div>
-          <button onClick={onHandleToggle}>
+          <button aria-label="button" onClick={onHandleToggle}>
             <span className={RegularPoppins.className}>
               Change Company Picture
             </span>

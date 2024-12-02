@@ -62,7 +62,7 @@ export default function JobBody({ id }: any) {
                                     <span>{data?.location}</span>
                                 </div>
                                 <div className={styles.application}>
-                                    <button onClick={onHandleApplyNow} className={styles.applyNow}>
+                                    <button aria-label="button" onClick={onHandleApplyNow} className={styles.applyNow}>
                                         <span className={RegularPoppins.className}>Apply Now</span>
                                     </button>
                                     <FavouriteButton size={23} jobPostId={id} />

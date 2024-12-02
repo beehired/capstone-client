@@ -91,10 +91,10 @@ export default function NotificationCard({
           <div className={styles.dialog}>
             <div className={styles.dialogContainer}>
               <div className={styles.diaglogHeader}>
-                <button onClick={onHandleArchiveToggle}>
+                <button aria-label="button" onClick={onHandleArchiveToggle}>
                   <TbTrash size={23} />
                 </button>
-                <button onClick={onHandleToggle}>
+                <button aria-label="button" onClick={onHandleToggle}>
                   <TbX size={23} />
                 </button>
               </div>

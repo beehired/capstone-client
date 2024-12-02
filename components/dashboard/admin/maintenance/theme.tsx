@@ -165,9 +165,10 @@ export default function ThemeTemplate() {
             type="Search"
             placeholder="Search here..."
             onChange={onHandleChange}
+            aria-label="search"
           />
         </div>
-        <button onClick={() => setToggle(() => !toggle)}>
+        <button aria-label="button" onClick={() => setToggle(() => !toggle)}>
           <span className={RegularPoppins.className}>Add New</span>
         </button>
       </div>

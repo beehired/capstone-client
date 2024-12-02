@@ -23,12 +23,12 @@ export default function Table() {
             <div className={styles.tableFooter}>
                 <span className={RegularPoppins.className}>Showing 10 of 20 of 200 entries</span>
                 <div>
-                    <button>
+                    <button aria-label="button">
                         <TbChevronLeft size={18} />
                     </button>
                     <span className={RegularPoppins.className
                     }>1</span>
-                    <button>
+                    <button aria-label="button">
                         <TbChevronRight size={18} />
                     </button>
                 </div>

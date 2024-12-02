@@ -82,11 +82,12 @@ export default function NotificationCard({
             <div className={styles.dialogContainer}>
               <div className={styles.diaglogHeader}>
                 <div>
-                  <button onClick={onHandleArchiveToggle}>
+                  <button aria-label="button" onClick={onHandleArchiveToggle}>
                     <TbTrash size={23} />
                   </button>
                 </div>
                 <button
+                  aria-label="button"
                   onClick={() =>
                     setToggleNotification(() => !toggleNotification)
                   }

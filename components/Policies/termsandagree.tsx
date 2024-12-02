@@ -178,8 +178,8 @@ export default function TermsAndCondition({ accept, onChange }: any) {
                 </div>
 
                 <div className={styles.radioGroupTerm}>
-                    <button value={accept} onClick={onChange} className={`${styles.accept} ${RegularPoppins.className}`}>Accept</button>
-                    <button onClick={onHandleRoute} className={`${styles.disagree} ${RegularPoppins.className}`}>Disagree</button>
+                    <button aria-label="button" value={accept} onClick={onChange} className={`${styles.accept} ${RegularPoppins.className}`}>Accept</button>
+                    <button aria-label="button" onClick={onHandleRoute} className={`${styles.disagree} ${RegularPoppins.className}`}>Disagree</button>
                 </div>
             </div>
         </div >

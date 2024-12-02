@@ -9,7 +9,7 @@ export default function ApplicationTab({ click, value }: any) {
     return (
         <div className={styles.container}>
             {AStatus.map((applicantStatus) => (
-                <button onClick={click} key={applicantStatus} value={applicantStatus} className={applicantStatus === value ? `${styles.active} ${RegularPoppins.className}` : `${RegularPoppins.className}`}>{applicantStatus}
+                <button aria-label={applicantStatus} onClick={click} key={applicantStatus} value={applicantStatus} className={applicantStatus === value ? `${styles.active} ${RegularPoppins.className}` : `${RegularPoppins.className}`}>{applicantStatus}
                 </button>
             ))
             }

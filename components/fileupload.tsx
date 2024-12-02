@@ -80,7 +80,7 @@ export default function FileUploads(props: any) {
                 {value ?
                     <div className={styles.upload}>
                         {value}
-                        <button onClick={() => setFieldValue("upload", null)}>
+                        <button aria-label="button" onClick={() => setFieldValue("upload", null)}>
                             <TbTrash size={20} />
                         </button>
                     </div> : null}

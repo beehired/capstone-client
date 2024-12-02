@@ -36,7 +36,7 @@ export default function FreelancerDocu({ requirement, type, createdAt }: any) {
                     </div>
                     <div className={styles.td}>
                         <div className={styles.actionsBtnGrp}>
-                            <button onClick={onHandleViewImage}>
+                            <button aria-label='View' onClick={onHandleViewImage}>
                                 <TbEye size={23} />
                             </button>
                         </div>

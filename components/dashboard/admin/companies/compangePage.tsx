@@ -120,6 +120,7 @@ export default function CompanyPage({ id }: any) {
               setTab(e.currentTarget.value);
             }}
             value={value}
+            aria-label={name}
             className={value === tab ? `${styles.active}` : ""}
           >
             <span className={RegularPoppins.className}>{name}</span>

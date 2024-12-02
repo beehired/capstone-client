@@ -183,13 +183,13 @@ export default function SecuritySettings() {
       ) : null}
       <div className={styles.securityCard}>
         <h2>Change Acount Password</h2>
-        <button onClick={onHandlePassword}>
+        <button aria-label="button" onClick={onHandlePassword}>
           <span className={RegularPoppins.className}>Change Password</span>
         </button>
       </div>
       <div className={styles.securityCard}>
         <h2>Account Deactivation</h2>
-        <button onClick={onHandleDeactivation}>
+        <button aria-label="button" onClick={onHandleDeactivation}>
           <span className={RegularPoppins.className}>Deactivate</span>
         </button>
       </div>

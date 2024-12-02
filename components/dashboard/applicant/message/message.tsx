@@ -223,7 +223,7 @@ export default function Message() {
                                         {UserMessageData?.user?.getMyCompany?.companyName}
                                     </span>
                                 </div>
-                                <button onClick={onHandleRemoveUser} className={styles.toggle}>
+                                <button aria-label="button" onClick={onHandleRemoveUser} className={styles.toggle}>
                                     <TbX size={23} />
                                 </button>
                             </div>
@@ -250,7 +250,7 @@ export default function Message() {
                                                         <div className={styles.image}>
                                                             <Image src={URL.createObjectURL(file)} alt="" fill objectFit='cover' objectPosition='center' priority />
                                                         </div>
-                                                        <button onClick={() => onHandleRemoveFiles(index)}>
+                                                        <button aria-label="button" onClick={() => onHandleRemoveFiles(index)}>
                                                             <TbX size={18} />
                                                         </button>
                                                     </div>

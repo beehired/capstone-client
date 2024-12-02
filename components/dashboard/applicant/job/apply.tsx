@@ -79,7 +79,7 @@ export default function ApplyNow({ close, jobPostId }: any) {
       <div className={styles.applicationContainer}>
         <div className={styles.header}>
           <h2>Select Your Resume</h2>
-          <button onClick={close}>
+          <button aria-label="button" onClick={close}>
             <TbX size={23} />
           </button>
         </div>

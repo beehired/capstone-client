@@ -29,10 +29,10 @@ export default function Calendar() {
                     <h2 className={`${RegularPoppins.className} ${styles.date}`}>{months[today.month()]} {today.year()} </h2>
                 </div>
                 <div className={styles.btnGrp}>
-                    <button onClick={() => setToday(today.month(today.month() - 1))} className={styles.leftBtn}>
+                    <button aria-label="button" onClick={() => setToday(today.month(today.month() - 1))} className={styles.leftBtn}>
                         <TbChevronLeft size={18} />
                     </button>
-                    <button onClick={() => setToday(today.month(today.month() + 1))} className={styles.rightBtn}>
+                    <button aria-label="button" onClick={() => setToday(today.month(today.month() + 1))} className={styles.rightBtn}>
                         <TbChevronRight size={18} />
                     </button>
                 </div>

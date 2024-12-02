@@ -21,10 +21,10 @@ function Calendar() {
                     <h2 className={`${RegularPoppins.className} ${styles.date}`}>{months[today.month()]} {today.year()} </h2>
                 </div>
                 <div className={styles.btnGrp}>
-                    <button onClick={() => setToday(today.month(today.month() - 1))} className={styles.leftBtn}>
+                    <button aria-label="button" onClick={() => setToday(today.month(today.month() - 1))} className={styles.leftBtn}>
                         <TbChevronLeft size={18} />
                     </button>
-                    <button onClick={() => setToday(today.month(today.month() + 1))} className={styles.rightBtn}>
+                    <button aria-label="button" onClick={() => setToday(today.month(today.month() + 1))} className={styles.rightBtn}>
                         <TbChevronRight size={18} />
                     </button>
                 </div>
@@ -47,18 +47,18 @@ function MiniCalendar({ onSelected, name, setValue }: any) {
     return (
         <div className={styles.miniCalendar}>
             <div className={styles.months}>
-                <button type="button" onClick={() => setToday(today.month(today.month() - 1))}>
+                <button aria-label="button" type="button" onClick={() => setToday(today.month(today.month() - 1))}>
                     <TbChevronLeft size={23} />
                 </button>
                 <span className={RegularPoppins.className}>{months[today.month()]}</span>
-                <button type="button" onClick={() => setToday(today.month(today.month() + 1))}>
+                <button aria-label="button" type="button" onClick={() => setToday(today.month(today.month() + 1))}>
                     <TbChevronRight size={23} />
                 </button>
             </div>
             <div className={styles.daysInMonth}>
                 {generateDate(today.month(), today.year()).map(({ date, currentMonth, today }, index) => (
                     <div className={styles.days} key={index}>
-                        <button onClick={(e) => {
+                        <button aria-label="button" onClick={(e) => {
                             onSelected(name, e.currentTarget.value)
                             setValue(false)
                         }} value={format(new Date(date.toDate()), "MMMM dd, yyyy")} type="button" className={today ? `${styles.isActive}` : ''}

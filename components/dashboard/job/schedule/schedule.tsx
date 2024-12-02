@@ -150,7 +150,7 @@ export default function CalendarSchedule({ close, id, applicantId, firstname, la
             <div className={styles.scheduleContainer}>
                 <div className={styles.header}>
                     <h2 className={RegularPoppins.className}>Create Interview Schedule</h2>
-                    <button className={styles.btn} onClick={close}>
+                    <button aria-label="button" className={styles.btn} onClick={close}>
                         <TbX size={28} />
                     </button>
                 </div>

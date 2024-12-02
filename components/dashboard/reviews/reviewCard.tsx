@@ -59,7 +59,7 @@ export default function ReviewCard({ reviewID, rating, review, name }: any) {
       <div className={styles.td}>{review.slice(0, 200)}</div>
       <div className={styles.td}>
         <div className={styles.actionsBtnGrp}>
-          <button onClick={onHandleToggle}>
+          <button aria-label="button" onClick={onHandleToggle}>
             <TbEye size={23} />
           </button>
         </div>

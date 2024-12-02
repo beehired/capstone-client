@@ -63,7 +63,7 @@ export default function ProfileSettings() {
                             <Image src={isEmpty(data?.myProfile?.avatar?.media) ? DefaultImage : data?.myProfile?.avatar?.media} alt="" fill objectFit='cover' objectPosition='center' />
                         </div>
                         <div>
-                            <button onClick={onHandleAddAvatar}>
+                            <button aria-label="button" onClick={onHandleAddAvatar}>
                                 <span className={RegularPoppins.className}>Change Profile Picture</span>
                             </button>
                         </div>
@@ -72,7 +72,7 @@ export default function ProfileSettings() {
                         <h2>Email Address</h2>
                         <div className={styles.email}>
                             <span className={RegularPoppins.className}>{data?.email}</span>
-                            <button onClick={onHandleEditEmail}>
+                            <button aria-label="button" onClick={onHandleEditEmail}>
                                 <TbEdit size={20} />
                             </button>
                         </div>

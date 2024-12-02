@@ -24,7 +24,7 @@ export default function ImageArray({ index, file, onHandleRemoveFiles }: any) {
             <div onClick={onHandlePreviewClose} className={styles.image}>
                 <Image src={URL.createObjectURL(file)} alt="" fill objectFit='cover' objectPosition='center' priority />
             </div>
-            <button onClick={onHandleRemoveFiles}>
+            <button aria-label="button" onClick={onHandleRemoveFiles}>
                 <TbX size={18} />
             </button>
         </div>

@@ -187,10 +187,10 @@ export default function ThemeCard({
       </div>
       <div className={styles.td}>
         <div className={styles.actionsBtnGrp}>
-          <button onClick={oHandleEditToggle} className={styles.edit}>
+          <button aria-label="button" onClick={oHandleEditToggle} className={styles.edit}>
             <TbEdit size={20} />
           </button>
-          <button
+          <button aria-label="button"
             onClick={onHandleToggleDeleteBtn}
             className={styles.deleteBtn}
           >

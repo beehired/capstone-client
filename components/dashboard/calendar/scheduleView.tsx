@@ -253,11 +253,11 @@ export default function ScheduleView({ id, close }: any) {
             </button>
           )}
           {user?.role === "freelance" ? null : (
-            <button onClick={onHandleEdit}>
+            <button aria-label="button" onClick={onHandleEdit}>
               <TbEdit size={23} />
             </button>
           )}
-          <button onClick={close}>
+          <button aria-label="button" onClick={close}>
             <TbX size={23} />
           </button>
         </div>

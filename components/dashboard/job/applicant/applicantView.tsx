@@ -80,7 +80,7 @@ export default function ApplicantView({ applicantId, close, firstname, lastname 
             <ToastNotification />
             <div className={styles.applicantContainer}>
                 <div className={styles.header}>
-                    <button className={styles.xbtn} onClick={close}>
+                    <button aria-label="button" className={styles.xbtn} onClick={close}>
                         <TbX size={28} />
                     </button>
                 </div>
@@ -109,14 +109,14 @@ export default function ApplicantView({ applicantId, close, firstname, lastname 
                         </div>
                         {data?.status === "Reject" || data?.status === "Hired" ? null :
                             <div className={styles.updateStatus}>
-                                <button className={styles.btn} onClick={onHandleActiveToggle}>
+                                <button aria-label="button" className={styles.btn} onClick={onHandleActiveToggle}>
                                     <TbChevronDown size={23} />
                                 </button>
                                 {
                                     activeToggle && <div className={styles.statusContainer}>
                                         <form onSubmit={handleSubmit}>
                                             {isSubmitting ? <Spinner /> : BStatus.map((status) => (
-                                                <button value={status} onClick={() => setFieldValue("status", status)} key={status}>
+                                                <button aria-label="button" value={status} onClick={() => setFieldValue("status", status)} key={status}>
                                                     <span className={RegularPoppins.className}>{status}</span>
                                                 </button>
                                             ))}

@@ -174,7 +174,7 @@ export default function MessageView() {
             <div className={styles.footer}>
                 <div className={styles.fileUpload}>
                     <input type='file' name="file" ref={fileRef} hidden multiple accept='image/jpg,image/jpeg, image/png, image/webp, image/avif' onChange={onHandleFileUpload} />
-                    <button className={styles.imageBtn} onClick={handleButtonClick}>
+                    <button aria-label="button" className={styles.imageBtn} onClick={handleButtonClick}>
                         <TbPhotoScan size={23} />
                     </button>
                 </div>
@@ -186,12 +186,12 @@ export default function MessageView() {
                                 <ImageArray index={index} key={index} file={file} onHandleRemoveFiles={() => onHandleRemoveFiles(index)} />
                             ))}
                         </div>
-                        : <textarea onKeyDown={handleKeyPress} className={lato.className} name="message" aria-placeholder='Aa' id="" value={values.message} onChange={handleChange} placeholder='Aa' ></textarea>}
+                        : <textarea aria-label='textarea' onKeyDown={handleKeyPress} className={lato.className} name="message" aria-placeholder='Aa' id="" value={values.message} onChange={handleChange} placeholder='Aa' ></textarea>}
                 </div>
                 {
                     values.message || selectedFiles ? <div>
                         <form onSubmit={handleSubmit}>
-                            <button className={styles.submitBtn} type="submit">
+                            <button aria-label="button" className={styles.submitBtn} type="submit">
                                 <TbSend2 size={23} />
                             </button>
                         </form>

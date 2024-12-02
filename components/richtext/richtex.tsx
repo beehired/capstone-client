@@ -63,30 +63,30 @@ export default function RichTextEditor({ value, setFieldValue }: any) {
         <div className={styles.container}>
             <div className={styles.toolbar}>
                 <div className={styles.basic}>
-                    <button type="button" onClick={() => editor.chain().focus().toggleBold().run()}
+                    <button aria-label="button" type="button" onClick={() => editor.chain().focus().toggleBold().run()}
                         className={editor.isActive('bold') ? `${styles.isActive}` : ''}>
                         <TbBold size={18} />
                     </button>
-                    <button type="button" onClick={() => editor.chain().focus().toggleItalic().run()}
+                    <button aria-label="button" type="button" onClick={() => editor.chain().focus().toggleItalic().run()}
                         className={editor.isActive('italic') ? `${styles.isActive}` : ''}>
                         <TbItalic size={18} />
                     </button>
-                    <button type="button" onClick={() => editor.chain().focus().toggleUnderline().run()}
+                    <button aria-label="button" type="button" onClick={() => editor.chain().focus().toggleUnderline().run()}
                         className={editor.isActive('underline') ? `${styles.isActive}` : ''}>
                         <TbUnderline size={18} />
                     </button>
-                    <button type="button" onClick={() => editor.chain().focus().toggleStrike().run()}
+                    <button aria-label="button" type="button" onClick={() => editor.chain().focus().toggleStrike().run()}
                         className={editor.isActive('strike') ? `${styles.isActive}` : ''}>
                         <TbStrikethrough size={18} />
                     </button>
 
                 </div>
                 <div className={styles.markup}>
-                    <button type="button" onClick={() => editor.chain().focus().toggleOrderedList().run()}
+                    <button aria-label="button" type="button" onClick={() => editor.chain().focus().toggleOrderedList().run()}
                         className={editor.isActive('listitem') ? `${styles.isActive}` : ''}>
                         <TbListNumbers size={18} />
                     </button>
-                    <button type="button" onClick={() => editor.chain().focus().toggleBulletList().run()}
+                    <button aria-label="button" type="button" onClick={() => editor.chain().focus().toggleBulletList().run()}
                         className={editor.isActive('bulletlist') ? `${styles.isActive}` : ''}>
                         <TbList size={18} />
                     </button>

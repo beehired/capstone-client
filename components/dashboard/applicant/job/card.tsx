@@ -50,13 +50,13 @@ export default function JobCard({ jobPostID, title, description, slug, location,
                         : <Image src={media} alt="" height={80} width={80} priority />}
                 </div>
                 <div className={styles.info}>
-                    <Link className={`${styles.title} ${RegularPoppins.className}`} href={`/freelancer/find-job/${jobPostID}`}>{title.length > 20 ? `${title.slice(0, 20)}...` : `${title}`}</Link>
+                    <Link aria-label="button" className={`${styles.title} ${RegularPoppins.className}`} href={`/freelancer/find-job/${jobPostID}`}>{title.length > 20 ? `${title.slice(0, 20)}...` : `${title}`}</Link>
                     <div className={styles.location}>
                         <span>{companyName}</span> &#x2022;
                         <span>{location}</span>
                     </div>
                 </div>
-            </div>      
+            </div>
             <div className={styles.description}>
                 {parse(description.slice(0, 160))}
             </div>

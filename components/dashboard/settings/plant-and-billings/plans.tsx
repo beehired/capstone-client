@@ -230,7 +230,7 @@ export default function PlansAndBillings() {
                   </div>
                 </div>
                 <div className={styles.footer}>
-                  <button onClick={onHandleUpgrade}>
+                  <button aria-label="button" onClick={onHandleUpgrade}>
                     <b>Upgrade your Plan</b>
                   </button>
                 </div>

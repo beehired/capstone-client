@@ -167,9 +167,10 @@ export default function FontTemplate() {
             type="Search"
             placeholder="Search here..."
             onChange={onHandleChange}
+            aria-label="search"
           />
         </div>
-        <button onClick={() => setToggle(() => !toggle)}>
+        <button aria-label="AddNew" onClick={() => setToggle(() => !toggle)}>
           <span className={RegularPoppins.className}>Add New</span>
         </button>
       </div>

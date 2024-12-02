@@ -90,13 +90,13 @@ export default function ApplicantCard({ applicationID, email, appID, createdAt, 
                             <Message close={onHandleToggleMessage} id={id} />
                         </Dialog>
                     }
-                    <button className={`${styles.actionBtn} ${styles.viewIcon}`} onClick={onHandleToggleView}>
+                    <button aria-label="button" className={`${styles.actionBtn} ${styles.viewIcon}`} onClick={onHandleToggleView}>
                         <TbEye size={23} />
                     </button>
-                    <button className={`${styles.actionBtn} ${styles.calendarIcon}`} onClick={onHandleToggleCalendar}>
+                    <button aria-label="button" className={`${styles.actionBtn} ${styles.calendarIcon}`} onClick={onHandleToggleCalendar}>
                         <TbCalendar size={23} />
                     </button>
-                    <button className={`${styles.actionBtn} ${styles.messageIcon}`} onClick={onHandleToggleMessage}>
+                    <button aria-label="button" className={`${styles.actionBtn} ${styles.messageIcon}`} onClick={onHandleToggleMessage}>
                         <TbMessage size={23} />
                     </button>
                 </div>

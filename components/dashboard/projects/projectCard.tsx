@@ -257,14 +257,14 @@ export default function ProjectCard({
                 <h2 className={RegularPoppins.className}>{title}</h2>
                 <div className={styles.grpBtn}>
                   {status === "Completed" ? null : (
-                    <button className={styles.changeStatus} onClick={onHandleEditStatus}>
+                    <button aria-label="button" className={styles.changeStatus} onClick={onHandleEditStatus}>
                       <TbStatusChange size={23} />
                     </button>
                   )}
-                  <button className={styles.Edit} onClick={onHandleEditToggle}>
+                  <button aria-label="button" className={styles.Edit} onClick={onHandleEditToggle}>
                     <TbEdit size={23} />
                   </button>
-                  <button onClick={onHandleToggleView}>
+                  <button aria-label="button" onClick={onHandleToggleView}>
                     <TbX size={23} />
                   </button>
                 </div>
@@ -315,11 +315,11 @@ export default function ProjectCard({
       <div className={styles.td}>{format(new Date(date), "MMMM dd, yyyy")}</div>
       <div className={styles.td}>
         <div className={styles.actionsBtnGrp}>
-          <button onClick={onHandleToggleView}>
+          <button aria-label="button" onClick={onHandleToggleView}>
             <TbEye size={20} />
           </button>
           {status === "Completed" ? (
-            <button onClick={onHandleReview}>
+            <button aria-label="button" onClick={onHandleReview}>
               <TbNote size={20} />
             </button>
           ) : null}

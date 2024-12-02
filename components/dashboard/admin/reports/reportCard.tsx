@@ -26,7 +26,7 @@ export default function ReportCard({ title, JobPost, reportID, name, date }: any
             </div>
             <div className={styles.td}>
                 <div className={styles.actionsBtnGrp}>
-                    <button onClick={() => router.push(`/dashboard/admin/reports/${reportID}`)}>
+                    <button aria-label="button" onClick={() => router.push(`/dashboard/admin/reports/${reportID}`)}>
                         <TbEye size={23} />
                     </button>
                 </div>

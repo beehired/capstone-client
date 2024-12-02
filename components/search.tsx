@@ -7,7 +7,7 @@ export default function Search() {
     return (
         <div className={styles.container}>
             <TbSearch size={25} />
-            <input type="text" placeholder='search job, keywords, and etc' />
+            <input aria-label='seach' type="text" placeholder='search job, keywords, and etc' />
         </div>
     )
 }

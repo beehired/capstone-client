@@ -108,6 +108,7 @@ export function ButtonIcon({ icon, name, url }: ButtonIconProps) {
           ? `${styles.iconBtn} ${styles.activeIcon}`
           : `${styles.iconBtn}`
       }
+      aria-label={name}
     >
       <div className={styles.con}>
         {icon}

@@ -76,12 +76,13 @@ export default function JobBody() {
         <div className={styles.container}>
             <div className={styles.header}>
                 <div className={styles.first}>
-                    <button
+                    <button aria-label="button"
                         onClick={() => router.push(`/dashboard/employer/jobs?archive=false`)}
                         className={searchParams.get("archive") === "false" ? `${styles.active}` : ""}>
                         <span className={RegularPoppins.className}>All Job</span>
                     </button>
                     <button
+                        aria-label="button"
                         onClick={() => router.push(`/dashboard/employer/jobs?archive=true`)}
                         className={searchParams.get("archive") === "true" ? `${styles.active}` : ""}>
                         <span className={RegularPoppins.className}>Archive</span>
@@ -90,7 +91,7 @@ export default function JobBody() {
                 <div className={styles.second}>
                     <div className={styles.search}>
                         <TbSearch size={20} />
-                        <input type='search' placeholder='Search' onChange={onHandleSearchJob} />
+                        <input aria-label='seach' type='search' placeholder='Search' onChange={onHandleSearchJob} />
                     </div>
                     <RouteButtonV1 name='Add New' url='/dashboard/employer/jobs/create' />
                 </div>

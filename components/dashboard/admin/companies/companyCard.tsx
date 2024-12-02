@@ -29,7 +29,7 @@ export default function CompanyCard({ media, companyName, companySize, getJobPos
             </div>
             <div className={styles.td}>
                 <div className={styles.actionsBtnGrp}>
-                    <button onClick={() => router.push(`/dashboard/admin/companies/${slug}`)}>
+                    <button aria-label={'link'} onClick={() => router.push(`/dashboard/admin/companies/${slug}`)}>
                         <TbLink size={23} />
                     </button>
                 </div>

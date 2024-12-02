@@ -147,9 +147,10 @@ export default function SkillsMaintenance() {
             type="Search"
             placeholder="Search here..."
             onChange={onHandleChange}
+            aria-label={'search'}
           />
         </div>
-        <button onClick={() => setToggle(() => !toggle)}>
+        <button aria-label="Addnew" onClick={() => setToggle(() => !toggle)}>
           <span className={RegularPoppins.className}>Add New</span>
         </button>
       </div>

@@ -345,6 +345,7 @@ export default function JobForm({ id }: any) {
                                 <div className={styles.skillsContainer}>
                                     {isEmpty(searchSkills?.item) ?
                                         <button
+                                            aria-label="button"
                                             type="button"
                                             className={values.skills.includes(search as never) ? `${styles.active}` : ""}
                                             onClick={(e: SyntheticEvent<HTMLButtonElement>) => {
@@ -365,7 +366,7 @@ export default function JobForm({ id }: any) {
                                             <span className={MediumPoppins.className}>{search}</span>
                                         </button>
                                         : searchSkills?.item.map(({ skillsID, skills }: { skillsID: never, skills: never }) => (
-                                            <button className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button" key={skillsID}
+                                            <button aria-label="button" className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button" key={skillsID}
                                                 onClick={(e) => {
 
                                                     const updatedSkills = values.skills.includes(e.currentTarget.value as never)
@@ -387,7 +388,7 @@ export default function JobForm({ id }: any) {
                             <div className={styles.skills}>
                                 <div className={styles.skillsContainer}>
                                     {values.skills.map((skills) => (
-                                        <button key={skills}
+                                        <button aria-label="button" key={skills}
                                             className={values.skills.includes(skills) ? `${styles.active}` : ""} name='skills' value={skills} type="button"
                                             onClick={(e) => {
 
@@ -428,7 +429,7 @@ export default function JobForm({ id }: any) {
                                     </div>
                                     <div className={styles.deleteBtn}>
 
-                                        <button onClick={() => setFileUpload(null)} type='button'>
+                                        <button aria-label="button" onClick={() => setFileUpload(null)} type='button'>
                                             <TbTrash size={23} />
                                         </button>
                                     </div>
@@ -451,7 +452,7 @@ export default function JobForm({ id }: any) {
                                         {({ getRootProps, getInputProps }) => (
                                             <section>
                                                 <div {...getRootProps()}>
-                                                    <input {...getInputProps()} name="agreement" />
+                                                    <input aria-label='drag and drop' {...getInputProps()} name="agreement" />
                                                     <div className={styles.uploading}>
                                                         <TbUpload size={45} />
                                                     </div>
@@ -476,11 +477,11 @@ export default function JobForm({ id }: any) {
                         <span className={`${RegularPoppins.className} ${styles.stepSpan}`}>Step {step} of {stepInfo.length}</span>
                         <div className={styles.stepGroup}>
                             {isSubmitting ? null :
-                                <button type="button" disabled={step <= 1} onClick={() => setStep(() => step - 1)}>
+                                <button aria-label="button" type="button" disabled={step <= 1} onClick={() => setStep(() => step - 1)}>
                                     <span className={RegularPoppins.className}>Back</span>
                                 </button>}
                             {step !== 3 ?
-                                <button type="button" onClick={() => setStep(() => step + 1)}>
+                                <button aria-label="button" type="button" onClick={() => setStep(() => step + 1)}>
                                     <span className={RegularPoppins.className}>Continue</span>
                                 </button> :
                                 <PrimaryButton loading={isSubmitting ? true : false} name='Submit' type='submit' />

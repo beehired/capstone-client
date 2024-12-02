@@ -53,10 +53,10 @@ export default function EmployerDashboard() {
             <div className={styles.overviewData}>
                 <div className={styles.weekBtn}>
                     <div className={styles.con}>
-                        <button className={sp.get("filter") === "week" ? styles.active : ""} onClick={() => router.push('/dashboard/employer/overview?filter=week')}>
+                        <button aria-label="button" className={sp.get("filter") === "week" ? styles.active : ""} onClick={() => router.push('/dashboard/employer/overview?filter=week')}>
                             <span className={RegularPoppins.className}>Week</span>
                         </button>
-                        <button className={sp.get("filter") === "month" ? styles.active : ""} onClick={() => router.push('/dashboard/employer/overview?filter=month')}>
+                        <button aria-label="button" className={sp.get("filter") === "month" ? styles.active : ""} onClick={() => router.push('/dashboard/employer/overview?filter=month')}>
                             <span className={RegularPoppins.className}>Month</span>
                         </button>
                     </div>

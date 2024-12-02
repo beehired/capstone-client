@@ -88,7 +88,7 @@ const Notification = () => {
                 <div ref={divRef} className={styles.notificationContainer}>
                     <div className={styles.notificationHeader}>
                         <h2 className={RegularPoppins.className}>Notifications</h2>
-                        <button onClick={() => {
+                        <button aria-label="button" onClick={() => {
                             mutation.mutate()
                         }}>
                             <TbChecks size={23} />

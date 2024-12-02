@@ -71,7 +71,7 @@ export default function Job({ id }: any) {
     const router = useRouter();
     const debounceSearch = useDebounce(search, 100)
     const { data, isLoading } = useQuery({
-        queryKey: ["JobPosts", id],
+        queryKey: ["JobPosts", id, page],
         queryFn: async () => {
             const { getJobPostById } = await GraphQLRequest(GetJobPostID, {
                 jobPostId: id

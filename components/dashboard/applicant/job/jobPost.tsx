@@ -46,7 +46,7 @@ export default function JobPost({ search, debounce, values }: any) {
     const [page, setPage] = useState(1)
 
     const { data, isLoading } = useQuery({
-        queryKey: ["JobBoard", debounce, values],
+        queryKey: ["JobBoard", debounce, values, page],
         queryFn: async () => {
             const { getJobBoard } = await GraphQLRequest(JobBoard, {
                 search: search,

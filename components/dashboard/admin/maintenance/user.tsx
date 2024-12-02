@@ -45,7 +45,7 @@ export default function UserTemplate() {
     }
 
     const { data } = useQuery({
-        queryKey: ["GetUserByRole", search, "admin"],
+        queryKey: ["GetUserByRole", search, "admin", page],
         queryFn: async () => {
             const { getAllUserAccountByRole } = await GraphQLRequest(GetAllUsersByRole, {
                 role: "admin",

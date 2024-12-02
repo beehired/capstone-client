@@ -36,7 +36,7 @@ export default function Project() {
 
 
     const { data } = useQuery({
-        queryKey: ["GetMyProjects", user?.id, value],
+        queryKey: ["GetMyProjects", user?.id, value, page],
         queryFn: async () => {
             const { getUserProjectOrganizer } = await GraphQLRequest(GetMyProjectByUserId, {
                 userId: user?.id,

@@ -55,7 +55,7 @@ export default function ThemeTemplate() {
   };
 
   const { data, isLoading } = useQuery({
-    queryKey: ["GetAllThemes", debounceSearch],
+    queryKey: ["GetAllThemes", debounceSearch, page],
     queryFn: async () => {
       const { getThemes } = await GraphQLRequest(GetAllProfileTheme, {
         search,

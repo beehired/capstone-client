@@ -18,7 +18,7 @@ export default function ReportList() {
     const [page, setPage] = useState(1)
 
     const { data } = useQuery({
-        queryKey: ["ReportQuery"],
+        queryKey: ["ReportQuery", page],
         queryFn: async () => {
             const { getAllJobPostReport } = await GraphQLRequest(GetAllReport, {
                 input: {

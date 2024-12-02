@@ -25,7 +25,7 @@ export default function Projects() {
     const itemsPerPage = 20;
 
     const { data: CompanyProjectData } = useQuery({
-        queryKey: ["GetMyCompanyProject", user?.user?.company.companyID, search, orderBy],
+        queryKey: ["GetMyCompanyProject", user?.user?.company.companyID, search, orderBy, page],
         queryFn: async () => {
             const { getCompanyProjects } = await GraphQLRequest(GetMyProjectCompany, {
                 companyId: user?.user?.company?.companyID,

@@ -54,7 +54,7 @@ export default function FontTemplate() {
   };
 
   const { data, isLoading } = useQuery({
-    queryKey: ["GetAllFonts", debounceSearch],
+    queryKey: ["GetAllFonts", debounceSearch, page],
     queryFn: async () => {
       const { getAllFonts } = await GraphQLRequest(GetAllFontFamily, {
         search,

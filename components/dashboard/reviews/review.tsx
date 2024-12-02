@@ -20,7 +20,7 @@ export default function Review() {
     const [page, setPage] = useState(1)
 
     const { data } = useQuery({
-        queryKey: ["GetCompaniesReview"],
+        queryKey: ["GetCompaniesReview", page],
         queryFn: async () => {
             const { getAllCompanyReview } = await GraphQLRequest(GetAllCompanieReview, {
                 input: {

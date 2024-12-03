@@ -6,7 +6,7 @@ export default function Notice() {
     return (
         <div className={styles.container}>
             <span>By clicking Login or Sign up, you agree to our {" "}
-                <Link href="/policy/terms&condition">Terms and Conditions</Link> and <Link href="/policy/datapolicy">Data Policy</Link>.
+                <Link href="/terms-and-conditions">Terms and Conditions</Link> and <Link href="/data-policy">Data Policy</Link>.
             </span>
         </div>
     )

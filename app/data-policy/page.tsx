@@ -2,6 +2,27 @@ import Footer from '@/components/footer'
 import React from 'react'
 import styles from '@/styles/policy/policy.module.scss'
 import { MediumPoppins } from '@/components/typograhy'
+import { Metadata } from 'next'
+
+
+
+export const metadata: Metadata = {
+    title: "BeeHired: Data Policy",
+    creator: "UST-CICS Group 7 BeeHired",
+    authors: [
+        { name: "Joshua Rembulat" },
+        { name: "Gabrielle Joanna Marie Belgar" },
+        { name: "Charlene Arlante" },
+        { name: "Louis Ivan Virgo" },
+    ],
+    keywords: ["next js", "vercel", "heroku", "beehired", "hired", "freelance", "filipino", "filipino freelance"],
+    openGraph: {
+        type: "website",
+        countryName: "Philippines",
+        alternateLocale: "PH"
+    }
+}
+
 
 export default function Page() {
     return (

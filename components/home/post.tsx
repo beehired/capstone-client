@@ -34,7 +34,7 @@ export default function Post() {
                         </div>
                     </div>
                     <div>
-                        {parse(description.slice(0, 200))}
+                        {parse(description.slice(0, 300))}
                     </div>
                 </div>
             ))}

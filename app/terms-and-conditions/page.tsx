@@ -1,8 +1,27 @@
 import React from 'react'
 import styles from '@/styles/policy/terms/termsofservices.module.scss'
-import { MediumPoppins, RegularPoppins } from '@/components/typograhy'
+import { RegularPoppins } from '@/components/typograhy'
 import Footer from '@/components/footer'
+import { Metadata } from 'next'
 
+
+
+export const metadata: Metadata = {
+    title: "BeeHired: Terms and Conditions",
+    creator: "UST-CICS Group 7 BeeHired",
+    authors: [
+        { name: "Joshua Rembulat" },
+        { name: "Gabrielle Joanna Marie Belgar" },
+        { name: "Charlene Arlante" },
+        { name: "Louis Ivan Virgo" },
+    ],
+    keywords: ["next js", "vercel", "heroku", "beehired", "hired", "freelance", "filipino", "filipino freelance"],
+    openGraph: {
+        type: "website",
+        countryName: "Philippines",
+        alternateLocale: "PH"
+    }
+}
 
 export default function Page() {
     return (

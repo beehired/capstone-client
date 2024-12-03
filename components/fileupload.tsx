@@ -62,7 +62,7 @@ export default function FileUploads(props: any) {
         <div>
             {value ? preview && (
                 <div className={styles.fileUpload}>
-                    <NextImage src={preview as string} alt="Upload preview" width={120} height={120} priority blurDataURL={preview as string} />
+                    <NextImage src={preview as string} alt="Upload preview" fill objectFit='contain' priority blurDataURL={preview as string} />
                 </div>
             ) : <div {...getRootProps({ className: styles.dropzone })}>
                 <input {...getInputProps()} onClick={open} />

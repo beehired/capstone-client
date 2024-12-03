@@ -5,10 +5,19 @@
 .container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 400px);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 
+    @include Desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include landscape {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     @include phone {
+        grid-template-columns: repeat(1, 1fr);
         justify-content: center;
     }
 

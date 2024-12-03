@@ -144,8 +144,8 @@ export default function Freelancer() {
 
                         {step === 2 ?
                             <>
-                                <h2>Identity Verifcation</h2>
-                                <span>Your Information will be secured under the <HrefLinkV2 name='Terms and Conditions' url='/' /> and <HrefLinkV2 name='Privacy Policy' url='/' /> of each respective party and to comply with the regulations of the relevant authority.
+                                <h2>Identity Verification</h2>
+                                <span>Your information will be secured under the <HrefLinkV2 name='Terms and Conditions' url='/terms-and-conditions' /> and <HrefLinkV2 name='Data Policy' url='/data-policy' /> of each respective party and to comply with the regulations of the relevant authority.
                                 </span>
                                 <div className={styles.ia}>
 
@@ -161,11 +161,11 @@ export default function Freelancer() {
                     {step === 1 ? <>
                         <div className={styles.info}>
                             <div className={styles.om}>
-                                <Label name="Firstname" required={true} />
+                                <Label name="First Name" required={true} />
                                 <InputV1 name='firstname' onChange={handleChange} placeholder='Firstname' type='text' value={values.firstname} errors={errors.firstname} touched={touched.firstname} />
                             </div>
                             <div className={styles.om}>
-                                <Label name="Lastname" required={true} />
+                                <Label name="Last Name" required={true} />
                                 <InputV1 name='lastname' onChange={handleChange} placeholder='Lastname' type='text' value={values.lastname} errors={errors.lastname} touched={touched.lastname} />
                             </div>
 
@@ -211,6 +211,7 @@ export default function Freelancer() {
                                 <FileUploads setFieldValue={setFieldValue} value={values.upload} selectedFile={setFileUpload} dragisActive={'Drop your image'}
                                     isNotActive={'Drag your image here to upload or click to select a file.'} componentName='none' />
                                 {errors.upload && touched.upload ? <SpanError message={errors.upload} /> : null}
+                                <Label name='Government ID ' required={true} />
                                 <SelectForm onClick={onHandleValidID} title='List of Philippines Valid IDs' size={validIDs} value={values.TypeID} errors={errors.TypeID} touched={touched.TypeID} />
                             </div>
 

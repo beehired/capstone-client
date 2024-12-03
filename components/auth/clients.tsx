@@ -212,13 +212,16 @@ export default function Clients() {
                                 <div className={styles.pcontainer}>
                                     <div className={styles.p}>
                                         {plans.map(({ name, icon, value, features }) => (
-                                            <div className={values.plan === value ? `${styles.planContainer} ${styles.planActive}` : `${styles.planContainer}`} key={name}>
+                                            <button value={value} onClick={() => {
+                                                setFieldValue("plan", value)
+                                            }}
+                                                className={values.plan === value ? `${styles.planContainer} ${styles.planActive}` : `${styles.planContainer}`} key={name}>
                                                 <div className={styles.header}>
                                                     <div className={styles.planHeader}>
                                                         {icon}
                                                         <span className={MediumPoppins.className}>{name}</span>
                                                     </div>
-                                                    <input type="radio" name='plan' id='plan' value={value} onChange={handleChange} />
+                                                    {/* <input type="radio" name='plan' id='plan' value={value} onChange={handleChange} /> */}
                                                 </div>
                                                 <div className={styles.body}>
                                                     {features.map(({ f1, post, f2, f3 }: any) => (
@@ -230,7 +233,7 @@ export default function Clients() {
                                                         </div>
                                                     ))}
                                                 </div>
-                                            </div>
+                                            </button>
                                         ))}
                                     </div>
                                     {errors.plan && touched.plan ? <SpanError message={errors.plan} /> : null}
@@ -242,11 +245,11 @@ export default function Clients() {
                     {step === 2 && <div className={styles.step1}>
                         <div className={styles.personal}>
                             <div className={styles.om}>
-                                <Label name="Firstname" required={true} />
+                                <Label name="First Name" required={true} />
                                 <InputV1 placeholder='Firstname' name='firstname' onChange={handleChange} value={values.firstname} type='text' errors={errors.firstname} touched={touched.firstname} />
                             </div>
                             <div className={styles.om}>
-                                <Label name="Lastname" required={true} />
+                                <Label name="Last Name" required={true} />
                                 <InputV1 placeholder='Lastname' name='lastname' onChange={handleChange} value={values.lastname} type='text' errors={errors.lastname} touched={touched.lastname} />
                             </div>
                         </div>

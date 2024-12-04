@@ -32,7 +32,7 @@ export default function FileUploads(props: any) {
                         setPreview(file.result)
                     } else {
                         selectedFile(null);
-                        toast.error("Image required is 500x500px");
+                        toast.error("Please upload an image with dimensions of 500x500 pixels");
                         setFieldValue("upload", null)
                     }
                 }

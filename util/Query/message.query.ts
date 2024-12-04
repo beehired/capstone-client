@@ -155,6 +155,51 @@ export const GetMessageList: TypedDocumentNode = gql`
   }
 `;
 
+
+export const GetMessageFreelancerList: TypedDocumentNode = gql`
+  query GetMessages($userId: ID!, $search: String) {
+    getFreelancerMessages(userID: $userId, search: $search) {
+      userID
+      user {
+        getMyCompany {
+          companyName
+          logo {
+            media
+          }
+        }
+        myProfile {
+          firstname
+          lastname
+          avatar {
+            media
+          }
+        }
+      }
+      message {
+        messageID
+        message
+        createdAt
+        media {
+          media
+        }
+        messageStatus {
+          messageStatusID
+          isRead
+          createdAt
+        }
+
+        sendUser {
+          userID
+          myProfile {
+            firstname
+            lastname
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const GetUnreadChat: TypedDocumentNode = gql`
   query Query($userId: ID!) {
     getUnreadCountMessage(userID: $userId)

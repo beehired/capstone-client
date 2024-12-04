@@ -41,10 +41,10 @@ export const FreelancerRegister = Yup.object().shape({
     .required("Confirm Password is required")
     .oneOf([Yup.ref("password")], "Password does not match"),
   TypeID: Yup.string().trim().required("You need to select a Valid ID"),
-  upload: Yup.mixed().required("You required to upload a document"),
+  upload: Yup.mixed().required("Pleae upload a required document"),
   skills: Yup.array(Yup.string())
     .min(3, "Select at least three (3) skill")
-    .max(5)
+    .max(5, "You can select up 5 skills only")
     .required("Add skills at least three"),
   tnc: Yup.boolean()
     .default(false)

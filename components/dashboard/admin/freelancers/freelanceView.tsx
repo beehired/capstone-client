@@ -44,7 +44,7 @@ export default function FreelanceView({ id }: any) {
       return await GraphQLRequest(VerifyMyAccount, inputValues);
     },
     onSuccess: async () => {
-      toast.success("Successfully User Verified");
+      toast.success("User Successfully Verified");
       queryClient.invalidateQueries({
         queryKey: ["Freelancers"],
       });

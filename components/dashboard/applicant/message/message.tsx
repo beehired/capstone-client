@@ -11,7 +11,7 @@ import { isEmpty } from 'lodash';
 import DefaulImage from '@/app/public/l60Hf.png'
 import { RegularPoppins } from '@/components/typograhy';
 import { TbChevronDown, TbChevronUp, TbPhotoScan, TbSend2, TbX } from 'react-icons/tb';
-import { GetMessageList, GetPersonalMessage, GetUnreadChat } from '@/util/Query/message.query';
+import { GetMessageFreelancerList, GetMessageList, GetPersonalMessage, GetUnreadChat } from '@/util/Query/message.query';
 import { GetMyUserProfile } from '@/util/Query/user.query';
 import MessageCard from './messageCard';
 import MsgCard from '@/components/dashboard/message/card';
@@ -87,12 +87,12 @@ export default function Message() {
     const { data } = useQuery({
         queryKey: ["MessageList", user?.id, userList, search],
         queryFn: async () => {
-            const { getMessages } = await GraphQLRequest(GetMessageList, {
+            const { getFreelancerMessages } = await GraphQLRequest(GetMessageFreelancerList, {
                 userId: user?.id,
                 search
             })
 
-            return getMessages
+            return getFreelancerMessages
         },
         refetchInterval: 1000
     })

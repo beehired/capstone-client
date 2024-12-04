@@ -212,7 +212,7 @@ export default function Clients() {
                                 <div className={styles.pcontainer}>
                                     <div className={styles.p}>
                                         {plans.map(({ name, icon, value, features }) => (
-                                            <button value={value} onClick={() => {
+                                            <button type="button" value={value} onClick={() => {
                                                 setFieldValue("plan", value)
                                             }}
                                                 className={values.plan === value ? `${styles.planContainer} ${styles.planActive}` : `${styles.planContainer}`} key={name}>

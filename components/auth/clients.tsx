@@ -333,7 +333,7 @@ export default function Clients() {
                             <SelectForm onClick={onHandleCompanySize} title="Company Size" size={csize} value={values.companySize} errors={errors.companySize} touched={touched.companySize} />
                             <div className={styles.agreement}>
                                 <CheckboxV1 name='tnc' checked={values.tnc} onChange={handleChange} />
-                                <span>I agree to this <HrefLinkV2 name='Terms and Agreement' url='/policy/terms&condition' /> and   <HrefLinkV2 name='Data Policy' url='/policy/datapolicy' />.</span>
+                                <span>I agree to this <HrefLinkV2 name='Terms and Conditions' url='/terms-and-conditions' /> and   <HrefLinkV2 name='Data Policy' url='/data-policy' />.</span>
                             </div>
                             {errors.tnc && touched.tnc ? <SpanError message={errors.tnc} /> : null}
                         </div>

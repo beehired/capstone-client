@@ -213,7 +213,7 @@ export default function Homepage() {
                     <div className={styles.text}>
                         <div className={styles.col1}>
                             <h2 className={BoldPoppins.className}>Empowering Filipino Freelancers</h2>
-                            <span>Explore Job Oppurtunities and Be Hired Now!</span>
+                            <span>Explore Job Opportunities and Be Hired Now!</span>
 
                         </div>
                         <div className={styles.col2}>

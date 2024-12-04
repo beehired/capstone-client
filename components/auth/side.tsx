@@ -55,8 +55,8 @@ export default function Side() {
                     </div>
                 </div>
                 <div className={styles.policy}>
-                    <Link aria-label='links' href="/policy/terms&condition">Terms and Conditions</Link>
-                    <Link aria-label='links' href="/">Data Policy</Link>
+                    <Link aria-label='links' href="/terms-and-conditions">Terms and Conditions</Link>
+                    <Link aria-label='links' href="/data-policy">Data Policy</Link>
                 </div>
             </div>
         </div >

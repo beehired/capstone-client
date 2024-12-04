@@ -158,7 +158,7 @@ export default function Company() {
                             </div>
                             <p className={RegularPoppins.className}>
                               Drag and Drop your documents, or click to select
-                              files
+                              files (PDF only)
                             </p>
                           </div>
                         </section>
@@ -193,7 +193,7 @@ export default function Company() {
                   value={values.upload}
                   selectedFile={setImageUpload}
                   dragisActive={"Drop your Company Logo"}
-                  isNotActive={"Drop your Company Logo"}
+                  isNotActive={"Drag and Drop your Company Logo (JPEG, AVIF, PNG, JPG only)"}
                   requiredWidth={500}
                   requiredHeight={500}
                   componentName={"company"}

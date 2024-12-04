@@ -103,7 +103,7 @@ export default function AvatarModule({ id, value, setValue }: any) {
                                             <div className={styles.uploading}>
                                                 <TbUpload size={35} />
                                             </div>
-                                            <p className={RegularPoppins.className}>Drag and Drop your image, or click to select files</p>
+                                            <p className={RegularPoppins.className}>Drag and Drop your image, or click to select files (JPEG, PNG, WEB, etc)</p>
                                         </div>
                                     </section>
                                 )}

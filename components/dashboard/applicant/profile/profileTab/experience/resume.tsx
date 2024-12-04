@@ -161,7 +161,7 @@ export default function Resume({ id }: { id: string }) {
                       <TbUpload size={45} />
                     </div>
                     <p className={RegularPoppins.className}>
-                      Drag and Drop your resume, or click to select files
+                      Drag and Drop your resume, or click to select files (PDF only)
                     </p>
                   </div>
                 </section>

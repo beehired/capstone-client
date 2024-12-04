@@ -299,7 +299,7 @@ export default function Clients() {
                             <div className={styles.fileUpload}>
                                 <div>
                                     <FileUploads setFieldValue={setFieldValue} value={values.upload} selectedFile={setFileUpload} dragisActive={'Drop your Company Logo'}
-                                        isNotActive={'Drop your Company Logo'} requiredWidth={500} requiredHeight={500} componentName={'company'} />
+                                        isNotActive={'Drop your Company Logo (JPEG, AVIF, PNG, JPG only)'} requiredWidth={500} requiredHeight={500} componentName={'company'} />
                                     <div>
                                         {errors.upload && touched.upload ? <SpanError message={errors.upload} /> : null}
                                     </div>

@@ -143,7 +143,7 @@ export default function ThemeCard({
                   "Drag and Drop your resume, or click to select files<"
                 }
                 isNotActive={
-                  "Drag and Drop your image, or click to select files"
+                  "Drag and Drop your image, or click to select files (JPEG, AVIF, PNG, JPG only)"
                 }
                 componentName="none"
               />

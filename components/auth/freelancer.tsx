@@ -209,7 +209,7 @@ export default function Freelancer() {
                             <div className={styles.fileupload}>
 
                                 <FileUploads setFieldValue={setFieldValue} value={values.upload} selectedFile={setFileUpload} dragisActive={'Drop your image'}
-                                    isNotActive={'Drag your image here to upload or click to select a file.'} componentName='none' />
+                                    isNotActive={'Drag your image here to upload or click to select a file. (JPEG, AVIF, PNG, JPG only)'} componentName='none' />
                                 {errors.upload && touched.upload ? <SpanError message={errors.upload} /> : null}
                                 <Label name='Government ID ' required={true} />
                                 <SelectForm onClick={onHandleValidID} title='List of Philippines Valid IDs' size={validIDs} value={values.TypeID} errors={errors.TypeID} touched={touched.TypeID} />

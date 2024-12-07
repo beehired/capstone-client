@@ -1,3 +1,4 @@
+import BeePage from '@/components/dashboard/applicant/bee/page'
 import Default from '@/components/dashboard/applicant/themes/default'
 import { GraphQLRequest } from '@/lib/graphQLRequest'
 import { GetUserByProfileId } from '@/util/Query/profile.query'
@@ -37,7 +38,7 @@ export const generateMetadata = async ({ params }: Props) => {
 export default function Page({ params: { id } }: Props) {
     return (
         <div>
-            <Default id={id} />
+            <BeePage id={id} />
         </div>
     )
 }

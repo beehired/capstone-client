@@ -48,7 +48,7 @@ export default function ProfileDesign({ id }: { id: string }) {
     })
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "20px" }}>
             <ProfileTemplate title='Themes' icon={false}>
                 <DesignTheme name={'themeId'} errors={errors.themeId} touched={touched.themeId} handleChange={setFieldValue} value={values.themeId} />
             </ProfileTemplate>

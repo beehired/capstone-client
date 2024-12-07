@@ -5,6 +5,7 @@ import ProfileSocial from '@/components/dashboard/applicant/profile/profileTab/s
 import Default from '@/components/dashboard/applicant/themes/default'
 import React from 'react'
 import styles from '@/styles/dashboard/applicant/profile/profile.module.scss'
+import Preview from '@/components/dashboard/applicant/themes/preview'
 
 
 type Props = {
@@ -43,7 +44,8 @@ export default function Page({ params, searchParams }: Props) {
                 {params.prof === "design" && <ProfileDesign id={params.id} />}
             </div>
             <div className={styles.preview}>
-                <Default id={params.id} />
+                {/* <Default id={params.id} /> */}
+                <Preview />
             </div>
         </div>
     )

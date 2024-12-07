@@ -29,11 +29,8 @@ export default function Preview() {
 
 
     return (
-        <div>
-            {isEmpty(data?.getMyTheme) && null
-            }
-            {
-                data?.getMyTheme.theme === "Default Theme" ? <Default id={id} /> : <LinkedIn id={id} />
+        <div style={{ width: "100%" }}>
+            {isEmpty(data?.getMyTheme?.theme) ? null : data?.getMyTheme.theme === "Default Theme" ? <Default id={id} /> : <LinkedIn id={id} />
             }
         </div>
     )

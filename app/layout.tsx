@@ -4,6 +4,8 @@ import Provider from "@/lib/provider";
 import { ApolloWrapper } from "@/lib/apolloWrapper";
 import ProgressBars from "@/components/progressbar";
 import { LightPoppins } from "@/components/typograhy";
+import { Analytics } from "@vercel/analytics/react"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,6 +20,7 @@ export default function RootLayout({
               {children}
             </ProgressBars>
           </Provider>
+          <Analytics />
         </ApolloWrapper>
       </body>
     </html>

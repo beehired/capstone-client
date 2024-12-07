@@ -13,6 +13,8 @@ import { isEmpty } from 'lodash';
 import NotAvailable from '@/components/notavailable'
 import { RegularPoppins } from '@/components/typograhy'
 import { Rating, RoundedStar } from '@smastrom/react-rating'
+import { usePathname } from 'next/navigation'
+import { GraphQLRequest } from '@/lib/graphQLRequest'
 
 const lato = Lato({
     weight: "400",
@@ -53,12 +55,16 @@ export default function LinkedIn({ id }: any) {
         }
     }, [data])
 
+
+
+    const params = usePathname();
+
     return (
-        <div className={styles.container}>
+        <div className={params.includes("bee") ? styles.container : styles.hello}>
             <div className={styles.header} >
                 <div className={styles.head} style={{
                     backgroundImage: `url(${data?.header?.media})`,
-                    objectFit: "contain"
+                    objectFit: "contain",
                 }}></div>
                 <div className={styles.avatar}>
                     <Image src={isEmpty(data?.avatar?.media) ? DefaultImage : data.avatar.media} alt="" objectFit='cover' objectPosition='center' fill priority />
@@ -87,7 +93,7 @@ export default function LinkedIn({ id }: any) {
             <div className={styles.about}>
                 <div className={styles.aboutTitle}>
                     <h2 className={RegularPoppins.className}>About</h2>
-                    <p>
+                    <p className={fonts}>
                         {data?.about?.bio}
                     </p>
                 </div>
@@ -171,7 +177,5 @@ export default function LinkedIn({ id }: any) {
         </div>
     )
 }
-function GraphQLRequest(GetUserByProfileId: any, arg1: { profileId: any }): { getUserProfileById: any } | PromiseLike<{ getUserProfileById: any }> {
-    throw new Error('Function not implemented.')
-}
+
 

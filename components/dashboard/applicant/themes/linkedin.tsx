@@ -64,7 +64,6 @@ export default function LinkedIn({ id }: any) {
             <div className={styles.header} >
                 <div className={styles.head} style={{
                     backgroundImage: `url(${data?.header?.media})`,
-                    objectFit: "contain",
                 }}></div>
                 <div className={styles.avatar}>
                     <Image src={isEmpty(data?.avatar?.media) ? DefaultImage : data.avatar.media} alt="" objectFit='cover' objectPosition='center' fill priority />

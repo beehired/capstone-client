@@ -13,12 +13,15 @@ import { GraphQLRequest } from '@/lib/graphQLRequest'
 import { AddThemeFonts } from '@/util/Mutation/profile.mutation'
 import toast from 'react-hot-toast'
 import ToastNotification from '@/components/notification'
+import { useRouter } from 'next/navigation'
 
 
 export default function ProfileDesign({ id }: { id: string }) {
 
     const [themes, setThemes] = useState("")
     const [fonts, setFonts] = useState("")
+
+    const router = useRouter();
 
 
     const mutation = useMutation({
@@ -28,10 +31,11 @@ export default function ProfileDesign({ id }: { id: string }) {
         },
         onSuccess: async () => {
             toast.success("Successfully Theme Added")
+            await window.location.reload();
         }
     })
 
-    const { errors, values, setFieldValue, handleSubmit, handleChange, isSubmitting, touched } = useFormik({
+    const { errors, values, setFieldValue, handleSubmit, handleChange, isSubmitting, touched, setSubmitting } = useFormik({
         initialValues: {
             themeId: "",
             fontsId: "",
@@ -44,6 +48,8 @@ export default function ProfileDesign({ id }: { id: string }) {
                 themeId: values.themeId,
                 profileId: values.profileId
             })
+
+            setSubmitting(false)
         }
     })
 

@@ -29,10 +29,9 @@ export default function Card({ id, name, image, s, handleChange, value }: { id: 
     return (
         <button aria-label={name} value={id} name={s} onClick={(e) => handleChange(s, id)} className={
             cn(
-                value === id && styles.active, // Add styles.active if value matches id
-                data?.getMyTheme?.theme === name && styles.active, // Add styles.active if theme exists
-                data?.getMyFont?.font === name && styles.active, // Add styles.active if font exists
-                styles.container // Always include styles.container
+                value === id && `${styles.active}   ${styles.container}`,
+                styles.container
+
             )
         }
         >

@@ -34,6 +34,8 @@ import { MediumPoppins } from '../typograhy'
 import { useDebounce } from '@uidotdev/usehooks'
 import { isEmpty } from 'lodash'
 import Spinner from '../spinner'
+import Dialog from '../dialog'
+import TermsAndCondition from '../Policies/termsandagree'
 export default function Freelancer() {
 
     const router = useRouter();
@@ -126,13 +128,20 @@ export default function Freelancer() {
             setSubmitting(false);
         }
     })
-
+    const onHandleChangeTNC = () => {
+        setFieldValue("tnc", true)
+    }
     const onHandleValidID = (e: any) => {
         setFieldValue("TypeID", e.target.value)
     }
 
     return (
         <div className={styles.container}>
+            {values.tnc ? null :
+                <Dialog>
+                    <TermsAndCondition accept={values.tnc} onChange={onHandleChangeTNC} />
+                </Dialog>
+            }
             <div className={styles.formContainer}>
                 <Form onSubmit={handleSubmit}>
                     <div className={styles.si}>

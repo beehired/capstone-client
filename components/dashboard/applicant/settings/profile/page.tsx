@@ -91,7 +91,7 @@ export default function ProfilePage() {
             </div>
             <div>
                 <h2>Phone Number</h2>
-                <InputV1 name={'phone'} placeholder={'+XX (country code) Your phone number (omit leading 0)'} type={'tel'} value={values.phone} onChange={handleChange}
+                <InputV1 name={'phone'} placeholder={''} type={'tel'} value={values.phone} onChange={handleChange}
                     errors={errors.phone} touched={touched.phone}
                 />
             </div>

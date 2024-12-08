@@ -89,7 +89,7 @@ export default function Page() {
                                     <b>Prohibited Content:</b> Employers are strictly prohibited from posting job openings that involve illegal activities, discriminatory practices, or jobs that require any form of payment or fee from job seekers. Job postings that do not comply with these requirements will be immediately removed, and the employer{"'"}s account may be subject to termination or suspension.
                                 </li>
                                 <li>
-                                    <b>Responsibility for Updates:</b>Employers are responsible for keeping their job postings up-to-date. If a job position is filled or unavailable, employers must promptly update the job posting status or archive it from the BeeHired platform. BeeHired is not liable for outdated or inaccurate information in job postings that the employer still needs to update.
+                                    <b>Responsibility for Updates:</b> Employers are responsible for keeping their job postings up-to-date. If a job position is filled or unavailable, employers must promptly update the job posting status or archive it from the BeeHired platform. BeeHired is not liable for outdated or inaccurate information in job postings that the employer still needs to update.
                                 </li>
                             </ul>
                             <span><b>3.2. Job Posting Duration:</b></span>
@@ -107,7 +107,7 @@ export default function Page() {
                                     <b> Automatic Archiving:</b> If an employer does not renew or extend a job posting within the specified timeframe, the posting will automatically be archived from the BeeHired platform upon closing. If necessary, employers can retrieve and repost the job by following the platform{"'"}s standard job posting procedures.
                                 </li>
                                 <li>
-                                    <b>No Hidden Fees:</b> BeeHired is committed to transparency and fairness. We do not charge any additional fees for the expiration, renewal, or extension of job postings, except for any standard subscription fees associated with the employer{"'"}s chosen plan (e.g., Basic or Pro Plan).
+                                    <b>No Hidden Fees:</b> BeeHired is committed to transparency and fairness. We do not charge any additional fees for the expiration of job postings, except for any standard subscription fees associated with the employer{"'"}s chosen plan (e.g., Basic or Pro Plan).
                                 </li>
                             </ul>
                         </div>

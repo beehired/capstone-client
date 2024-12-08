@@ -46,7 +46,7 @@ export default function Page() {
                         </span>
                         <span><b>1.2 Profile Creation for Freelancer</b></span>
                         <span>
-                            We collect additional information from you that helps showcase your qualifications to potential employers. This includes your educational background, work history, relevant skills and certifications, and a resume or CV. Freelancers can also upload portfolio samples or work to demonstrate their expertise. A fully detailed profile helps employers and potential business connections better understand your qualifications.
+                            When freelancers apply for jobs on BeeHired, we collect specific job application data. This includes files you upload, like resumes. This data is critical for employers to review your qualifications and make hiring decisions. We store this information to track your application status and ensure effective communication between you and potential employers.
                         </span>
                         <span><b>1.3 Employer Data</b>
                         </span>
@@ -55,12 +55,12 @@ export default function Page() {
                         </span>
                         <span><b>1.4 Job Application Data</b></span>
                         <span>
-                            When freelancers apply for jobs on BeeHired, we collect specific job application data. This includes the content of your job application, such as any files or documents you upload, like resumes and portfolios. You may also provide job preferences, including desired salary, availability, and other relevant information. This data is critical for employers to review your qualifications and make hiring decisions. We store this information to track your application status and ensure effective communication between you and potential employers.
+                            When freelancers apply for jobs on BeeHired, we collect specific job application data. This includes files you upload, like resumes. This data is critical for employers to review your qualifications and make hiring decisions. We store this information to track your application status and ensure effective communication between you and potential employers
                         </span>
                         <span><b>1.5 Messaging Data</b>
                         </span>
                         <span>
-                            BeeHired allows freelancers and employers to communicate directly through our platform. We collect the content of the messages exchanged between users, including any attachments or files shared. Additionally, we log message timestamps and the interaction history between users. This data is essential for tracking communication between freelancers and employers, enabling smooth coordination for job opportunities, interview scheduling, and contract negotiations.
+                            BeeHired allows freelancers and employers to communicate directly through our platform. We collect the content of the messages exchanged between users, including any images shared. Additionally, we log message timestamps and the interaction history between users. This data is essential for tracking communication between freelancers and employers, enabling smooth coordination for job opportunities, interview scheduling, and contract negotiations.
 
                         </span>
                         <span><b>1.6 Third-Party System</b>
@@ -93,12 +93,12 @@ export default function Page() {
                         <span><b>2.1 Providing Services</b>
                         </span>
                         <span>
-                            We use the personal data collected to deliver and manage the core functionalities of our platform. This includes creating and managing user accounts, facilitating job postings and applications, and matching freelancers with employers. We also handle and process payments for completed work to ensure that freelancers are compensated for their services and that employers fulfill their financial obligations. Additionally, we enable messaging and communication between users, allowing freelancers and employers to interact directly regarding job opportunities, interviews, and other work-related matters. These functions are essential for the effective operation of BeeHired and to ensure a seamless experience for all users.
+                            We use the personal data collected to deliver and manage the core functionalities of our platform. This includes creating and managing user accounts, facilitating job postings and applications, and matching freelancers with employers. Additionally, we enable messaging and communication between users, allowing freelancers and employers to interact directly regarding job opportunities, interviews, and other work-related matters. These functions are essential for the effective operation of BeeHired and to ensure a seamless experi
                         </span>
                         <span><b>2.2 Personalization</b>
                         </span>
                         <span>
-                            We use your data to personalize the content and features of the platform to enhance user experience. For freelancers, job recommendations are tailored based on their profile information, skills, and previous activity. We help employers find suitable candidates by matching freelancer profiles with relevant job postings, thereby improving the efficiency of the recruitment process. Personalization also extends to offering customized content and improving overall platform functionality, making it more relevant and engaging based on individual user preferences and behaviors.
+                            We use your data to personalize the platform’s content and features for a better user experience. For freelancers, job recommendations are tailored based on their skills. We help employers find suitable candidates by matching freelancer profiles with relevant job postings. Personalization also improves overall platform functionality, making it more relevant and engaging based on user preferences and behaviors.
                         </span>
                         <span><b>2.3 Security and Compliance</b>
                         </span>

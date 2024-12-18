@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 
 export const CreateWorkExperienceValidationSchema = Yup.object().shape({
-  title: Yup.string().trim().required("Title is required"),
+  title: Yup.string().trim().required("Title is required").max(100),
   description: Yup.string().trim().max(1000, "The max is only 1000 Characters"),
   companyName: Yup.string().trim().required("Company Name is required"),
   employmentType: Yup.string().trim().required("Employment Type is required"),
@@ -50,9 +50,12 @@ export const CreateWorkExperienceValidationSchema = Yup.object().shape({
 
 export const UpdateWorkExperienceValidationSchema = Yup.object().shape({
   portfolioID: Yup.string().trim().required("Portfolio ID is required"),
-  title: Yup.string().trim().required("Title is required"),
+  title: Yup.string().trim().required("Title is required").max(100),
   description: Yup.string().trim().max(1000, "The max is only 1000 Characters"),
-  companyName: Yup.string().trim().required("Company Name is required"),
+  companyName: Yup.string()
+    .trim()
+    .required("Company Name is required")
+    .max(100),
   employmentType: Yup.string().trim().required("Employment Type is required"),
   working: Yup.boolean(),
   startMonth: Yup.string().trim().required("Month is required"),

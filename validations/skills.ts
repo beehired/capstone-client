@@ -4,14 +4,16 @@ export const AddSkillsValidation = Yup.object().shape({
   skills: Yup.string()
     .trim()
     .required("Skill is required")
-    .min(1, "It should be minimum of 1 letter"),
+    .min(1, "It should be minimum of 1 letter")
+    .max(50),
 });
 
 export const UpdateSkillsValidation = Yup.object().shape({
   skills: Yup.string()
     .trim()
     .required("Skill is required")
-    .min(1, "It should be minimum of 1 letter"),
+    .min(1, "It should be minimum of 1 letter")
+    .max(50),
 });
 
 export const DeleteSkillsValidation = Yup.object().shape({

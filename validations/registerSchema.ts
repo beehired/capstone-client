@@ -1,10 +1,22 @@
 import * as Yup from "yup";
 
 export const ClientRegister = Yup.object().shape({
-  firstname: Yup.string().min(2).required("Firstname is required").trim(),
-  lastname: Yup.string().min(2).required("Lastname is required").trim(),
+  firstname: Yup.string()
+    .min(2)
+    .required("Firstname is required")
+    .trim()
+    .max(50, "The maximum characters is 50"),
+  lastname: Yup.string()
+    .min(2)
+    .required("Lastname is required")
+    .trim()
+    .max(50, "The maxiumum characters is 100"),
   plan: Yup.string().required("Subscriptions Plan is required"),
-  email: Yup.string().email().required("Email Address is Required").trim(),
+  email: Yup.string()
+    .email()
+    .required("Email Address is Required")
+    .trim()
+    .max(100),
   password: Yup.string()
     .required("Password is required")
     .matches(
@@ -14,7 +26,7 @@ export const ClientRegister = Yup.object().shape({
   confirmPass: Yup.string()
     .required("Confirm Password is required")
     .oneOf([Yup.ref("password")], "Password does not match"),
-  companyName: Yup.string().required("The Company Name is required"),
+  companyName: Yup.string().required("The Company Name is required").max(50),
   description: Yup.string()
     .max(1000, "The max length is only 1000 characters")
     .required("Company Description is required"),
@@ -28,9 +40,17 @@ export const ClientRegister = Yup.object().shape({
 });
 
 export const FreelancerRegister = Yup.object().shape({
-  firstname: Yup.string().min(2).required("Firstname is required").trim(),
-  lastname: Yup.string().min(2).required("Lastname is required").trim(),
-  email: Yup.string().email().required("Email Address is Required").trim(),
+  firstname: Yup.string()
+    .min(2)
+    .required("Firstname is required")
+    .trim()
+    .max(50),
+  lastname: Yup.string().min(2).required("Lastname is required").trim().max(50),
+  email: Yup.string()
+    .email()
+    .required("Email Address is Required")
+    .trim()
+    .max(100),
   password: Yup.string()
     .required("Password is required")
     .matches(
@@ -52,9 +72,17 @@ export const FreelancerRegister = Yup.object().shape({
 });
 
 export const AdminRegister = Yup.object().shape({
-  firstname: Yup.string().min(2).required("Firstname is required").trim(),
-  lastname: Yup.string().min(2).required("Lastname is required").trim(),
-  email: Yup.string().email().required("Email Address is Required").trim(),
+  firstname: Yup.string()
+    .min(2)
+    .required("Firstname is required")
+    .trim()
+    .max(50),
+  lastname: Yup.string().min(2).required("Lastname is required").trim().max(50),
+  email: Yup.string()
+    .email()
+    .required("Email Address is Required")
+    .trim()
+    .max(100),
   password: Yup.string()
     .required("Password is required")
     .matches(

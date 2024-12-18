@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 
 export const CreateValidationAbout = Yup.object().shape({
-  bio: Yup.string().trim().required("About is required"),
+  bio: Yup.string().trim().required("About is required").max(250),
 });
 
 export const UpdateValidationAbout = Yup.object().shape({

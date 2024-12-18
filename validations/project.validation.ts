@@ -12,7 +12,7 @@ export const ProjectDetailsSchema = Yup.object().shape({
       "End Date cannot be earlier or the same as the Start Date",
       function (value: any) {
         const { startDate } = this.parent;
-        if (!startDate || !value) return true; // If either is missing, skip this validation
+        if (!startDate || !value) return true;
         return new Date(value) > new Date(startDate);
       }
     ),

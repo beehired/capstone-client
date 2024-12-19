@@ -3,14 +3,14 @@ import * as Yup from "yup";
 export const ClientRegister = Yup.object().shape({
   firstname: Yup.string()
     .min(2)
-    .required("Firstname is required")
+    .required("First name is required")
     .trim()
-    .max(50, "The maximum characters is 50"),
+    .max(50, "First name cannot exceed 50 characters."),
   lastname: Yup.string()
     .min(2)
-    .required("Lastname is required")
+    .required("Last name is required")
     .trim()
-    .max(50, "The maxiumum characters is 100"),
+    .max(50, "Last Name cannot exceed 50 characters."),
   plan: Yup.string().required("Subscriptions Plan is required"),
   email: Yup.string()
     .email()
@@ -42,10 +42,14 @@ export const ClientRegister = Yup.object().shape({
 export const FreelancerRegister = Yup.object().shape({
   firstname: Yup.string()
     .min(2)
-    .required("Firstname is required")
+    .required("First name is required")
     .trim()
-    .max(50),
-  lastname: Yup.string().min(2).required("Lastname is required").trim().max(50),
+    .max(50, "First name cannot exceed 50 characters."),
+  lastname: Yup.string()
+    .min(2)
+    .required("Last name is required")
+    .trim()
+    .max(50, "Last name cannot exceed 50 characters."),
   email: Yup.string()
     .email()
     .required("Email Address is Required")
@@ -74,10 +78,14 @@ export const FreelancerRegister = Yup.object().shape({
 export const AdminRegister = Yup.object().shape({
   firstname: Yup.string()
     .min(2)
-    .required("Firstname is required")
+    .required("First Name is required")
     .trim()
     .max(50),
-  lastname: Yup.string().min(2).required("Lastname is required").trim().max(50),
+  lastname: Yup.string()
+    .min(2)
+    .required("Last Name is required")
+    .trim()
+    .max(50),
   email: Yup.string()
     .email()
     .required("Email Address is Required")

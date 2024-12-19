@@ -5,7 +5,7 @@ export const AddSkillsValidation = Yup.object().shape({
     .trim()
     .required("Skill is required")
     .min(1, "It should be minimum of 1 letter")
-    .max(50),
+    .max(50, "Skills name cannot exceed 50 characters"),
 });
 
 export const UpdateSkillsValidation = Yup.object().shape({
@@ -13,7 +13,7 @@ export const UpdateSkillsValidation = Yup.object().shape({
     .trim()
     .required("Skill is required")
     .min(1, "It should be minimum of 1 letter")
-    .max(50),
+    .max(50, "Skills name cannot exceed 50 characters"),
 });
 
 export const DeleteSkillsValidation = Yup.object().shape({

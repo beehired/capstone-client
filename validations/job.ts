@@ -1,7 +1,10 @@
 import * as Yup from "yup";
 
 export let CreateJobValidationSchema = Yup.object().shape({
-  title: Yup.string().trim().required("Job Title is required").max(100),
+  title: Yup.string()
+    .trim()
+    .required("Job Title is required")
+    .max(100, "Job title cannot exceed 100 characters."),
   description: Yup.string().trim().required("Job Description is required"),
   location: Yup.string()
     .oneOf(["On site", "Remote", "Hybrid"])
